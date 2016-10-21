@@ -70,6 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\ConsultaContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaContratos.Designer.cs">
+      <DependentUpon>ConsultaContratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaEmpleados.Designer.cs">
+      <DependentUpon>ConsultaEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaProductores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaProductores.Designer.cs">
+      <DependentUpon>ConsultaProductores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principales\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +96,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\RegistroContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroContratos.Designer.cs">
+      <DependentUpon>RegistroContratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RegistroEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroEmpleados.Designer.cs">
+      <DependentUpon>RegistroEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RegistroProductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroProductor.Designer.cs">
+      <DependentUpon>RegistroProductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utileria.cs" />
+    <EmbeddedResource Include="Consultas\ConsultaContratos.resx">
+      <DependentUpon>ConsultaContratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaEmpleados.resx">
+      <DependentUpon>ConsultaEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaProductores.resx">
+      <DependentUpon>ConsultaProductores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -86,7 +132,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registros\RegistroContratos.resx">
+      <DependentUpon>RegistroContratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\RegistroEmpleados.resx">
+      <DependentUpon>RegistroEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\RegistroProductor.resx">
+      <DependentUpon>RegistroProductor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,8 +158,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Consultas\" />
-    <Folder Include="Registros\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +168,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>FactoriaDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\paraConsultas.jpg" />
+    <None Include="Resources\BotonCancelar1.png" />
+    <None Include="Resources\BotonGuardar1.png" />
+    <None Include="Resources\BotonCancelar.png" />
+    <None Include="Resources\BotonBusqueda.png" />
+    <None Include="Resources\BotonAñadir.png" />
+    <None Include="Resources\cacao-1-318x212.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

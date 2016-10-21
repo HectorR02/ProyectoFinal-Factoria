@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entidades
 {
@@ -7,9 +8,9 @@ namespace Entidades
         [Key]
         public int ProductorId { get; set; }
 
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
 
-        public int Cedula { get; set; }
+        public Int64 Cedula { get; set; }
 
         public int FactoriaRNC { get; set; }
     }

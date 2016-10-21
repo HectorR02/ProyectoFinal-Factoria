@@ -14,11 +14,11 @@ namespace Entidades
 
         public string NombreProductor { get; set; }
 
-        public int CedulaProductor { get; set; }
+        public Int64 CedulaProductor { get; set; }
 
         public int Quintales { get; set; }
 
-        public int PrecioPorQuintal { get; set; }
+        public Decimal PrecioPorQuintal { get; set; }
 
         public string FirmaAutorizada { get; set; }
 

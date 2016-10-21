@@ -5,7 +5,7 @@ namespace Entidades
     public class Factorias
     {
         [Key]
-        public int RNC { get; set; }
+        public int FactoriaRNC { get; set; }
 
         public string NombreSucursal { get; set; }
 

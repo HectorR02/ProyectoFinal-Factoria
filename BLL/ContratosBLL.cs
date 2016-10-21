@@ -45,7 +45,7 @@ namespace BLL
             }
             return contrato;
         }
-        public static bool Elimiar(Contratos Existente)
+        public static bool Eliminar(Contratos Existente)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
