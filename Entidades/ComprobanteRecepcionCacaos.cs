@@ -14,7 +14,7 @@ namespace Entidades
 
         public string NombreProductor { get; set; }
 
-        public int CedulaProductor { get; set; }
+        public Int64 CedulaProductor { get; set; }
 
         public string TipoProducto { get; set; }
 
@@ -22,19 +22,19 @@ namespace Entidades
 
         public string CertificacionProducto { get; set; }
 
-        public double KgBruto { get; set; }
+        public Decimal KgBruto { get; set; }
 
-        public double Quintales { get; set; }
+        public Decimal Quintales { get; set; }
 
-        public float FactorConversion { get; set; }
+        public Decimal FactorConversion { get; set; }
 
         public int Sacos { get; set; }
 
-        public float DescuentoMoho { get; set; }
+        public Decimal DescuentoMoho { get; set; }
 
-        public float DescuentoBasura { get; set; }
+        public Decimal DescuentoBasura { get; set; }
 
-        public float DescuentoHumedad { get; set; }
+        public Decimal DescuentoHumedad { get; set; }
 
         public string NombreChofer { get; set; }
 
@@ -48,8 +48,10 @@ namespace Entidades
 
         public string EntregadoPor { get; set; }
 
-        public int CedulaChofer { get; set; }
-
         public int ProductorId { get; set; }
+
+        public Int64 CamionLleno { get; set; }
+
+        public Int64 CamionVacio { get; set; }
     }
 }
