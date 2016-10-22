@@ -120,6 +120,12 @@
     <Compile Include="Registros\RegistroProductor.Designer.cs">
       <DependentUpon>RegistroProductor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\RegistroReciboRecepcionProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroReciboRecepcionProducto.Designer.cs">
+      <DependentUpon>RegistroReciboRecepcionProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utileria.cs" />
     <EmbeddedResource Include="Consultas\ConsultaContratos.resx">
       <DependentUpon>ConsultaContratos.cs</DependentUpon>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="Registros\RegistroProductor.resx">
       <DependentUpon>RegistroProductor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros\RegistroReciboRecepcionProducto.resx">
+      <DependentUpon>RegistroReciboRecepcionProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -177,6 +186,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>FactoriaDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\BotonBusqueda1.png" />
     <None Include="Resources\Impresora1-25x25.png" />
     <None Include="Resources\Impresora25x25.png" />
     <None Include="Resources\Impresora1-52x40.png" />

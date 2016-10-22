@@ -12,7 +12,7 @@ namespace Entidades
 
         public string NombreProductor { get; set; }
 
-        public int CedulaProductor { get; set; }
+        public Int64 CedulaProductor { get; set; }
 
         public string AsociacionProductor { get; set; }
 
@@ -26,15 +26,15 @@ namespace Entidades
 
         public int PorcientoHumedad { get; set; }
 
-        public double TotalTara { get; set; }
+        public Decimal TotalTara { get; set; }
 
-        public float DescuentoSacos { get; set; }
+        public Decimal DescuentoSacos { get; set; }
 
-        public float DescuentoMoho { get; set; }
+        public Decimal DescuentoMoho { get; set; }
 
-        public float DescuentoImpureza { get; set; }
+        public Decimal DescuentoImpureza { get; set; }
 
-        public float DescuentoHumedad { get; set; }
+        public Decimal DescuentoHumedad { get; set; }
 
         public DateTime FechaRecepcion { get; set; }
 

@@ -30,11 +30,11 @@ namespace Entidades
 
         public int Sacos { get; set; }
 
-        public Decimal DescuentoMoho { get; set; }
+        public int DescuentoMoho { get; set; }
 
-        public Decimal DescuentoBasura { get; set; }
+        public int DescuentoBasura { get; set; }
 
-        public Decimal DescuentoHumedad { get; set; }
+        public int DescuentoHumedad { get; set; }
 
         public string NombreChofer { get; set; }
 

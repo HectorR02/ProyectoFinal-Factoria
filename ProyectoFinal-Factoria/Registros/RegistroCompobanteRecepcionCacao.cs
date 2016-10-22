@@ -1,12 +1,5 @@
 ﻿using Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal_Factoria.Registros
@@ -179,6 +172,10 @@ namespace ProyectoFinal_Factoria.Registros
 
             SacosTextBox.ReadOnly = SacosTextBox1.ReadOnly = SacosTextBox2.ReadOnly = SacosTextBox3.ReadOnly = CamionLlenoTextBox.ReadOnly = CamionLlenoTextBox1.ReadOnly = CamionLlenoTextBox2.ReadOnly = CamionLlenoTextBox3.ReadOnly = CamionVacioTextBox.ReadOnly = CamionVacioTextBox1.ReadOnly = CamionVacioTextBox2.ReadOnly = CamionVacioTextBox3.ReadOnly = KgBrutoTextBox.ReadOnly = KgBrutoTextBox1.ReadOnly = KgBrutoTextBox2.ReadOnly = KgBrutoTextBox3.ReadOnly = FactorTextBox.ReadOnly = FactorTextBox1.ReadOnly = FactorTextBox2.ReadOnly = FactorTextBox3.ReadOnly = QuinSecosTextBox.ReadOnly = QuinSecosTextBox1.ReadOnly = QuinSecosTextBox2.ReadOnly = QuinSecosTextBox3.ReadOnly = false;
             FactorTextBox.Text = FactorTextBox1.Text = FactorTextBox2.Text = FactorTextBox3.Text = FactorTextBoxTotal.Text = factor.ToString();
+            SacosTextBox.ReadOnly = SacosTextBox1.ReadOnly = SacosTextBox2.ReadOnly = SacosTextBox3.ReadOnly = false;
+            CamionLlenoTextBox.ReadOnly = CamionLlenoTextBox1.ReadOnly = CamionLlenoTextBox2.ReadOnly = CamionLlenoTextBox3.ReadOnly = false;
+            CamionVacioTextBox.ReadOnly = CamionVacioTextBox1.ReadOnly = CamionVacioTextBox2.ReadOnly = CamionVacioTextBox3.ReadOnly = false;
+            KgBrutoTextBox.ReadOnly = KgBrutoTextBox1.ReadOnly = KgBrutoTextBox2.ReadOnly = KgBrutoTextBox3.ReadOnly = false;
 
             NumeroComprobanteTextBox.Focus();
         }
@@ -230,11 +227,11 @@ namespace ProyectoFinal_Factoria.Registros
                                                 Comprobante.FactorConversion = Convert.ToDecimal(FactorTextBoxTotal.Text);
                                                 Comprobante.Quintales = Convert.ToDecimal(QuinSecosTextBoxTotal.Text);
                                                 if (!string.IsNullOrEmpty(HumedadTextBox.Text) && !HumedadTextBox.Text.Equals("Ej.: 2"))
-                                                    Comprobante.DescuentoHumedad = Convert.ToDecimal(HumedadTextBox.Text);
+                                                    Comprobante.DescuentoHumedad = Convert.ToInt32(HumedadTextBox.Text);
                                                 if (!string.IsNullOrEmpty(BasuraTextBox.Text) && !BasuraTextBox.Text.Equals("Ej.: 3"))
-                                                    Comprobante.DescuentoBasura = Convert.ToDecimal(BasuraTextBox.Text);
+                                                    Comprobante.DescuentoBasura = Convert.ToInt32(BasuraTextBox.Text);
                                                 if (!string.IsNullOrEmpty(MohoTextBox.Text) && !MohoTextBox.Text.Equals("Ej.: 4"))
-                                                    Comprobante.DescuentoMoho = Convert.ToDecimal(MohoTextBox.Text);
+                                                    Comprobante.DescuentoMoho = Convert.ToInt32(MohoTextBox.Text);
                                                 Comprobante.NombreChofer = ChoferTextBox.Text;
                                                 Comprobante.TipoTransporte = TipoTransporteTextBox.Text;
                                                 Comprobante.ZonaProcedencia = ZonaTextBox.Text;
@@ -243,6 +240,9 @@ namespace ProyectoFinal_Factoria.Registros
                                                 Comprobante.RecibidoPor = "Santiago Perez";
                                                 Comprobante.EntregadoPor = ChoferTextBox.Text;
                                                 BLL.ComprobaanteRecepcionCacaosBLL.Insertar(Comprobante);
+                                                this.Hide();
+                                                var temp = new RegistroReciboRecepcionProducto();
+                                                temp.Show();
                                             }
                                             else { }
                                         }
@@ -490,6 +490,137 @@ namespace ProyectoFinal_Factoria.Registros
         private void KgBrutoTextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidacionPesada(KgBrutoTextBox3, KgBrutoTextBoxTotal, "Ej.: 150", e);
-        }        
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(NumeroComprobanteTextBox.Text) && !NumeroComprobanteTextBox.Text.Equals("Ejemplo: 001"))
+            {
+                var Comprobante = BLL.ComprobaanteRecepcionCacaosBLL.Buscar(Convert.ToInt32(NumeroComprobanteTextBox.Text));
+                if(Comprobante != null)
+                {
+                    FechaDateTimePicker.Value = Comprobante.Fecha;
+                    AsociacionTextBox.Text = Comprobante.Asociacion;
+                    ProductorIdTextBox.Text = Comprobante.ProductorId.ToString();
+                    ProductorComboBox.SelectedItem = Comprobante.NombreProductor;
+                    CedulaMaskedTextBox.Text = Comprobante.CedulaProductor.ToString();
+                    TipoProductoComboBox.SelectedItem = Comprobante.TipoProducto;
+                    CertificacionProductoComboBox.SelectedItem = Comprobante.CertificacionProducto;
+                    EstadoProductoComboBox.SelectedItem = Comprobante.EstadoProducto;
+                    SacosTextBoxTotal.Text = Comprobante.Sacos.ToString();
+                    CamionLlenoTextBoxTotal.Text = Comprobante.CamionLleno.ToString();
+                    CamionVacioTextBoxTotal.Text = Comprobante.CamionVacio.ToString();
+                    FactorTextBoxTotal.Text = Comprobante.FactorConversion.ToString();
+                    QuinSecosTextBoxTotal.Text = Comprobante.Quintales.ToString();
+                    HumedadTextBox.Text = Comprobante.DescuentoHumedad.ToString();
+                    BasuraTextBox.Text = Comprobante.DescuentoBasura.ToString();
+                    MohoTextBox.Text = Comprobante.DescuentoMoho.ToString();
+                    ChoferTextBox.Text = Comprobante.NombreChofer;
+                    TipoTransporteTextBox.Text = Comprobante.NombreChofer;
+                    PlacaTextBox.Text = Comprobante.PlacaVehiculo;
+                    ZonaTextBox.Text = Comprobante.ZonaProcedencia;
+                    SacosTextBox.ReadOnly = SacosTextBox1.ReadOnly = SacosTextBox2.ReadOnly = SacosTextBox3.ReadOnly = true;
+                    CamionLlenoTextBox.ReadOnly = CamionLlenoTextBox1.ReadOnly = CamionLlenoTextBox2.ReadOnly = CamionLlenoTextBox3.ReadOnly = true;
+                    CamionVacioTextBox.ReadOnly = CamionVacioTextBox1.ReadOnly = CamionVacioTextBox2.ReadOnly = CamionVacioTextBox3.ReadOnly = true;
+                    KgBrutoTextBox.ReadOnly = KgBrutoTextBox1.ReadOnly = KgBrutoTextBox2.ReadOnly = KgBrutoTextBox3.ReadOnly = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("El Comprobante no existe");
+                }
+            }
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(NumeroComprobanteTextBox.Text))
+            {
+                if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
+                {
+                    if (CedulaMaskedTextBox.MaskFull)
+                    {
+                        if (!string.IsNullOrEmpty(SacosTextBoxTotal.Text))
+                        {
+                            if (!string.IsNullOrEmpty(KgBrutoTextBoxTotal.Text))
+                            {
+                                if (!string.IsNullOrEmpty(FactorTextBoxTotal.Text))
+                                {
+                                    if (!string.IsNullOrEmpty(TipoTransporteTextBox.Text))
+                                    {
+                                        if (!string.IsNullOrEmpty(ChoferTextBox.Text))
+                                        {
+                                            if (!string.IsNullOrEmpty(ZonaTextBox.Text))
+                                            {
+                                                var Ced = CedulaMaskedTextBox.Text.Split('-');
+                                                var cdula = Ced[0] + Ced[1] + Ced[2];
+                                                var Comprobante = new ComprobanteRecepcionCacaos();
+                                                Comprobante.NumeroComprobante = Convert.ToInt32(NumeroComprobanteTextBox.Text);
+                                                Comprobante.Fecha = FechaDateTimePicker.Value;
+                                                if (!string.IsNullOrEmpty(AsociacionTextBox.Text))
+                                                    Comprobante.Asociacion = AsociacionTextBox.Text;
+                                                Comprobante.ProductorId = Convert.ToInt32(ProductorIdTextBox.Text);
+                                                Comprobante.NombreProductor = ProductorComboBox.SelectedItem.ToString();
+                                                Comprobante.CedulaProductor = Convert.ToInt64(cdula);
+                                                Comprobante.TipoProducto = TipoProductoComboBox.SelectedItem.ToString();
+                                                Comprobante.CertificacionProducto = CertificacionProductoComboBox.SelectedItem.ToString();
+                                                Comprobante.EstadoProducto = EstadoProductoComboBox.SelectedItem.ToString();
+                                                Comprobante.Sacos = Convert.ToInt32(SacosTextBoxTotal.Text);
+                                                if (!string.IsNullOrEmpty(CamionLlenoTextBoxTotal.Text))
+                                                    Comprobante.CamionLleno = Convert.ToInt64(CamionLlenoTextBoxTotal.Text);
+                                                if (!string.IsNullOrEmpty(CamionVacioTextBoxTotal.Text))
+                                                    Comprobante.CamionVacio = Convert.ToInt64(CamionVacioTextBoxTotal.Text);
+                                                Comprobante.KgBruto = Convert.ToDecimal(KgBrutoTextBoxTotal.Text);
+                                                Comprobante.FactorConversion = Convert.ToDecimal(FactorTextBoxTotal.Text);
+                                                Comprobante.Quintales = Convert.ToDecimal(QuinSecosTextBoxTotal.Text);
+                                                if (!string.IsNullOrEmpty(HumedadTextBox.Text) && !HumedadTextBox.Text.Equals("Ej.: 2"))
+                                                    Comprobante.DescuentoHumedad = Convert.ToInt32(HumedadTextBox.Text);
+                                                if (!string.IsNullOrEmpty(BasuraTextBox.Text) && !BasuraTextBox.Text.Equals("Ej.: 3"))
+                                                    Comprobante.DescuentoBasura = Convert.ToInt32(BasuraTextBox.Text);
+                                                if (!string.IsNullOrEmpty(MohoTextBox.Text) && !MohoTextBox.Text.Equals("Ej.: 4"))
+                                                    Comprobante.DescuentoMoho = Convert.ToInt32(MohoTextBox.Text);
+                                                Comprobante.NombreChofer = ChoferTextBox.Text;
+                                                Comprobante.TipoTransporte = TipoTransporteTextBox.Text;
+                                                Comprobante.ZonaProcedencia = ZonaTextBox.Text;
+                                                if (!string.IsNullOrEmpty(PlacaTextBox.Text))
+                                                    Comprobante.PlacaVehiculo = PlacaTextBox.Text;
+                                                Comprobante.RecibidoPor = "Santiago Perez";
+                                                Comprobante.EntregadoPor = ChoferTextBox.Text;
+                                                BLL.ComprobaanteRecepcionCacaosBLL.Eliminar(Comprobante);
+                                            }
+                                            else { }
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    }
+                                    else { }
+                                }
+                                else { }
+                            }
+                            else
+                            { }
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+        }
     }
 }

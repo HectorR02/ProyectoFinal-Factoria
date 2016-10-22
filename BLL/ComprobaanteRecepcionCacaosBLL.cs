@@ -82,5 +82,23 @@ namespace BLL
             }
             return lista;
         }
+
+        public static ComprobanteRecepcionCacaos Buscar(string NombreProductor, Int64 NumeroCedula)
+        {
+            var Comprobante = new ComprobanteRecepcionCacaos();
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    Comprobante = conexion.ComprobanteRecepcionCacao.Where(x => x.NombreProductor == NombreProductor && x.CedulaProductor == NumeroCedula).SingleOrDefault();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return Comprobante;
+        }
     }
 }

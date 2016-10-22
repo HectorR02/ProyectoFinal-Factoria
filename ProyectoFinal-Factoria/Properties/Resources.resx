@@ -124,6 +124,9 @@
   <data name="BotonCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Impresora1-25x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Impresora1-25x25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cacao-1-318x212" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cacao-1-318x212.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,7 +148,7 @@
   <data name="BotonAñadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonAñadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Impresora1-25x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Impresora1-25x25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotonBusqueda1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonBusqueda1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
