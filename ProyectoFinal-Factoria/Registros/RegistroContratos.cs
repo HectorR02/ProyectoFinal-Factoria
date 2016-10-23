@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using ProyectoFinal_Factoria.VentanasReportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,6 +78,9 @@ namespace ProyectoFinal_Factoria.Registros
                                                     ProductorId = Convert.ToInt32(ProductorIdTextBox.Text),
                                                     FactoriaRNC = Convert.ToInt32(FactoriaRNCTextBox.Text)
                                                 });
+                                                var rep = new ReporteContrato();
+                                                rep.NumeroDeContrato = 1;
+                                                rep.Show();
                                             }
                                             else
                                             {

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProyectoFinal_Factoria</RootNamespace>
     <AssemblyName>ProyectoFinal-Factoria</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -56,9 +59,12 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,6 +93,11 @@
     </Compile>
     <Compile Include="Consultas\ConsultaProductores.Designer.cs">
       <DependentUpon>ConsultaProductores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FactoriaDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FactoriaDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Principales\Form1.cs">
       <SubType>Form</SubType>
@@ -127,6 +138,30 @@
       <DependentUpon>RegistroReciboRecepcionProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Utileria.cs" />
+    <Compile Include="VentanasReportes\ReporteComprobanteRecepcionCacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasReportes\ReporteComprobanteRecepcionCacao.Designer.cs">
+      <DependentUpon>ReporteComprobanteRecepcionCacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasReportes\ReporteContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasReportes\ReporteContrato.Designer.cs">
+      <DependentUpon>ReporteContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasReportes\ReporteReciboRecepcionProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasReportes\ReporteReciboRecepcionProducto.Designer.cs">
+      <DependentUpon>ReporteReciboRecepcionProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Unico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unico.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <EmbeddedResource Include="Consultas\ConsultaContratos.resx">
       <DependentUpon>ConsultaContratos.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,7 +196,33 @@
     <EmbeddedResource Include="Registros\RegistroReciboRecepcionProducto.resx">
       <DependentUpon>RegistroReciboRecepcionProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report2.rdlc" />
+    <EmbeddedResource Include="Reportes\Report3.rdlc" />
+    <EmbeddedResource Include="VentanasReportes\ReporteComprobanteRecepcionCacao.resx">
+      <DependentUpon>ReporteComprobanteRecepcionCacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasReportes\ReporteContrato.resx">
+      <DependentUpon>ReporteContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasReportes\ReporteReciboRecepcionProducto.resx">
+      <DependentUpon>ReporteReciboRecepcionProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="FactoriaDBDataSet.xsc">
+      <DependentUpon>FactoriaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FactoriaDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FactoriaDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FactoriaDBDataSet.xss">
+      <DependentUpon>FactoriaDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Entidades.ComprobanteRecepcionCacaos.datasource" />
+    <None Include="Properties\DataSources\Entidades.Contratos.datasource" />
+    <None Include="Properties\DataSources\Entidades.RecibosRecepcionProductos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -171,19 +232,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Vistas\Unico.xsc">
+      <DependentUpon>Unico.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Vistas\Unico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Unico.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Vistas\Unico.xss">
+      <DependentUpon>Unico.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\FactoriaDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\FactoriaDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>FactoriaDB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\BotonBusqueda1.png" />
@@ -214,6 +287,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{a66c8ce8-a5a5-424d-9bdb-f3b91ef1d046}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{55CF3F2D-4467-4BC3-B52C-8B036AA0CA18}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{6a6b48b0-8924-4544-8f6f-44e6a0842d08}</Project>

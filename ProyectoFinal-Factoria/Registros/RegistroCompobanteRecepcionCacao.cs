@@ -240,9 +240,10 @@ namespace ProyectoFinal_Factoria.Registros
                                                 Comprobante.RecibidoPor = "Santiago Perez";
                                                 Comprobante.EntregadoPor = ChoferTextBox.Text;
                                                 BLL.ComprobaanteRecepcionCacaosBLL.Insertar(Comprobante);
-                                                this.Hide();
-                                                var temp = new RegistroReciboRecepcionProducto();
-                                                temp.Show();
+                                                //this.Hide();
+                                                var Rep = new VentanasReportes.ReporteComprobanteRecepcionCacao();
+                                                Rep.NumeroComprobante = Convert.ToInt32(NumeroComprobanteTextBox.Text);
+                                                Rep.Show();
                                             }
                                             else { }
                                         }

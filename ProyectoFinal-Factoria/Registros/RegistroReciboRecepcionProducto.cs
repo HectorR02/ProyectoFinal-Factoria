@@ -34,23 +34,26 @@ namespace ProyectoFinal_Factoria.Registros
                     var Ced = CedulaProductorMaskedTextBox.Text.Split('-');
                     var cdula = Ced[0] + Ced[1] + Ced[2];
                     var Comp = BLL.ComprobaanteRecepcionCacaosBLL.Buscar(RecibimosDeComboBox.SelectedItem.ToString(), Convert.ToInt64(cdula));
-                    AsociacionTextBox.Text = Comp.Asociacion;
-                    DetalleTextBox.Text = Comp.KgBruto.ToString() + "Kg Bruto - " + Comp.TipoProducto + " - " + Comp.EstadoProducto + " - Certificacion: " + Comp.CertificacionProducto;
-                    X100SacosTextBox.Text = Comp.Sacos.ToString();
-                    X100MohoTextBox.Text = Comp.DescuentoMoho.ToString();
-                    X100ImpurezaTextBox.Text = Comp.DescuentoBasura.ToString();
-                    X100HumedadTextBox.Text = Comp.DescuentoHumedad.ToString();
-                    DescSacosTextBox.Text = ((Decimal)(Comp.Sacos * 0.25)).ToString();
-                    DescMohoTextBox.Text = ((Decimal)(Comp.DescuentoMoho * 0.25)).ToString();
-                    DescImpurezaTextBox.Text = ((Decimal)(Comp.DescuentoBasura * 0.25)).ToString();
-                    DescHumedadTextBox.Text = ((Decimal) (Comp.DescuentoHumedad * 0.25)).ToString();
-                    TotalTaraTextBox.Text = (((Decimal)(Comp.Sacos * 0.25)) + ((Decimal)(Comp.DescuentoMoho * 0.25)) + ((Decimal)(Comp.DescuentoBasura * 0.25)) + ((Decimal)(Comp.DescuentoHumedad * 0.25))).ToString();
-                    FechaRecepcionDateTimePicker.Value = Comp.Fecha;
-                    var kilos = (Decimal)Comp.Quintales * 50 - Convert.ToDecimal(DescSacosTextBox.Text);
-                    var RD = (Decimal)kilos * 120;
-                    ApagarRichTextBox.AppendText(kilos+" Kilos = "+Comp.Quintales+" Quintales por valor de "+RD+" PESOS DOMINICANOS\n"+"6000.00 precio por Quintal");
-                    NotasTextBox.Text = "No." + Comp.NumeroComprobante.ToString();
-                    GuardarButton.Enabled = ImprimirButton.Enabled = EliminarButton.Enabled = true;
+                    if(Comp != null)
+                    {
+                        AsociacionTextBox.Text = Comp.Asociacion;
+                        DetalleTextBox.Text = Comp.KgBruto.ToString() + "Kg Bruto - " + Comp.TipoProducto + " - " + Comp.EstadoProducto + " - Certificacion: " + Comp.CertificacionProducto;
+                        X100SacosTextBox.Text = Comp.Sacos.ToString();
+                        X100MohoTextBox.Text = Comp.DescuentoMoho.ToString();
+                        X100ImpurezaTextBox.Text = Comp.DescuentoBasura.ToString();
+                        X100HumedadTextBox.Text = Comp.DescuentoHumedad.ToString();
+                        DescSacosTextBox.Text = ((Decimal)(Comp.Sacos * 0.25)).ToString();
+                        DescMohoTextBox.Text = ((Decimal)(Comp.DescuentoMoho * 0.25)).ToString();
+                        DescImpurezaTextBox.Text = ((Decimal)(Comp.DescuentoBasura * 0.25)).ToString();
+                        DescHumedadTextBox.Text = ((Decimal)(Comp.DescuentoHumedad * 0.25)).ToString();
+                        TotalTaraTextBox.Text = (((Decimal)(Comp.Sacos * 0.25)) + ((Decimal)(Comp.DescuentoMoho * 0.25)) + ((Decimal)(Comp.DescuentoBasura * 0.25)) + ((Decimal)(Comp.DescuentoHumedad * 0.25))).ToString();
+                        FechaRecepcionDateTimePicker.Value = Comp.Fecha;
+                        var kilos = (Decimal)Comp.Quintales * 50 - Convert.ToDecimal(DescSacosTextBox.Text);
+                        var RD = (Decimal)kilos * 120;
+                        ApagarRichTextBox.AppendText(kilos + " Kilos = " + Comp.Quintales + " Quintales por valor de " + RD + " PESOS DOMINICANOS\n" + "6000.00 precio por Quintal");
+                        NotasTextBox.Text = "No." + Comp.NumeroComprobante.ToString();
+                        GuardarButton.Enabled = ImprimirButton.Enabled = EliminarButton.Enabled = true;
+                    }
                 }
             }
         }
@@ -82,6 +85,10 @@ namespace ProyectoFinal_Factoria.Registros
             Recibo.RealizadoPor = "Yorbelyn Micheel";
             Recibo.ProductorId = 1;
             Recibo.FactoriaRNC = 963214587;
+            BLL.RecibosRecepcionProductosBLL.Insertar(Recibo);
+            var Rep = new VentanasReportes.ReporteReciboRecepcionProducto();
+            Rep.NumeroRecibo = Convert.ToInt32(EntradaNoTextBox.Text);
+            Rep.Show();
         }
     }
 }

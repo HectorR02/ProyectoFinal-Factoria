@@ -16,7 +16,7 @@ namespace ProyectoFinal_Factoria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Registros.RegistroCompobanteRecepcionCacao());
+            Application.Run(new Registros.RegistroReciboRecepcionProducto());
         }
     }
 }
