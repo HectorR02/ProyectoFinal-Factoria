@@ -274,6 +274,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>FactoriaDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\BotonAñadir1.png" />
     <None Include="Resources\slide_311423_2767019_free.jpg" />
     <None Include="Resources\cacao-3-318x212.jpg" />
     <None Include="Resources\Grounded-Cocoa.jpg" />

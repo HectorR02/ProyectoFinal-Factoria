@@ -36,13 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.NumeroComprobanteTextBox = new System.Windows.Forms.TextBox();
             this.AsociacionTextBox = new System.Windows.Forms.TextBox();
@@ -50,40 +43,20 @@
             this.ProductorComboBox = new System.Windows.Forms.ComboBox();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.CamionVacioTextBoxTotal = new System.Windows.Forms.TextBox();
-            this.QuinSecosTextBoxTotal = new System.Windows.Forms.TextBox();
-            this.FactorTextBoxTotal = new System.Windows.Forms.TextBox();
-            this.KgBrutoTextBoxTotal = new System.Windows.Forms.TextBox();
-            this.CamionLlenoTextBoxTotal = new System.Windows.Forms.TextBox();
-            this.SacosTextBoxTotal = new System.Windows.Forms.TextBox();
-            this.CamionVacioTextBox3 = new System.Windows.Forms.TextBox();
-            this.QuinSecosTextBox3 = new System.Windows.Forms.TextBox();
-            this.FactorTextBox3 = new System.Windows.Forms.TextBox();
-            this.KgBrutoTextBox3 = new System.Windows.Forms.TextBox();
-            this.CamionLlenoTextBox3 = new System.Windows.Forms.TextBox();
-            this.SacosTextBox3 = new System.Windows.Forms.TextBox();
-            this.CamionVacioTextBox2 = new System.Windows.Forms.TextBox();
-            this.QuinSecosTextBox2 = new System.Windows.Forms.TextBox();
-            this.FactorTextBox2 = new System.Windows.Forms.TextBox();
-            this.KgBrutoTextBox2 = new System.Windows.Forms.TextBox();
-            this.CamionLlenoTextBox2 = new System.Windows.Forms.TextBox();
-            this.SacosTextBox2 = new System.Windows.Forms.TextBox();
-            this.CamionVacioTextBox1 = new System.Windows.Forms.TextBox();
-            this.QuinSecosTextBox1 = new System.Windows.Forms.TextBox();
-            this.FactorTextBox1 = new System.Windows.Forms.TextBox();
-            this.KgBrutoTextBox1 = new System.Windows.Forms.TextBox();
-            this.CamionLlenoTextBox1 = new System.Windows.Forms.TextBox();
-            this.SacosTextBox1 = new System.Windows.Forms.TextBox();
-            this.CamionVacioTextBox = new System.Windows.Forms.TextBox();
-            this.QuinSecosTextBox = new System.Windows.Forms.TextBox();
-            this.FactorTextBox = new System.Windows.Forms.TextBox();
-            this.KgBrutoTextBox = new System.Windows.Forms.TextBox();
-            this.CamionLlenoTextBox = new System.Windows.Forms.TextBox();
-            this.SacosTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.MohoTextBox = new System.Windows.Forms.TextBox();
             this.BasuraTextBox = new System.Windows.Forms.TextBox();
@@ -110,6 +83,7 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.ImprimirButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -210,90 +184,6 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Estado del Producto";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(15, 50);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 22);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "No. Sacos/Cajas";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(37, 81);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 22);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Camión Lleno";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(38, 113);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 22);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Camión Vacio";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(81, 145);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 22);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "KgBruto";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(34, 176);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 22);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "% Conversión";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(20, 208);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(140, 22);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "Quintales Secos";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label15.Location = new System.Drawing.Point(556, 25);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 22);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "TOTAL";
-            // 
             // BuscarButton
             // 
             this.BuscarButton.FlatAppearance.BorderSize = 0;
@@ -360,403 +250,157 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.CamionVacioTextBoxTotal);
-            this.groupBox1.Controls.Add(this.QuinSecosTextBoxTotal);
-            this.groupBox1.Controls.Add(this.FactorTextBoxTotal);
-            this.groupBox1.Controls.Add(this.KgBrutoTextBoxTotal);
-            this.groupBox1.Controls.Add(this.CamionLlenoTextBoxTotal);
-            this.groupBox1.Controls.Add(this.SacosTextBoxTotal);
-            this.groupBox1.Controls.Add(this.CamionVacioTextBox3);
-            this.groupBox1.Controls.Add(this.QuinSecosTextBox3);
-            this.groupBox1.Controls.Add(this.FactorTextBox3);
-            this.groupBox1.Controls.Add(this.KgBrutoTextBox3);
-            this.groupBox1.Controls.Add(this.CamionLlenoTextBox3);
-            this.groupBox1.Controls.Add(this.SacosTextBox3);
-            this.groupBox1.Controls.Add(this.CamionVacioTextBox2);
-            this.groupBox1.Controls.Add(this.QuinSecosTextBox2);
-            this.groupBox1.Controls.Add(this.FactorTextBox2);
-            this.groupBox1.Controls.Add(this.KgBrutoTextBox2);
-            this.groupBox1.Controls.Add(this.CamionLlenoTextBox2);
-            this.groupBox1.Controls.Add(this.SacosTextBox2);
-            this.groupBox1.Controls.Add(this.CamionVacioTextBox1);
-            this.groupBox1.Controls.Add(this.QuinSecosTextBox1);
-            this.groupBox1.Controls.Add(this.FactorTextBox1);
-            this.groupBox1.Controls.Add(this.KgBrutoTextBox1);
-            this.groupBox1.Controls.Add(this.CamionLlenoTextBox1);
-            this.groupBox1.Controls.Add(this.SacosTextBox1);
-            this.groupBox1.Controls.Add(this.CamionVacioTextBox);
-            this.groupBox1.Controls.Add(this.QuinSecosTextBox);
-            this.groupBox1.Controls.Add(this.FactorTextBox);
-            this.groupBox1.Controls.Add(this.KgBrutoTextBox);
-            this.groupBox1.Controls.Add(this.CamionLlenoTextBox);
-            this.groupBox1.Controls.Add(this.SacosTextBox);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(31, 209);
+            this.groupBox1.Location = new System.Drawing.Point(12, 209);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(658, 252);
+            this.groupBox1.Size = new System.Drawing.Size(693, 252);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PESADAS";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label19.Location = new System.Drawing.Point(491, 25);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(21, 24);
-            this.label19.TabIndex = 48;
-            this.label19.Text = "4";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label18.Location = new System.Drawing.Point(389, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(21, 24);
-            this.label18.TabIndex = 47;
-            this.label18.Text = "3";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label17.Location = new System.Drawing.Point(301, 25);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(21, 24);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "2";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label16.Location = new System.Drawing.Point(198, 25);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(21, 24);
-            this.label16.TabIndex = 45;
-            this.label16.Text = "1";
-            // 
-            // CamionVacioTextBoxTotal
-            // 
-            this.CamionVacioTextBoxTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionVacioTextBoxTotal.Location = new System.Drawing.Point(560, 112);
-            this.CamionVacioTextBoxTotal.Name = "CamionVacioTextBoxTotal";
-            this.CamionVacioTextBoxTotal.ReadOnly = true;
-            this.CamionVacioTextBoxTotal.Size = new System.Drawing.Size(79, 26);
-            this.CamionVacioTextBoxTotal.TabIndex = 44;
-            this.CamionVacioTextBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // QuinSecosTextBoxTotal
-            // 
-            this.QuinSecosTextBoxTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuinSecosTextBoxTotal.Location = new System.Drawing.Point(560, 206);
-            this.QuinSecosTextBoxTotal.Name = "QuinSecosTextBoxTotal";
-            this.QuinSecosTextBoxTotal.ReadOnly = true;
-            this.QuinSecosTextBoxTotal.Size = new System.Drawing.Size(79, 26);
-            this.QuinSecosTextBoxTotal.TabIndex = 43;
-            this.QuinSecosTextBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FactorTextBoxTotal
-            // 
-            this.FactorTextBoxTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactorTextBoxTotal.Location = new System.Drawing.Point(560, 175);
-            this.FactorTextBoxTotal.Name = "FactorTextBoxTotal";
-            this.FactorTextBoxTotal.ReadOnly = true;
-            this.FactorTextBoxTotal.Size = new System.Drawing.Size(79, 26);
-            this.FactorTextBoxTotal.TabIndex = 42;
-            this.FactorTextBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // KgBrutoTextBoxTotal
-            // 
-            this.KgBrutoTextBoxTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KgBrutoTextBoxTotal.Location = new System.Drawing.Point(560, 144);
-            this.KgBrutoTextBoxTotal.Name = "KgBrutoTextBoxTotal";
-            this.KgBrutoTextBoxTotal.ReadOnly = true;
-            this.KgBrutoTextBoxTotal.Size = new System.Drawing.Size(79, 26);
-            this.KgBrutoTextBoxTotal.TabIndex = 41;
-            this.KgBrutoTextBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // CamionLlenoTextBoxTotal
-            // 
-            this.CamionLlenoTextBoxTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionLlenoTextBoxTotal.Location = new System.Drawing.Point(560, 82);
-            this.CamionLlenoTextBoxTotal.Name = "CamionLlenoTextBoxTotal";
-            this.CamionLlenoTextBoxTotal.ReadOnly = true;
-            this.CamionLlenoTextBoxTotal.Size = new System.Drawing.Size(79, 26);
-            this.CamionLlenoTextBoxTotal.TabIndex = 40;
-            this.CamionLlenoTextBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // SacosTextBoxTotal
-            // 
-            this.SacosTextBoxTotal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SacosTextBoxTotal.Location = new System.Drawing.Point(560, 50);
-            this.SacosTextBoxTotal.Name = "SacosTextBoxTotal";
-            this.SacosTextBoxTotal.ReadOnly = true;
-            this.SacosTextBoxTotal.Size = new System.Drawing.Size(79, 26);
-            this.SacosTextBoxTotal.TabIndex = 39;
-            this.SacosTextBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // CamionVacioTextBox3
-            // 
-            this.CamionVacioTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionVacioTextBox3.Location = new System.Drawing.Point(464, 112);
-            this.CamionVacioTextBox3.Name = "CamionVacioTextBox3";
-            this.CamionVacioTextBox3.Size = new System.Drawing.Size(79, 26);
-            this.CamionVacioTextBox3.TabIndex = 38;
-            this.CamionVacioTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CamionVacioTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CamionVacioTextBox3_KeyPress);
-            // 
-            // QuinSecosTextBox3
-            // 
-            this.QuinSecosTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuinSecosTextBox3.Location = new System.Drawing.Point(464, 206);
-            this.QuinSecosTextBox3.Name = "QuinSecosTextBox3";
-            this.QuinSecosTextBox3.ReadOnly = true;
-            this.QuinSecosTextBox3.Size = new System.Drawing.Size(79, 26);
-            this.QuinSecosTextBox3.TabIndex = 37;
-            this.QuinSecosTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FactorTextBox3
-            // 
-            this.FactorTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactorTextBox3.Location = new System.Drawing.Point(464, 175);
-            this.FactorTextBox3.Name = "FactorTextBox3";
-            this.FactorTextBox3.ReadOnly = true;
-            this.FactorTextBox3.Size = new System.Drawing.Size(79, 26);
-            this.FactorTextBox3.TabIndex = 36;
-            this.FactorTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // KgBrutoTextBox3
-            // 
-            this.KgBrutoTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KgBrutoTextBox3.Location = new System.Drawing.Point(464, 144);
-            this.KgBrutoTextBox3.Name = "KgBrutoTextBox3";
-            this.KgBrutoTextBox3.Size = new System.Drawing.Size(79, 26);
-            this.KgBrutoTextBox3.TabIndex = 35;
-            this.KgBrutoTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.KgBrutoTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KgBrutoTextBox3_KeyPress);
-            // 
-            // CamionLlenoTextBox3
-            // 
-            this.CamionLlenoTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionLlenoTextBox3.Location = new System.Drawing.Point(464, 82);
-            this.CamionLlenoTextBox3.Name = "CamionLlenoTextBox3";
-            this.CamionLlenoTextBox3.Size = new System.Drawing.Size(79, 26);
-            this.CamionLlenoTextBox3.TabIndex = 34;
-            this.CamionLlenoTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CamionLlenoTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CamionLlenoTextBox3_KeyPress);
-            // 
-            // SacosTextBox3
-            // 
-            this.SacosTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SacosTextBox3.Location = new System.Drawing.Point(464, 50);
-            this.SacosTextBox3.Name = "SacosTextBox3";
-            this.SacosTextBox3.Size = new System.Drawing.Size(79, 26);
-            this.SacosTextBox3.TabIndex = 33;
-            this.SacosTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SacosTextBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SacosTextBox3_KeyPress);
-            // 
-            // CamionVacioTextBox2
-            // 
-            this.CamionVacioTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionVacioTextBox2.Location = new System.Drawing.Point(361, 113);
-            this.CamionVacioTextBox2.Name = "CamionVacioTextBox2";
-            this.CamionVacioTextBox2.Size = new System.Drawing.Size(79, 26);
-            this.CamionVacioTextBox2.TabIndex = 32;
-            this.CamionVacioTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CamionVacioTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CamionVacioTextBox2_KeyPress);
-            // 
-            // QuinSecosTextBox2
-            // 
-            this.QuinSecosTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuinSecosTextBox2.Location = new System.Drawing.Point(361, 207);
-            this.QuinSecosTextBox2.Name = "QuinSecosTextBox2";
-            this.QuinSecosTextBox2.ReadOnly = true;
-            this.QuinSecosTextBox2.Size = new System.Drawing.Size(79, 26);
-            this.QuinSecosTextBox2.TabIndex = 31;
-            this.QuinSecosTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FactorTextBox2
-            // 
-            this.FactorTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactorTextBox2.Location = new System.Drawing.Point(361, 176);
-            this.FactorTextBox2.Name = "FactorTextBox2";
-            this.FactorTextBox2.ReadOnly = true;
-            this.FactorTextBox2.Size = new System.Drawing.Size(79, 26);
-            this.FactorTextBox2.TabIndex = 30;
-            this.FactorTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // KgBrutoTextBox2
-            // 
-            this.KgBrutoTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KgBrutoTextBox2.Location = new System.Drawing.Point(361, 145);
-            this.KgBrutoTextBox2.Name = "KgBrutoTextBox2";
-            this.KgBrutoTextBox2.Size = new System.Drawing.Size(79, 26);
-            this.KgBrutoTextBox2.TabIndex = 29;
-            this.KgBrutoTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.KgBrutoTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KgBrutoTextBox2_KeyPress);
-            // 
-            // CamionLlenoTextBox2
-            // 
-            this.CamionLlenoTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionLlenoTextBox2.Location = new System.Drawing.Point(361, 83);
-            this.CamionLlenoTextBox2.Name = "CamionLlenoTextBox2";
-            this.CamionLlenoTextBox2.Size = new System.Drawing.Size(79, 26);
-            this.CamionLlenoTextBox2.TabIndex = 28;
-            this.CamionLlenoTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CamionLlenoTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CamionLlenoTextBox2_KeyPress);
-            // 
-            // SacosTextBox2
-            // 
-            this.SacosTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SacosTextBox2.Location = new System.Drawing.Point(361, 51);
-            this.SacosTextBox2.Name = "SacosTextBox2";
-            this.SacosTextBox2.Size = new System.Drawing.Size(79, 26);
-            this.SacosTextBox2.TabIndex = 27;
-            this.SacosTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SacosTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SacosTextBox2_KeyPress);
-            // 
-            // CamionVacioTextBox1
-            // 
-            this.CamionVacioTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionVacioTextBox1.Location = new System.Drawing.Point(266, 112);
-            this.CamionVacioTextBox1.Name = "CamionVacioTextBox1";
-            this.CamionVacioTextBox1.Size = new System.Drawing.Size(79, 26);
-            this.CamionVacioTextBox1.TabIndex = 26;
-            this.CamionVacioTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CamionVacioTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CamionVacioTextBox1_KeyPress);
-            // 
-            // QuinSecosTextBox1
-            // 
-            this.QuinSecosTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuinSecosTextBox1.Location = new System.Drawing.Point(266, 206);
-            this.QuinSecosTextBox1.Name = "QuinSecosTextBox1";
-            this.QuinSecosTextBox1.ReadOnly = true;
-            this.QuinSecosTextBox1.Size = new System.Drawing.Size(79, 26);
-            this.QuinSecosTextBox1.TabIndex = 25;
-            this.QuinSecosTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FactorTextBox1
-            // 
-            this.FactorTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactorTextBox1.Location = new System.Drawing.Point(266, 175);
-            this.FactorTextBox1.Name = "FactorTextBox1";
-            this.FactorTextBox1.ReadOnly = true;
-            this.FactorTextBox1.Size = new System.Drawing.Size(79, 26);
-            this.FactorTextBox1.TabIndex = 24;
-            this.FactorTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // KgBrutoTextBox1
-            // 
-            this.KgBrutoTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KgBrutoTextBox1.Location = new System.Drawing.Point(266, 144);
-            this.KgBrutoTextBox1.Name = "KgBrutoTextBox1";
-            this.KgBrutoTextBox1.Size = new System.Drawing.Size(79, 26);
-            this.KgBrutoTextBox1.TabIndex = 23;
-            this.KgBrutoTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.KgBrutoTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KgBrutoTextBox1_KeyPress);
-            // 
-            // CamionLlenoTextBox1
-            // 
-            this.CamionLlenoTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionLlenoTextBox1.Location = new System.Drawing.Point(266, 82);
-            this.CamionLlenoTextBox1.Name = "CamionLlenoTextBox1";
-            this.CamionLlenoTextBox1.Size = new System.Drawing.Size(79, 26);
-            this.CamionLlenoTextBox1.TabIndex = 22;
-            this.CamionLlenoTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CamionLlenoTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CamionLlenoTextBox1_KeyPress);
-            // 
-            // SacosTextBox1
-            // 
-            this.SacosTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SacosTextBox1.Location = new System.Drawing.Point(266, 50);
-            this.SacosTextBox1.Name = "SacosTextBox1";
-            this.SacosTextBox1.Size = new System.Drawing.Size(79, 26);
-            this.SacosTextBox1.TabIndex = 21;
-            this.SacosTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SacosTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SacosTextBox1_KeyPress);
-            // 
-            // CamionVacioTextBox
-            // 
-            this.CamionVacioTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionVacioTextBox.Location = new System.Drawing.Point(167, 113);
-            this.CamionVacioTextBox.Name = "CamionVacioTextBox";
-            this.CamionVacioTextBox.Size = new System.Drawing.Size(79, 26);
-            this.CamionVacioTextBox.TabIndex = 20;
-            this.CamionVacioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CamionVacioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CamionVacioTextBox_KeyPress);
-            // 
-            // QuinSecosTextBox
-            // 
-            this.QuinSecosTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuinSecosTextBox.Location = new System.Drawing.Point(167, 207);
-            this.QuinSecosTextBox.Name = "QuinSecosTextBox";
-            this.QuinSecosTextBox.ReadOnly = true;
-            this.QuinSecosTextBox.Size = new System.Drawing.Size(79, 26);
-            this.QuinSecosTextBox.TabIndex = 19;
-            this.QuinSecosTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FactorTextBox
-            // 
-            this.FactorTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactorTextBox.Location = new System.Drawing.Point(167, 176);
-            this.FactorTextBox.Name = "FactorTextBox";
-            this.FactorTextBox.ReadOnly = true;
-            this.FactorTextBox.Size = new System.Drawing.Size(79, 26);
-            this.FactorTextBox.TabIndex = 18;
-            this.FactorTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // KgBrutoTextBox
-            // 
-            this.KgBrutoTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KgBrutoTextBox.Location = new System.Drawing.Point(167, 145);
-            this.KgBrutoTextBox.Name = "KgBrutoTextBox";
-            this.KgBrutoTextBox.Size = new System.Drawing.Size(79, 26);
-            this.KgBrutoTextBox.TabIndex = 17;
-            this.KgBrutoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.KgBrutoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KgBrutoTextBox_KeyPress);
-            // 
-            // CamionLlenoTextBox
-            // 
-            this.CamionLlenoTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CamionLlenoTextBox.Location = new System.Drawing.Point(167, 83);
-            this.CamionLlenoTextBox.Name = "CamionLlenoTextBox";
-            this.CamionLlenoTextBox.Size = new System.Drawing.Size(79, 26);
-            this.CamionLlenoTextBox.TabIndex = 16;
-            this.CamionLlenoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.CamionLlenoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CamionLlenoTextBox_KeyPress);
-            // 
-            // SacosTextBox
-            // 
-            this.SacosTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SacosTextBox.Location = new System.Drawing.Point(167, 51);
-            this.SacosTextBox.Name = "SacosTextBox";
-            this.SacosTextBox.Size = new System.Drawing.Size(79, 26);
-            this.SacosTextBox.TabIndex = 15;
-            this.SacosTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SacosTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SacosTextBox_KeyPress);
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(528, 28);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 22);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "Q. Secos";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(442, 28);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 22);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "% Conv.";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(345, 28);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 22);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Kg. Bruto";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(235, 28);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 22);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Cam. Vacio";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(104, 28);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 22);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Camion Lleno";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 22);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "No. Sacos";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir1;
+            this.button1.Location = new System.Drawing.Point(631, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 33);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(529, 57);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(81, 26);
+            this.textBox6.TabIndex = 6;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(446, 57);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(76, 26);
+            this.textBox5.TabIndex = 5;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(349, 57);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(87, 26);
+            this.textBox4.TabIndex = 4;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(239, 58);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 26);
+            this.textBox3.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(104, 58);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(125, 26);
+            this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(10, 58);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(88, 26);
+            this.textBox1.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 96);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(677, 150);
+            this.dataGridView1.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -769,7 +413,7 @@
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(695, 209);
+            this.groupBox2.Location = new System.Drawing.Point(711, 209);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(257, 202);
             this.groupBox2.TabIndex = 23;
@@ -846,17 +490,18 @@
             this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox3.Location = new System.Drawing.Point(31, 467);
+            this.groupBox3.Location = new System.Drawing.Point(12, 467);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(921, 113);
+            this.groupBox3.Size = new System.Drawing.Size(956, 113);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DATOS TRANSPORTE";
             // 
             // ZonaTextBox
             // 
+            this.ZonaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ZonaTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ZonaTextBox.Location = new System.Drawing.Point(518, 76);
+            this.ZonaTextBox.Location = new System.Drawing.Point(557, 76);
             this.ZonaTextBox.Name = "ZonaTextBox";
             this.ZonaTextBox.Size = new System.Drawing.Size(389, 26);
             this.ZonaTextBox.TabIndex = 7;
@@ -864,8 +509,9 @@
             // 
             // PlacaTextBox
             // 
+            this.PlacaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PlacaTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlacaTextBox.Location = new System.Drawing.Point(518, 29);
+            this.PlacaTextBox.Location = new System.Drawing.Point(557, 29);
             this.PlacaTextBox.Name = "PlacaTextBox";
             this.PlacaTextBox.Size = new System.Drawing.Size(389, 26);
             this.PlacaTextBox.TabIndex = 6;
@@ -891,9 +537,10 @@
             // 
             // label26
             // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(460, 75);
+            this.label26.Location = new System.Drawing.Point(499, 75);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(56, 24);
             this.label26.TabIndex = 3;
@@ -901,9 +548,10 @@
             // 
             // label25
             // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(456, 27);
+            this.label25.Location = new System.Drawing.Point(495, 27);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(61, 24);
             this.label25.TabIndex = 2;
@@ -1082,6 +730,7 @@
             this.Load += new System.EventHandler(this.RegistroCompobanteRecepcionCacao_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1101,13 +750,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.TextBox NumeroComprobanteTextBox;
         private System.Windows.Forms.TextBox AsociacionTextBox;
@@ -1115,40 +757,6 @@
         private System.Windows.Forms.ComboBox ProductorComboBox;
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox CamionVacioTextBoxTotal;
-        private System.Windows.Forms.TextBox QuinSecosTextBoxTotal;
-        private System.Windows.Forms.TextBox FactorTextBoxTotal;
-        private System.Windows.Forms.TextBox KgBrutoTextBoxTotal;
-        private System.Windows.Forms.TextBox CamionLlenoTextBoxTotal;
-        private System.Windows.Forms.TextBox SacosTextBoxTotal;
-        private System.Windows.Forms.TextBox CamionVacioTextBox3;
-        private System.Windows.Forms.TextBox QuinSecosTextBox3;
-        private System.Windows.Forms.TextBox FactorTextBox3;
-        private System.Windows.Forms.TextBox KgBrutoTextBox3;
-        private System.Windows.Forms.TextBox CamionLlenoTextBox3;
-        private System.Windows.Forms.TextBox SacosTextBox3;
-        private System.Windows.Forms.TextBox CamionVacioTextBox2;
-        private System.Windows.Forms.TextBox QuinSecosTextBox2;
-        private System.Windows.Forms.TextBox FactorTextBox2;
-        private System.Windows.Forms.TextBox KgBrutoTextBox2;
-        private System.Windows.Forms.TextBox CamionLlenoTextBox2;
-        private System.Windows.Forms.TextBox SacosTextBox2;
-        private System.Windows.Forms.TextBox CamionVacioTextBox1;
-        private System.Windows.Forms.TextBox QuinSecosTextBox1;
-        private System.Windows.Forms.TextBox FactorTextBox1;
-        private System.Windows.Forms.TextBox KgBrutoTextBox1;
-        private System.Windows.Forms.TextBox CamionLlenoTextBox1;
-        private System.Windows.Forms.TextBox SacosTextBox1;
-        private System.Windows.Forms.TextBox CamionVacioTextBox;
-        private System.Windows.Forms.TextBox QuinSecosTextBox;
-        private System.Windows.Forms.TextBox FactorTextBox;
-        private System.Windows.Forms.TextBox KgBrutoTextBox;
-        private System.Windows.Forms.TextBox CamionLlenoTextBox;
-        private System.Windows.Forms.TextBox SacosTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox MohoTextBox;
         private System.Windows.Forms.TextBox BasuraTextBox;
@@ -1174,5 +782,19 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button ImprimirButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

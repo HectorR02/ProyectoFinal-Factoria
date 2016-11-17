@@ -57,6 +57,7 @@
     <Compile Include="EstadoProductosBLL.cs" />
     <Compile Include="FactoriasBLL.cs" />
     <Compile Include="FincasBLL.cs" />
+    <Compile Include="PesadasBLL.cs" />
     <Compile Include="ProductoresBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecibosRecepcionProductosBLL.cs" />

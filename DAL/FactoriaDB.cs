@@ -34,5 +34,7 @@ namespace DAL
         public virtual DbSet<Usuarios> Usuario { get; set; }
 
         public DbSet<TiposDeUsuarios> TipoUsuario { get; set; }
+
+        public DbSet<Pesadas> Pesada { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace BLL.Tests
         public void BuscarTest()
         {
             Assert.IsNotNull(BLL.TipoProductosBLL.Buscar("fdsd"));
+            //Assert.
         }
 
         [TestMethod()]

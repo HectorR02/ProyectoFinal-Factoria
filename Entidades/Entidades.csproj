@@ -56,6 +56,7 @@
     <Compile Include="EstadoProductos.cs" />
     <Compile Include="Factorias.cs" />
     <Compile Include="Fincas.cs" />
+    <Compile Include="Pesadas.cs" />
     <Compile Include="Productores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecibosRecepcionProductos.cs" />
