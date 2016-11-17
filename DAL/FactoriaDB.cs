@@ -30,5 +30,9 @@ namespace DAL
         public virtual DbSet<EstadoProductos> EstadoProducto { get; set; }
 
         public virtual DbSet<TipoProductos> TipoProducto { get; set; }
+
+        public virtual DbSet<Usuarios> Usuario { get; set; }
+
+        public DbSet<TiposDeUsuarios> TipoUsuario { get; set; }
     }
 }

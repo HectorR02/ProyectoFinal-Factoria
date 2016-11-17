@@ -60,7 +60,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecibosRecepcionProductos.cs" />
     <Compile Include="TipoProductos.cs" />
+    <Compile Include="TiposDeUsuarios.cs" />
     <Compile Include="TiposEmpleados.cs" />
+    <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

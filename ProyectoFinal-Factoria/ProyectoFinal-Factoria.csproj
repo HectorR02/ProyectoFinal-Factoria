@@ -99,11 +99,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FactoriaDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Principales\Form1.cs">
+    <Compile Include="Principales\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principales\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Principales\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principales\PantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principales\PantallaPrincipal.Designer.cs">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,6 +143,18 @@
     <Compile Include="Registros\RegistroReciboRecepcionProducto.Designer.cs">
       <DependentUpon>RegistroReciboRecepcionProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\RegistroTipoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroTipoUsuario.Designer.cs">
+      <DependentUpon>RegistroTipoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RegistroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroUsuario.Designer.cs">
+      <DependentUpon>RegistroUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utileria.cs" />
     <Compile Include="VentanasReportes\ReporteComprobanteRecepcionCacao.cs">
       <SubType>Form</SubType>
@@ -156,12 +174,6 @@
     <Compile Include="VentanasReportes\ReporteReciboRecepcionProducto.Designer.cs">
       <DependentUpon>ReporteReciboRecepcionProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Unico.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Unico.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <EmbeddedResource Include="Consultas\ConsultaContratos.resx">
       <DependentUpon>ConsultaContratos.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +182,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaProductores.resx">
       <DependentUpon>ConsultaProductores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principales\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principales\PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\RegistroReciboRecepcionProducto.resx">
       <DependentUpon>RegistroReciboRecepcionProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\RegistroTipoUsuario.resx">
+      <DependentUpon>RegistroTipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\RegistroUsuario.resx">
+      <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\Report2.rdlc" />
@@ -223,6 +247,9 @@
     <None Include="Properties\DataSources\Entidades.ComprobanteRecepcionCacaos.datasource" />
     <None Include="Properties\DataSources\Entidades.Contratos.datasource" />
     <None Include="Properties\DataSources\Entidades.RecibosRecepcionProductos.datasource" />
+    <None Include="Properties\DataSources\Entidades.TiposDeUsuarios.datasource" />
+    <None Include="Properties\DataSources\Entidades.TiposEmpleados.datasource" />
+    <None Include="Properties\DataSources\Entidades.Usuarios.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,25 +259,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Vistas\Unico.xsc">
-      <DependentUpon>Unico.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Vistas\Unico.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Unico.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Vistas\Unico.xss">
-      <DependentUpon>Unico.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Vistas\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\FactoriaDB.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -259,6 +274,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>FactoriaDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\slide_311423_2767019_free.jpg" />
+    <None Include="Resources\cacao-3-318x212.jpg" />
+    <None Include="Resources\Grounded-Cocoa.jpg" />
+    <None Include="Resources\BotonGuardar11.png" />
     <None Include="Resources\BotonBusqueda1.png" />
     <None Include="Resources\Impresora1-25x25.png" />
     <None Include="Resources\Impresora25x25.png" />

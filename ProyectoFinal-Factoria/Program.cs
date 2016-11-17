@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinal_Factoria.Principales;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ProyectoFinal_Factoria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Registros.RegistroReciboRecepcionProducto());
+            Application.Run(new Consultas.ConsultaContratos());
         }
     }
 }

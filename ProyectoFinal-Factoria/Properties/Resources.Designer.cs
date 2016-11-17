@@ -123,9 +123,39 @@ namespace ProyectoFinal_Factoria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BotonGuardar11 {
+            get {
+                object obj = ResourceManager.GetObject("BotonGuardar11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cacao_1_318x212 {
             get {
                 object obj = ResourceManager.GetObject("cacao-1-318x212", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cacao_3_318x212 {
+            get {
+                object obj = ResourceManager.GetObject("cacao-3-318x212", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Grounded_Cocoa {
+            get {
+                object obj = ResourceManager.GetObject("Grounded-Cocoa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +196,16 @@ namespace ProyectoFinal_Factoria.Properties {
         internal static System.Drawing.Bitmap paraConsultas {
             get {
                 object obj = ResourceManager.GetObject("paraConsultas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap slide_311423_2767019_free {
+            get {
+                object obj = ResourceManager.GetObject("slide_311423_2767019_free", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

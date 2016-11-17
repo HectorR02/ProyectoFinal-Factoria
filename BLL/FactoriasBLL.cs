@@ -71,7 +71,10 @@ namespace BLL
             {
                 try
                 {
-                    lista = conexion.Factoria.ToList();
+                    if (conexion.Factoria.ToList().Count() > 0)
+                        lista = conexion.Factoria.ToList();
+                    else
+                        lista = null;
                 }
                 catch (Exception)
                 {

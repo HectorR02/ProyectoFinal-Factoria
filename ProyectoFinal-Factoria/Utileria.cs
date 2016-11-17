@@ -111,5 +111,13 @@ namespace ProyectoFinal_Factoria
                     caja.ForeColor = Color.Black;
                 }
         }
+
+        public static int ToInt(string cadena)
+        {
+            int entero;
+            int.TryParse(cadena, out entero);
+
+            return entero;
+        }
     }
 }
