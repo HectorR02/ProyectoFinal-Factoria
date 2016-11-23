@@ -173,7 +173,6 @@
             this.label10.Size = new System.Drawing.Size(137, 24);
             this.label10.TabIndex = 9;
             this.label10.Text = "Factoria RNC";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // NoContratoTextBox
             // 
@@ -182,7 +181,6 @@
             this.NoContratoTextBox.Name = "NoContratoTextBox";
             this.NoContratoTextBox.Size = new System.Drawing.Size(116, 26);
             this.NoContratoTextBox.TabIndex = 10;
-            this.NoContratoTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // FechaDateTimePicker
             // 

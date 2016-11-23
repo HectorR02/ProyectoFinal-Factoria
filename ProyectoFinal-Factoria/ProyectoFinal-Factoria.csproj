@@ -94,11 +94,6 @@
     <Compile Include="Consultas\ConsultaProductores.Designer.cs">
       <DependentUpon>ConsultaProductores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FactoriaDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FactoriaDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Principales\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,9 +215,9 @@
     <EmbeddedResource Include="Registros\RegistroUsuario.resx">
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Report1.rdlc" />
-    <EmbeddedResource Include="Reportes\Report2.rdlc" />
-    <EmbeddedResource Include="Reportes\Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\ComprobanteRecepcion.rdlc" />
+    <EmbeddedResource Include="Reportes\ReciboRecepcionCacao.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteContrato.rdlc" />
     <EmbeddedResource Include="VentanasReportes\ReporteComprobanteRecepcionCacao.resx">
       <DependentUpon>ReporteComprobanteRecepcionCacao.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,21 +227,18 @@
     <EmbeddedResource Include="VentanasReportes\ReporteReciboRecepcionProducto.resx">
       <DependentUpon>ReporteReciboRecepcionProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="FactoriaDBDataSet.xsc">
-      <DependentUpon>FactoriaDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="FactoriaDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FactoriaDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FactoriaDBDataSet.xss">
-      <DependentUpon>FactoriaDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Entidades.CertificacionProductos.datasource" />
     <None Include="Properties\DataSources\Entidades.ComprobanteRecepcionCacaos.datasource" />
     <None Include="Properties\DataSources\Entidades.Contratos.datasource" />
+    <None Include="Properties\DataSources\Entidades.Empleados.datasource" />
+    <None Include="Properties\DataSources\Entidades.EstadoProductos.datasource" />
+    <None Include="Properties\DataSources\Entidades.Factorias.datasource" />
+    <None Include="Properties\DataSources\Entidades.Fincas.datasource" />
+    <None Include="Properties\DataSources\Entidades.Pesadas.datasource" />
+    <None Include="Properties\DataSources\Entidades.Productores.datasource" />
     <None Include="Properties\DataSources\Entidades.RecibosRecepcionProductos.datasource" />
+    <None Include="Properties\DataSources\Entidades.TipoProductos.datasource" />
     <None Include="Properties\DataSources\Entidades.TiposDeUsuarios.datasource" />
     <None Include="Properties\DataSources\Entidades.TiposEmpleados.datasource" />
     <None Include="Properties\DataSources\Entidades.Usuarios.datasource" />
@@ -268,12 +260,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\FactoriaDB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\FactoriaDB_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>FactoriaDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\FlechaDerecha25x25.png" />
     <None Include="Resources\BotonAñadir1.png" />
     <None Include="Resources\slide_311423_2767019_free.jpg" />
     <None Include="Resources\cacao-3-318x212.jpg" />
@@ -316,6 +309,9 @@
       <Project>{6a6b48b0-8924-4544-8f6f-44e6a0842d08}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

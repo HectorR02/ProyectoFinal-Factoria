@@ -22,14 +22,6 @@ namespace Entidades
 
         public string CertificacionProducto { get; set; }
 
-        public Decimal KgBruto { get; set; }
-
-        public Decimal Quintales { get; set; }
-
-        public Decimal FactorConversion { get; set; }
-
-        public int Sacos { get; set; }
-
         public int DescuentoMoho { get; set; }
 
         public int DescuentoBasura { get; set; }
@@ -50,8 +42,35 @@ namespace Entidades
 
         public int ProductorId { get; set; }
 
-        public Int64 CamionLleno { get; set; }
+        public Double TotalQuintales { get; set; }
 
-        public Int64 CamionVacio { get; set; }
+        public ComprobanteRecepcionCacaos(DateTime fecha, string asoc, string productor, Int64 cedulaProd, string tipoProd,
+            string estadoProd, string certificacion, int descMoho, int descBas, int descHum, string chofer, string tipTrans, 
+            string placa, string zona, string recibidoX, string entregadoX, int productorId)
+        {
+            this.Fecha = fecha;
+            this.Asociacion = asoc;
+            this.NombreProductor = productor;
+            this.CedulaProductor = cedulaProd;
+            this.TipoProducto = tipoProd;
+            this.EstadoProducto = estadoProd;
+            this.CertificacionProducto = certificacion;
+            this.DescuentoMoho = descMoho;
+            this.DescuentoBasura = descBas;
+            this.DescuentoHumedad = descHum;
+            this.NombreChofer = chofer;
+            this.TipoTransporte = tipTrans;
+            this.PlacaVehiculo = placa;
+            this.ZonaProcedencia = zona;
+            this.RecibidoPor = recibidoX;
+            this.EntregadoPor = entregadoX;
+            this.ProductorId = productorId;
+            this.TotalQuintales = 0.0;
+        }
+
+        public ComprobanteRecepcionCacaos()
+        {
+
+        }
     }
 }

@@ -18,92 +18,90 @@ namespace ProyectoFinal_Factoria.Registros
             InitializeComponent();
             var val = new Utileria(ProductorIdTextBox, "Ejemplo: 0001", NombresTextBox, "N");
             var val1 = new Utileria(NombresTextBox, "Ejemplo: Juan Pérez", CedulaMaskedTextBox, "L");
+            CargarFactorias();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void CargarFactorias()
         {
+            var fact = new Factorias(354684, "Tenares", "La Zursa, #3 Sto. Dgo.", 8095878767);
 
+            BLL.FactoriasBLL.Insertar(fact);
+
+            FactoriaComboBox.DataSource = BLL.FactoriasBLL.GetList();
+            FactoriaComboBox.ValueMember = "FactoriaRNC";
+            FactoriaComboBox.DisplayMember = "NombreSucursal";
         }
 
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private Int64 ToInt64(string texto)
         {
-            if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
-            {
-                if(!string.IsNullOrEmpty(NombresTextBox.Text))
-                {
-                    if(CedulaMaskedTextBox.MaskFull)
-                    {
-                        var cedula = CedulaMaskedTextBox.Text.Split('-');
-                        string Ced = cedula[0] + cedula[1] + cedula[2];
-                        BLL.ProductoresBLL.Insertar(new Productores() {
-                            ProductorId = Convert.ToInt32(ProductorIdTextBox.Text),
-                            FactoriaRNC = 1547,
-                            Nombres = NombresTextBox.Text,
-                            Cedula = Convert.ToInt64(Ced)
-                        });
-                    }
-                    else
-                    {
-                        CedulaMaskedTextBox.Focus();
-                    }
-                }else
-                {
-                    NombresTextBox.Focus();
-                }
-            }
-            else
-            {
-                ProductorIdTextBox.Focus();
-            }
+            Int64 numero;
+            Int64.TryParse(texto, out numero);
+            return numero;
         }
 
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private int ToInt(string texto)
+        {
+            int numero;
+            int.TryParse(texto, out numero);
+            return numero;
+        }
+
+        private void LimpiarCampos()
         {
             ProductorIdTextBox.Clear();
             NombresTextBox.Clear();
             CedulaMaskedTextBox.Clear();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public Productores CrearProductor()
         {
-            if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
+            Productores productor = null;
+
+            if (!string.IsNullOrEmpty(NombresTextBox.Text))
             {
-                if (!string.IsNullOrEmpty(NombresTextBox.Text))
+                if (CedulaMaskedTextBox.MaskFull)
                 {
-                    if (CedulaMaskedTextBox.MaskFull)
-                    {
-                        var cedula = CedulaMaskedTextBox.Text.Split('-');
-                        string Ced = cedula[0] + cedula[1] + cedula[2];
-                        NombresTextBox.Text = CedulaMaskedTextBox.Text;
-                        BLL.ProductoresBLL.Eliminar(new Productores()
-                        {
-                            ProductorId = Convert.ToInt32(ProductorIdTextBox.Text),
-                            FactoriaRNC = 1547,
-                            Nombres = NombresTextBox.Text,
-                            Cedula = Convert.ToInt64(Ced)
-                        });
-                    }
-                    else
-                    {
-                        CedulaMaskedTextBox.Focus();
-                    }
+                    var cedula = CedulaMaskedTextBox.Text.Split('-');
+                    string Ced = cedula[0] + cedula[1] + cedula[2];
+                    productor.FactoriaRNC = (int)FactoriaComboBox.SelectedValue;
+                    productor.Nombres = NombresTextBox.Text;
+                    productor.Cedula = ToInt64(Ced);
                 }
                 else
                 {
-                    NombresTextBox.Focus();
+                    CedulaMaskedTextBox.Focus();
                 }
             }
             else
             {
-                ProductorIdTextBox.Focus();
+                NombresTextBox.Focus();
             }
+
+            return productor;
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            Productores productor = CrearProductor();
+            if (productor != null)
+            {
+                if (BLL.ProductoresBLL.Insertar(productor))
+                    MessageBox.Show("Ha Registrado Un Productor", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("No se pudo realizar la operacion solicitada", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
             {
-                var productor = BLL.ProductoresBLL.Buscar(Convert.ToInt32(ProductorIdTextBox.Text));
+                var productor = BLL.ProductoresBLL.Buscar(ToInt(ProductorIdTextBox.Text));
                 if (productor != null)
                 {
                     NombresTextBox.Text = productor.Nombres;
@@ -111,8 +109,25 @@ namespace ProyectoFinal_Factoria.Registros
                 }
                 else
                 {
+                    MessageBox.Show("No Se Encontro El Productor Solicitado", "-- Consulta Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ProductorIdTextBox.Clear();
                     ProductorIdTextBox.Focus();
+                }
+            }
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            var productor = BLL.ProductoresBLL.Buscar(ToInt(ProductorIdTextBox.Text));
+            if(productor != null)
+            {
+                if (BLL.ProductoresBLL.Eliminar(productor))
+                {
+                    MessageBox.Show("Productor Eliminado", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido eliminar", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

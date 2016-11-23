@@ -13,6 +13,7 @@ namespace ProyectoFinal_Factoria.VentanasReportes
     public partial class ReporteComprobanteRecepcionCacao : Form
     {
         public int NumeroComprobante { get; set; }
+
         public ReporteComprobanteRecepcionCacao()
         {
             InitializeComponent();
@@ -21,6 +22,10 @@ namespace ProyectoFinal_Factoria.VentanasReportes
         private void ReporteComprobanteRecepcionCacao_Load(object sender, EventArgs e)
         {
             this.ComprobanteRecepcionCacaosBindingSource.Add(BLL.ComprobaanteRecepcionCacaosBLL.Buscar(NumeroComprobante));
+            foreach (var pesado in BLL.PesadasBLL.GetList(NumeroComprobante))
+            {
+                this.PesadasBindingSource.Add(pesado);
+            }
             this.reportViewer1.RefreshReport();
         }
     }

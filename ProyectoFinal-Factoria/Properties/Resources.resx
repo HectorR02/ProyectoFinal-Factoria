@@ -160,10 +160,13 @@
   <data name="BotonCancelar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonCancelar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BotonAñadir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonAñadir1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="paraConsultas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paraConsultas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonAñadir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonAñadir1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FlechaDerecha25x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FlechaDerecha25x25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

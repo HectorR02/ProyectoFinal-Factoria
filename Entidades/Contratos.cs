@@ -18,12 +18,17 @@ namespace Entidades
 
         public int Quintales { get; set; }
 
-        public Decimal PrecioPorQuintal { get; set; }
+        public Double PrecioPorQuintal { get; set; }
 
         public string FirmaAutorizada { get; set; }
 
         public int ProductorId { get; set; }
 
-        public int FactoriaRNC { get; set; }
+        public Int64 FactoriaRNC { get; set; }
+
+        public Contratos()
+        {
+
+        }
     }
 }

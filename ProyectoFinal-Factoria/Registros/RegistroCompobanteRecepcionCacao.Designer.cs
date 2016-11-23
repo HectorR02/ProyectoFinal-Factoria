@@ -49,14 +49,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Agregarbutton = new System.Windows.Forms.Button();
+            this.QuintalesSecostextBox = new System.Windows.Forms.TextBox();
+            this.FactorConversiontextBox5 = new System.Windows.Forms.TextBox();
+            this.KgBrutotextBox4 = new System.Windows.Forms.TextBox();
+            this.CamionVaciotextBox3 = new System.Windows.Forms.TextBox();
+            this.CamionLlenotextBox2 = new System.Windows.Forms.TextBox();
+            this.SacostextBox1 = new System.Windows.Forms.TextBox();
+            this.PesadasdataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.MohoTextBox = new System.Windows.Forms.TextBox();
             this.BasuraTextBox = new System.Windows.Forms.TextBox();
@@ -83,7 +83,7 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.ImprimirButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PesadasdataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -256,19 +256,19 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.Agregarbutton);
+            this.groupBox1.Controls.Add(this.QuintalesSecostextBox);
+            this.groupBox1.Controls.Add(this.FactorConversiontextBox5);
+            this.groupBox1.Controls.Add(this.KgBrutotextBox4);
+            this.groupBox1.Controls.Add(this.CamionVaciotextBox3);
+            this.groupBox1.Controls.Add(this.CamionLlenotextBox2);
+            this.groupBox1.Controls.Add(this.SacostextBox1);
+            this.groupBox1.Controls.Add(this.PesadasdataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 209);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(693, 252);
+            this.groupBox1.Size = new System.Drawing.Size(709, 252);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PESADAS";
@@ -277,7 +277,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(528, 28);
+            this.label14.Location = new System.Drawing.Point(542, 28);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(82, 22);
             this.label14.TabIndex = 13;
@@ -287,7 +287,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(442, 28);
+            this.label13.Location = new System.Drawing.Point(457, 28);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 22);
             this.label13.TabIndex = 12;
@@ -297,7 +297,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(345, 28);
+            this.label12.Location = new System.Drawing.Point(359, 28);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 22);
             this.label12.TabIndex = 11;
@@ -307,7 +307,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(235, 28);
+            this.label11.Location = new System.Drawing.Point(249, 28);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 22);
             this.label11.TabIndex = 10;
@@ -317,7 +317,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(104, 28);
+            this.label10.Location = new System.Drawing.Point(118, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(125, 22);
             this.label10.TabIndex = 9;
@@ -327,80 +327,87 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 28);
+            this.label9.Location = new System.Drawing.Point(14, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 22);
             this.label9.TabIndex = 8;
             this.label9.Text = "No. Sacos";
             // 
-            // button1
+            // Agregarbutton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir1;
-            this.button1.Location = new System.Drawing.Point(631, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 33);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = false;
+            this.Agregarbutton.BackColor = System.Drawing.SystemColors.Control;
+            this.Agregarbutton.FlatAppearance.BorderSize = 0;
+            this.Agregarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Agregarbutton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir1;
+            this.Agregarbutton.Location = new System.Drawing.Point(638, 53);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(54, 33);
+            this.Agregarbutton.TabIndex = 7;
+            this.Agregarbutton.UseVisualStyleBackColor = false;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
-            // textBox6
+            // QuintalesSecostextBox
             // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(529, 57);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(81, 26);
-            this.textBox6.TabIndex = 6;
+            this.QuintalesSecostextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuintalesSecostextBox.Location = new System.Drawing.Point(546, 58);
+            this.QuintalesSecostextBox.Name = "QuintalesSecostextBox";
+            this.QuintalesSecostextBox.Size = new System.Drawing.Size(81, 26);
+            this.QuintalesSecostextBox.TabIndex = 6;
             // 
-            // textBox5
+            // FactorConversiontextBox5
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(446, 57);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(76, 26);
-            this.textBox5.TabIndex = 5;
+            this.FactorConversiontextBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FactorConversiontextBox5.Location = new System.Drawing.Point(461, 57);
+            this.FactorConversiontextBox5.Name = "FactorConversiontextBox5";
+            this.FactorConversiontextBox5.Size = new System.Drawing.Size(76, 26);
+            this.FactorConversiontextBox5.TabIndex = 5;
             // 
-            // textBox4
+            // KgBrutotextBox4
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(349, 57);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(87, 26);
-            this.textBox4.TabIndex = 4;
+            this.KgBrutotextBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KgBrutotextBox4.Location = new System.Drawing.Point(363, 57);
+            this.KgBrutotextBox4.Name = "KgBrutotextBox4";
+            this.KgBrutotextBox4.Size = new System.Drawing.Size(87, 26);
+            this.KgBrutotextBox4.TabIndex = 4;
             // 
-            // textBox3
+            // CamionVaciotextBox3
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(239, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 3;
+            this.CamionVaciotextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CamionVaciotextBox3.Location = new System.Drawing.Point(253, 58);
+            this.CamionVaciotextBox3.Name = "CamionVaciotextBox3";
+            this.CamionVaciotextBox3.Size = new System.Drawing.Size(100, 26);
+            this.CamionVaciotextBox3.TabIndex = 3;
             // 
-            // textBox2
+            // CamionLlenotextBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(104, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 26);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.CamionLlenotextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CamionLlenotextBox2.Location = new System.Drawing.Point(118, 58);
+            this.CamionLlenotextBox2.Name = "CamionLlenotextBox2";
+            this.CamionLlenotextBox2.Size = new System.Drawing.Size(125, 26);
+            this.CamionLlenotextBox2.TabIndex = 2;
+            this.CamionLlenotextBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox1
+            // SacostextBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(10, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(88, 26);
-            this.textBox1.TabIndex = 1;
+            this.SacostextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SacostextBox1.Location = new System.Drawing.Point(18, 58);
+            this.SacostextBox1.Name = "SacostextBox1";
+            this.SacostextBox1.Size = new System.Drawing.Size(88, 26);
+            this.SacostextBox1.TabIndex = 1;
             // 
-            // dataGridView1
+            // PesadasdataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(677, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.PesadasdataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PesadasdataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PesadasdataGridView1.BackgroundColor = System.Drawing.Color.Silver;
+            this.PesadasdataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PesadasdataGridView1.GridColor = System.Drawing.SystemColors.ControlText;
+            this.PesadasdataGridView1.Location = new System.Drawing.Point(10, 96);
+            this.PesadasdataGridView1.Name = "PesadasdataGridView1";
+            this.PesadasdataGridView1.Size = new System.Drawing.Size(693, 150);
+            this.PesadasdataGridView1.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -413,9 +420,9 @@
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(711, 209);
+            this.groupBox2.Location = new System.Drawing.Point(727, 209);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(257, 202);
+            this.groupBox2.Size = new System.Drawing.Size(241, 202);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DESCUENTO";
@@ -423,7 +430,7 @@
             // MohoTextBox
             // 
             this.MohoTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MohoTextBox.Location = new System.Drawing.Point(143, 148);
+            this.MohoTextBox.Location = new System.Drawing.Point(134, 147);
             this.MohoTextBox.Name = "MohoTextBox";
             this.MohoTextBox.Size = new System.Drawing.Size(100, 26);
             this.MohoTextBox.TabIndex = 5;
@@ -432,7 +439,7 @@
             // BasuraTextBox
             // 
             this.BasuraTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BasuraTextBox.Location = new System.Drawing.Point(143, 98);
+            this.BasuraTextBox.Location = new System.Drawing.Point(134, 97);
             this.BasuraTextBox.Name = "BasuraTextBox";
             this.BasuraTextBox.Size = new System.Drawing.Size(100, 26);
             this.BasuraTextBox.TabIndex = 4;
@@ -441,7 +448,7 @@
             // HumedadTextBox
             // 
             this.HumedadTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HumedadTextBox.Location = new System.Drawing.Point(143, 49);
+            this.HumedadTextBox.Location = new System.Drawing.Point(134, 49);
             this.HumedadTextBox.Name = "HumedadTextBox";
             this.HumedadTextBox.Size = new System.Drawing.Size(100, 26);
             this.HumedadTextBox.TabIndex = 3;
@@ -451,7 +458,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(50, 147);
+            this.label22.Location = new System.Drawing.Point(41, 147);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(87, 24);
             this.label22.TabIndex = 2;
@@ -461,7 +468,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(38, 97);
+            this.label21.Location = new System.Drawing.Point(29, 96);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(99, 24);
             this.label21.TabIndex = 1;
@@ -471,7 +478,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(15, 48);
+            this.label20.Location = new System.Drawing.Point(6, 49);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(122, 24);
             this.label20.TabIndex = 0;
@@ -691,6 +698,7 @@
             this.ImprimirButton.Text = "Imprimir";
             this.ImprimirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ImprimirButton.UseVisualStyleBackColor = false;
+            this.ImprimirButton.Click += new System.EventHandler(this.ImprimirButton_Click);
             // 
             // RegistroCompobanteRecepcionCacao
             // 
@@ -730,7 +738,7 @@
             this.Load += new System.EventHandler(this.RegistroCompobanteRecepcionCacao_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PesadasdataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -782,14 +790,14 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button ImprimirButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Agregarbutton;
+        private System.Windows.Forms.TextBox QuintalesSecostextBox;
+        private System.Windows.Forms.TextBox FactorConversiontextBox5;
+        private System.Windows.Forms.TextBox KgBrutotextBox4;
+        private System.Windows.Forms.TextBox CamionVaciotextBox3;
+        private System.Windows.Forms.TextBox CamionLlenotextBox2;
+        private System.Windows.Forms.TextBox SacostextBox1;
+        private System.Windows.Forms.DataGridView PesadasdataGridView1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;

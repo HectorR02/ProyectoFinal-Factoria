@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -22,9 +23,9 @@ namespace BLL
                     conexion.SaveChanges();
                     resultado = true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    MessageBox.Show(e.ToString());
                     throw;
                 }
             }
@@ -40,9 +41,9 @@ namespace BLL
                 {
                     User = conexion.Usuario.Find(usuarioId);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    MessageBox.Show(e.ToString());
                     throw;
                 }
             }

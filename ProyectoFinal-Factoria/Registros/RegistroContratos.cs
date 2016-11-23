@@ -19,17 +19,154 @@ namespace ProyectoFinal_Factoria.Registros
             InitializeComponent();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Eventos para los botones del formulario
         private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            if (CrearContrato() != null)
+                if (BLL.ContratosBLL.Insertar(CrearContrato()))
+                {
+                    var rep = new ReporteContrato();
+                    rep.NumeroDeContrato = BLL.ContratosBLL.UltimoContrato();
+                    rep.Show();
+                }
+            LimpiarCampos();
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            if (BLL.ContratosBLL.Buscar(ToInt(NoContratoTextBox.Text)) != null)
+            {
+                string mensaje = "No Se Ha Podido Llevar A Cabo La \nOperacion Solicidada";
+                string titulo = "-- Transaccion Fallida --";
+                if (BLL.ContratosBLL.Eliminar(BLL.ContratosBLL.Buscar(ToInt(NoContratoTextBox.Text))))
+                {
+                    mensaje = "Se Ha Eliminado Un Contrato";
+                    titulo = "-- Transaccion Exitosa --";
+                    MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                    MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("El Contrato No Existe", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LimpiarCampos();
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            var contrato = BLL.ContratosBLL.Buscar(Convert.ToInt32(NoContratoTextBox.Text));
+            if (contrato != null)
+            {
+                FechaDateTimePicker.Value = contrato.FechaEmision;
+                DetallesRichTextBox.Text = contrato.Detalle;
+                NombreProductorTextBox.Text = contrato.NombreProductor;
+                CedulaProductorMaskedTextBox.Text = contrato.CedulaProductor.ToString();
+                QuintalesTextBox.Text = contrato.Quintales.ToString();
+                PrecioXqUintalTextBox.Text = contrato.PrecioPorQuintal.ToString();
+                FirmaAutoridadTextBox.Text = contrato.FirmaAutorizada;
+                ProductorIdTextBox.Text = contrato.ProductorId.ToString();
+                FactoriaRNCTextBox.Text = contrato.FactoriaRNC.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No existe");
+            }
+        }
+
+        //Metodos para menejo de datos
+        private Double ToDouble(string texto)
+        {
+            Double numero;
+            Double.TryParse(texto, out numero);
+            return numero;
+        }
+
+        private int ToInt(string texto)
+        {
+            int numero;
+            int.TryParse(texto, out numero);
+            return numero;
+        }
+
+        private Int64 ToInt64(string texto)
+        {
+            Int64 numero;
+            Int64.TryParse(texto, out numero);
+            return numero;
+        }
+
+        private Contratos CrearContrato()
+        {
+            Contratos nuevo = null;
+            if (!string.IsNullOrEmpty(NoContratoTextBox.Text))
+                if (!string.IsNullOrEmpty(FactoriaRNCTextBox.Text))
+                    if (!string.IsNullOrEmpty(FirmaAutoridadTextBox.Text))
+                        if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
+                            if (!string.IsNullOrEmpty(NombreProductorTextBox.Text))
+                                if (CedulaProductorMaskedTextBox.MaskFull)
+                                    if (!string.IsNullOrEmpty(QuintalesTextBox.Text))
+                                        if (!string.IsNullOrEmpty(PrecioXqUintalTextBox.Text))
+                                            if (!string.IsNullOrEmpty(DetallesRichTextBox.Text))
+                                            {
+                                                nuevo = new Contratos();
+                                                char[] separator = { '(', ')', ' ', '-' };
+                                                var Ced = CedulaProductorMaskedTextBox.Text.Split(separator);
+                                                var Cedula = Ced[0] + Ced[1] + Ced[2];
+                                                nuevo.FechaEmision = FechaDateTimePicker.Value;
+                                                nuevo.Detalle = DetallesRichTextBox.Text;
+                                                nuevo.NombreProductor = NombreProductorTextBox.Text;
+                                                nuevo.CedulaProductor = ToInt64(Cedula);
+                                                nuevo.Quintales = ToInt(QuintalesTextBox.Text);
+                                                nuevo.PrecioPorQuintal = ToDouble(PrecioXqUintalTextBox.Text);
+                                                nuevo.FirmaAutorizada = FirmaAutoridadTextBox.Text;
+                                                nuevo.ProductorId = ToInt(ProductorIdTextBox.Text);
+                                                nuevo.FactoriaRNC = ToInt(FactoriaRNCTextBox.Text);
+                                            }
+                                            else
+                                            {
+
+                                            }
+                                        else
+                                        {
+
+                                        }
+                                    else
+                                    {
+
+                                    }
+                                else
+                                {
+
+                                }
+                            else
+                            {
+
+                            }
+                        else
+                        {
+
+                        }
+                    else
+                    {
+
+                    }
+                else
+                {
+
+                }
+            else
+            {
+
+            }
+            return nuevo;
+        }
+
+        private void LimpiarCampos()
         {
             NoContratoTextBox.Clear();
             FechaDateTimePicker.Value = DateTime.Today;
@@ -41,187 +178,6 @@ namespace ProyectoFinal_Factoria.Registros
             FirmaAutoridadTextBox.Clear();
             ProductorIdTextBox.Clear();
             FactoriaRNCTextBox.Clear();
-        }
-
-        private void GuardarButton_Click(object sender, EventArgs e)
-        {
-            if(!string.IsNullOrEmpty(NoContratoTextBox.Text))
-            {
-                if (!string.IsNullOrEmpty(FactoriaRNCTextBox.Text))
-                {
-                    if (!string.IsNullOrEmpty(FirmaAutoridadTextBox.Text))
-                    {
-                        if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
-                        {
-                            if (!string.IsNullOrEmpty(NombreProductorTextBox.Text))
-                            {
-                                if (CedulaProductorMaskedTextBox.MaskFull)
-                                {
-                                    if (!string.IsNullOrEmpty(QuintalesTextBox.Text))
-                                    {
-                                        if (!string.IsNullOrEmpty(PrecioXqUintalTextBox.Text))
-                                        {
-                                            if (!string.IsNullOrEmpty(DetallesRichTextBox.Text))
-                                            {
-                                                char[] separator = { '(', ')', ' ', '-' };
-                                                var Ced = CedulaProductorMaskedTextBox.Text.Split(separator);
-                                                var Cedula = Ced[0] + Ced[1] + Ced[2];
-                                                BLL.ContratosBLL.Insertar(new Contratos() {
-                                                    NumeroContrato = 1,
-                                                    FechaEmision = FechaDateTimePicker.Value,
-                                                    Detalle = DetallesRichTextBox.Text,
-                                                    NombreProductor = NombreProductorTextBox.Text,
-                                                    CedulaProductor = Convert.ToInt64(Cedula),
-                                                    Quintales = Convert.ToInt32(QuintalesTextBox.Text),
-                                                    PrecioPorQuintal = Convert.ToDecimal(PrecioXqUintalTextBox.Text),
-                                                    FirmaAutorizada = FirmaAutoridadTextBox.Text,
-                                                    ProductorId = Convert.ToInt32(ProductorIdTextBox.Text),
-                                                    FactoriaRNC = Convert.ToInt32(FactoriaRNCTextBox.Text)
-                                                });
-                                                var rep = new ReporteContrato();
-                                                rep.NumeroDeContrato = 1;
-                                                rep.Show();
-                                            }
-                                            else
-                                            {
-
-                                            }
-                                        }else
-                                        {
-
-                                        }
-                                    }else
-                                    {
-
-                                    }
-                                }else
-                                {
-
-                                }
-                            }else
-                            {
-
-                            }
-                        }else
-                        {
-
-                        }
-                    }else
-                    {
-
-                    }
-                }
-                else
-                {
-
-                }
-            }
-            else { }
-        }
-
-        private void EliminarButton_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(NoContratoTextBox.Text))
-            {
-                if (!string.IsNullOrEmpty(FactoriaRNCTextBox.Text))
-                {
-                    if (!string.IsNullOrEmpty(FirmaAutoridadTextBox.Text))
-                    {
-                        if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
-                        {
-                            if (!string.IsNullOrEmpty(NombreProductorTextBox.Text))
-                            {
-                                if (CedulaProductorMaskedTextBox.MaskFull)
-                                {
-                                    if (!string.IsNullOrEmpty(QuintalesTextBox.Text))
-                                    {
-                                        if (!string.IsNullOrEmpty(PrecioXqUintalTextBox.Text))
-                                        {
-                                            if (!string.IsNullOrEmpty(DetallesRichTextBox.Text))
-                                            {
-                                                char[] separator = { '(', ')', ' ', '-' };
-                                                var Ced = CedulaProductorMaskedTextBox.Text.Split(separator);
-                                                var Cedula = Ced[0] + Ced[1] + Ced[2];
-                                                BLL.ContratosBLL.Eliminar(new Contratos()
-                                                {
-                                                    NumeroContrato = Convert.ToInt32(NoContratoTextBox.Text),
-                                                    FechaEmision = FechaDateTimePicker.Value,
-                                                    Detalle = DetallesRichTextBox.Text,
-                                                    NombreProductor = NombreProductorTextBox.Text,
-                                                    CedulaProductor = Convert.ToInt64(Cedula),
-                                                    Quintales = Convert.ToInt32(QuintalesTextBox.Text),
-                                                    PrecioPorQuintal = Convert.ToDecimal(PrecioXqUintalTextBox.Text),
-                                                    FirmaAutorizada = FirmaAutoridadTextBox.Text,
-                                                    ProductorId = Convert.ToInt32(ProductorIdTextBox.Text),
-                                                    FactoriaRNC = Convert.ToInt32(FactoriaRNCTextBox.Text)
-                                                });
-                                            }
-                                            else
-                                            {
-
-                                            }
-                                        }
-                                        else
-                                        {
-
-                                        }
-                                    }
-                                    else
-                                    {
-
-                                    }
-                                }
-                                else
-                                {
-
-                                }
-                            }
-                            else
-                            {
-
-                            }
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                    else
-                    {
-
-                    }
-                }
-                else
-                {
-
-                }
-            }
-            else { }
-        }
-
-        private void BuscarButton_Click(object sender, EventArgs e)
-        {
-            if(!string.IsNullOrEmpty(NoContratoTextBox.Text))
-            {
-                var contrato = BLL.ContratosBLL.Buscar(Convert.ToInt32(NoContratoTextBox.Text));
-                if(contrato != null)
-                {
-                    FechaDateTimePicker.Value = contrato.FechaEmision;
-                    DetallesRichTextBox.Text = contrato.Detalle;
-                    NombreProductorTextBox.Text = contrato.NombreProductor;
-                    CedulaProductorMaskedTextBox.Text = contrato.CedulaProductor.ToString();
-                    QuintalesTextBox.Text = contrato.Quintales.ToString();
-                    PrecioXqUintalTextBox.Text = contrato.PrecioPorQuintal.ToString();
-                    FirmaAutoridadTextBox.Text = contrato.FirmaAutorizada;
-                    ProductorIdTextBox.Text = contrato.ProductorId.ToString();
-                    FactoriaRNCTextBox.Text = contrato.FactoriaRNC.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("No existe");
-                }
-            }else {
-            }
         }
     }
 }

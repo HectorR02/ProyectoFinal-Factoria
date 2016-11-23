@@ -28,20 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label tipoUsuarioIdLabel;
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.tiposDeUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.tipoUsuarioIdTextBox = new System.Windows.Forms.TextBox();
             nombreLabel = new System.Windows.Forms.Label();
             tipoUsuarioIdLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposDeUsuariosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.BackColor = System.Drawing.Color.Transparent;
+            nombreLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            nombreLabel.Location = new System.Drawing.Point(19, 83);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(63, 19);
+            nombreLabel.TabIndex = 5;
+            nombreLabel.Text = "Nombre";
+            // 
+            // tipoUsuarioIdLabel
+            // 
+            tipoUsuarioIdLabel.AutoSize = true;
+            tipoUsuarioIdLabel.BackColor = System.Drawing.Color.Transparent;
+            tipoUsuarioIdLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tipoUsuarioIdLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            tipoUsuarioIdLabel.Location = new System.Drawing.Point(59, 35);
+            tipoUsuarioIdLabel.Name = "tipoUsuarioIdLabel";
+            tipoUsuarioIdLabel.Size = new System.Drawing.Size(23, 19);
+            tipoUsuarioIdLabel.TabIndex = 6;
+            tipoUsuarioIdLabel.Text = "Id";
             // 
             // BuscarButton
             // 
@@ -59,21 +80,21 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
-            // button2
+            // NuevoButton
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(23, 137);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Nuevo";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.NuevoButton.FlatAppearance.BorderSize = 0;
+            this.NuevoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NuevoButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoButton.Location = new System.Drawing.Point(23, 137);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(117, 50);
+            this.NuevoButton.TabIndex = 1;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
@@ -107,50 +128,19 @@
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // tiposDeUsuariosBindingSource
-            // 
-            this.tiposDeUsuariosBindingSource.DataSource = typeof(Entidades.TiposDeUsuarios);
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.BackColor = System.Drawing.Color.Transparent;
-            nombreLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            nombreLabel.Location = new System.Drawing.Point(19, 83);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(63, 19);
-            nombreLabel.TabIndex = 5;
-            nombreLabel.Text = "Nombre";
-            // 
             // nombreTextBox
             // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tiposDeUsuariosBindingSource, "Nombre", true));
             this.nombreTextBox.Location = new System.Drawing.Point(88, 82);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(355, 20);
             this.nombreTextBox.TabIndex = 6;
             // 
-            // tipoUsuarioIdLabel
-            // 
-            tipoUsuarioIdLabel.AutoSize = true;
-            tipoUsuarioIdLabel.BackColor = System.Drawing.Color.Transparent;
-            tipoUsuarioIdLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tipoUsuarioIdLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            tipoUsuarioIdLabel.Location = new System.Drawing.Point(59, 35);
-            tipoUsuarioIdLabel.Name = "tipoUsuarioIdLabel";
-            tipoUsuarioIdLabel.Size = new System.Drawing.Size(23, 19);
-            tipoUsuarioIdLabel.TabIndex = 6;
-            tipoUsuarioIdLabel.Text = "Id";
-            // 
             // tipoUsuarioIdTextBox
             // 
-            this.tipoUsuarioIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tiposDeUsuariosBindingSource, "TipoUsuarioId", true));
             this.tipoUsuarioIdTextBox.Location = new System.Drawing.Point(88, 34);
             this.tipoUsuarioIdTextBox.Name = "tipoUsuarioIdTextBox";
             this.tipoUsuarioIdTextBox.Size = new System.Drawing.Size(213, 20);
             this.tipoUsuarioIdTextBox.TabIndex = 7;
-            this.tipoUsuarioIdTextBox.TextChanged += new System.EventHandler(this.tipoUsuarioIdTextBox_TextChanged);
             // 
             // RegistroTipoUsuario
             // 
@@ -165,12 +155,11 @@
             this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.BuscarButton);
             this.Name = "RegistroTipoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroTipoUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.tiposDeUsuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,10 +168,9 @@
         #endregion
 
         private System.Windows.Forms.Button BuscarButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.BindingSource tiposDeUsuariosBindingSource;
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.TextBox tipoUsuarioIdTextBox;
     }

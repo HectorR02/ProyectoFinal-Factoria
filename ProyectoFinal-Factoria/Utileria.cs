@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ProyectoFinal_Factoria
 {
-    class Utileria
+    public class Utileria
     {
         TextBox caja;
         string Texto;
@@ -111,13 +111,13 @@ namespace ProyectoFinal_Factoria
                     caja.ForeColor = Color.Black;
                 }
         }
-
-        public static int ToInt(string cadena)
+        
+        public static int ToInt(string texto)
         {
-            int entero;
-            int.TryParse(cadena, out entero);
+            int numero;
+            int.TryParse(texto, out numero);
 
-            return entero;
+            return numero;
         }
     }
 }

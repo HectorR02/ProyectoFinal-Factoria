@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="FactoriasBLLTests.cs" />
     <Compile Include="FincasBLLTests.cs" />
+    <Compile Include="PesadasBLLTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoProductosBLLTests.cs" />
     <Compile Include="TiposEmpleadosBLLTests.cs" />

@@ -17,7 +17,7 @@ namespace ProyectoFinal_Factoria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Consultas.ConsultaContratos());
+            Application.Run(new PantallaPrincipal());
         }
     }
 }

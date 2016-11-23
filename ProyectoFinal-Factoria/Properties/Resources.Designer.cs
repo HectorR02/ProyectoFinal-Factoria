@@ -163,6 +163,16 @@ namespace ProyectoFinal_Factoria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FlechaDerecha25x25 {
+            get {
+                object obj = ResourceManager.GetObject("FlechaDerecha25x25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grounded_Cocoa {
             get {
                 object obj = ResourceManager.GetObject("Grounded-Cocoa", resourceCulture);

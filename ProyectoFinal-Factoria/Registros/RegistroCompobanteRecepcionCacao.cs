@@ -1,12 +1,13 @@
 ﻿using Entidades;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ProyectoFinal_Factoria.Registros
 {
     public partial class RegistroCompobanteRecepcionCacao : Form
     {
-        private int factor = 126;
+        private List<Pesadas> pesadas;
         public RegistroCompobanteRecepcionCacao()
         {
             InitializeComponent();
@@ -15,54 +16,60 @@ namespace ProyectoFinal_Factoria.Registros
             CargarCertificacionProd();
             CargarEstadoProd();
             ProductorComboBox.Items.Add("Juan Perez");
+            pesadas = new List<Pesadas>();
         }
-//         Temporales
+        //         Temporales
         private void CargarTipoProducto()
         {
-            var tp = new TipoProductos();
-            tp.Tipo = "Sanchez";
+            var tp = new TipoProductos("Sánchez");
+            var tp1 = new TipoProductos("Hispaniola");
+
             BLL.TipoProductosBLL.Insertar(tp);
-            tp.Tipo = "Hispaniola";
-            BLL.TipoProductosBLL.Insertar(tp);
-            foreach (TipoProductos TP in BLL.TipoProductosBLL.GetList())
-                TipoProductoComboBox.Items.Add(TP.Tipo);
+            BLL.TipoProductosBLL.Insertar(tp1);
+
+            TipoProductoComboBox.DataSource = BLL.TipoProductosBLL.GetList();
+            TipoProductoComboBox.ValueMember = "TipoId";
+            TipoProductoComboBox.DisplayMember = "Tipo";
         }
 
-        private void  CargarCertificacionProd()
+        private void CargarCertificacionProd()
         {
-            var CCFP = new CertificacionProductos();
-            CCFP.Certificacion = "Orgánico";
+            var CCFP = new CertificacionProductos(0, "Orgánico");
+            var CCFP1 = new CertificacionProductos(0, "Rain Forest");
+            var CCFP2 = new CertificacionProductos(0, "UTZ");
+            var CCFP3 = new CertificacionProductos(0, "FLO");
+            var CCFP4 = new CertificacionProductos(0, "Convencional");
+            var CCFP5 = new CertificacionProductos(0, "Ninguna");
+
             BLL.CertificacionProductosBLL.Insertar(CCFP);
-            CCFP.Certificacion = "Rain Forest";
-            BLL.CertificacionProductosBLL.Insertar(CCFP);
-            CCFP.Certificacion = "UTZ";
-            BLL.CertificacionProductosBLL.Insertar(CCFP);
-            CCFP.Certificacion = "FLO";
-            BLL.CertificacionProductosBLL.Insertar(CCFP);
-            CCFP.Certificacion = "Convencional";
-            BLL.CertificacionProductosBLL.Insertar(CCFP);
-            CCFP.Certificacion = "Ninguna";
-            BLL.CertificacionProductosBLL.Insertar(CCFP);
-            foreach (CertificacionProductos Ccfp in BLL.CertificacionProductosBLL.GetList())
-                CertificacionProductoComboBox.Items.Add(Ccfp.Certificacion);
+            BLL.CertificacionProductosBLL.Insertar(CCFP1);
+            BLL.CertificacionProductosBLL.Insertar(CCFP2);
+            BLL.CertificacionProductosBLL.Insertar(CCFP3);
+            BLL.CertificacionProductosBLL.Insertar(CCFP4);
+            BLL.CertificacionProductosBLL.Insertar(CCFP5);
+
+            CertificacionProductoComboBox.DataSource = BLL.CertificacionProductosBLL.GetList();
+            CertificacionProductoComboBox.ValueMember = "CertificacionId";
+            CertificacionProductoComboBox.DisplayMember = "Certificacion";
         }
 
         private void CargarEstadoProd()
         {
-            var CEP = new EstadoProductos();
+            var CEP = new EstadoProductos("Baba");
+            var CEP1 = new EstadoProductos("Fermentado");
+            var CEP2 = new EstadoProductos("Seco");
+            var CEP3 = new EstadoProductos("Con Gomo");
+            var CEP4 = new EstadoProductos("Oreado");
+            
+            BLL.EstadoProductosBLL.Insertar(CEP);
+            BLL.EstadoProductosBLL.Insertar(CEP1);
+            BLL.EstadoProductosBLL.Insertar(CEP2);
+            BLL.EstadoProductosBLL.Insertar(CEP3);
+            BLL.EstadoProductosBLL.Insertar(CEP4);
 
-            CEP.Estado = "Baba";
-            BLL.EstadoProductosBLL.Insertar(CEP);
-            CEP.Estado = "Fermentado";
-            BLL.EstadoProductosBLL.Insertar(CEP);
-            CEP.Estado = "Seco";
-            BLL.EstadoProductosBLL.Insertar(CEP);
-            CEP.Estado = "Con Gomo";
-            BLL.EstadoProductosBLL.Insertar(CEP);
-            CEP.Estado = "Oreado";
-            BLL.EstadoProductosBLL.Insertar(CEP);
-            foreach (EstadoProductos ET in BLL.EstadoProductosBLL.GetList())
-                EstadoProductoComboBox.Items.Add(ET.Estado);
+            EstadoProductoComboBox.DataSource = BLL.EstadoProductosBLL.GetList();
+            EstadoProductoComboBox.ValueMember = "EstadoId";
+            EstadoProductoComboBox.DisplayMember = "Estado";
         }
 
         private void Validaciones()
@@ -70,14 +77,14 @@ namespace ProyectoFinal_Factoria.Registros
             var val = new Utileria(NumeroComprobanteTextBox, "Ejemplo: 001", AsociacionTextBox, "N");
             var val1 = new Utileria(AsociacionTextBox, "Ejemplo: Productores Independientes", ProductorIdTextBox, "LN");
             var val2 = new Utileria(ProductorIdTextBox, "Ejemplo: 001", CedulaMaskedTextBox, "N");
-            
+
 
             var val31 = new Utileria(HumedadTextBox, "Ej.: 2", BasuraTextBox, "N");
             var val32 = new Utileria(BasuraTextBox, "Ej.: 3", MohoTextBox, "N");
             var val33 = new Utileria(MohoTextBox, "Ej.: 4", ChoferTextBox, "N");
         }
 
-//          Fin Temporales
+        //          Fin Temporales
         private void RegistroCompobanteRecepcionCacao_Load(object sender, EventArgs e)
         {
 
@@ -101,9 +108,17 @@ namespace ProyectoFinal_Factoria.Registros
             PlacaTextBox.Clear();
             ZonaTextBox.Clear();
             TipoTransporteTextBox.Clear();
-            
+            SacostextBox1.Clear();
+            CamionLlenotextBox2.Clear();
+            CamionVaciotextBox3.Clear();
+            KgBrutotextBox4.Clear();
+            FactorConversiontextBox5.Clear();
+            QuintalesSecostextBox.Clear();
+            pesadas = new List<Pesadas>();
+            PesadasdataGridView1.DataSource = null;
 
-            NumeroComprobanteTextBox.Focus();
+
+            NumeroComprobanteTextBox.Text = (BLL.ComprobaanteRecepcionCacaosBLL.UltimoComprobante() + 1).ToString();
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -111,35 +126,194 @@ namespace ProyectoFinal_Factoria.Registros
             LimpiarCampos();
         }
 
+        private int ToInt(string texto)
+        {
+            int entero;
+            int.TryParse(texto, out entero);
+            return entero;
+        }
+
+        private ComprobanteRecepcionCacaos LlenarCampos()
+        {
+            var Ced = CedulaMaskedTextBox.Text.Split('-');
+            var cdula = Ced[0] + Ced[1] + Ced[2];
+
+            ComprobanteRecepcionCacaos nuevo = new ComprobanteRecepcionCacaos();
+
+            nuevo.Fecha = FechaDateTimePicker.Value;
+            nuevo.Asociacion = AsociacionTextBox.Text;
+            nuevo.NombreProductor = ProductorComboBox.Text;
+            nuevo.CedulaProductor = Convert.ToInt64(cdula);
+            nuevo.TipoProducto = TipoProductoComboBox.Text;
+            nuevo.EstadoProducto = EstadoProductoComboBox.Text;
+            nuevo.CertificacionProducto = CertificacionProductoComboBox.Text;
+            nuevo.DescuentoMoho = ToInt(MohoTextBox.Text);
+            nuevo.DescuentoBasura = ToInt(BasuraTextBox.Text);
+            nuevo.DescuentoHumedad = ToInt(HumedadTextBox.Text);
+            nuevo.NombreChofer = ChoferTextBox.Text;
+            nuevo.TipoTransporte = TipoTransporteTextBox.Text;
+            nuevo.PlacaVehiculo = PlacaTextBox.Text;
+            nuevo.ZonaProcedencia = ZonaTextBox.Text;
+            nuevo.RecibidoPor = "Juan";
+            nuevo.EntregadoPor = "Pedro";
+            nuevo.ProductorId = ToInt(ProductorIdTextBox.Text);
+            Double totalQuintales = 0;
+            foreach (var pesada in pesadas)
+                totalQuintales += pesada.QuinSecos;
+            nuevo.TotalQuintales = totalQuintales;
+            return nuevo;
+        }
+
+        private void LlenarCampos(ComprobanteRecepcionCacaos comprobante)
+        {
+            NumeroComprobanteTextBox.Text = comprobante.NumeroComprobante.ToString();
+            AsociacionTextBox.Text = comprobante.Asociacion;
+            ProductorIdTextBox.Text = comprobante.ProductorId.ToString();
+            ProductorComboBox.SelectedText = comprobante.NombreProductor;
+            CedulaMaskedTextBox.Text = comprobante.CedulaProductor.ToString();
+            TipoProductoComboBox.Text = comprobante.TipoProducto;
+            CertificacionProductoComboBox.Text = comprobante.CertificacionProducto;
+            EstadoProductoComboBox.Text = comprobante.EstadoProducto;
+            HumedadTextBox.Text = comprobante.DescuentoHumedad.ToString();
+            BasuraTextBox.Text = comprobante.DescuentoBasura.ToString();
+            MohoTextBox.Text = comprobante.DescuentoMoho.ToString();
+            ChoferTextBox.Text = comprobante.NombreChofer;
+            PlacaTextBox.Text = comprobante.PlacaVehiculo;
+            ZonaTextBox.Text = comprobante.ZonaProcedencia;
+            TipoTransporteTextBox.Text = comprobante.TipoTransporte;
+        }
+
+        private bool CamposLlenos()
+        {
+            bool resultado = false;
+            if (!string.IsNullOrEmpty(NumeroComprobanteTextBox.Text))
+                if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
+                    if (!string.IsNullOrEmpty(ProductorComboBox.Text))
+                        if (CedulaMaskedTextBox.MaskFull)
+                            if (!string.IsNullOrEmpty(TipoProductoComboBox.Text))
+                                if (!string.IsNullOrEmpty(CertificacionProductoComboBox.Text))
+                                    if (!string.IsNullOrEmpty(EstadoProductoComboBox.Text))
+                                        if (pesadas.Count > 0)
+                                            if (!string.IsNullOrEmpty(ChoferTextBox.Text))
+                                                if (!string.IsNullOrEmpty(PlacaTextBox.Text))
+                                                    if (!string.IsNullOrEmpty(ZonaTextBox.Text))
+                                                        if (!string.IsNullOrEmpty(TipoTransporteTextBox.Text))
+                                                            resultado = true;
+            return resultado;
+        }
+
+        private void ConfirmarPesadas()
+        {
+            foreach (var pesada in pesadas)
+                pesada.ComprobanteId = BLL.ComprobaanteRecepcionCacaosBLL.UltimoComprobante();
+        }
+
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-           
-        }       
+            if (CamposLlenos())
+            {
+                if (BLL.ComprobaanteRecepcionCacaosBLL.Insertar(LlenarCampos()))
+                {
+                    ConfirmarPesadas();
+                    BLL.PesadasBLL.Insertar(pesadas);
+                }
+                LimpiarCampos();
+            }else
+                MessageBox.Show("No Puede Dejar Ningun Campo Vacío","-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(NumeroComprobanteTextBox.Text) && !NumeroComprobanteTextBox.Text.Equals("Ejemplo: 001"))
+            if (!string.IsNullOrEmpty(NumeroComprobanteTextBox.Text) && !NumeroComprobanteTextBox.Text.Equals("Ejemplo: 001"))
             {
-                var Comprobante = BLL.ComprobaanteRecepcionCacaosBLL.Buscar(Convert.ToInt32(NumeroComprobanteTextBox.Text));
-                if(Comprobante != null)
+                var Comprobante = BLL.ComprobaanteRecepcionCacaosBLL.Buscar(ToInt(NumeroComprobanteTextBox.Text));
+                if (Comprobante != null)
                 {
-                    
+                    LlenarCampos(Comprobante);
+                    PesadasdataGridView1.DataSource = null;
+                    PesadasdataGridView1.DataSource = BLL.PesadasBLL.GetList(ToInt(NumeroComprobanteTextBox.Text));
                 }
                 else
                 {
-                    MessageBox.Show("El Comprobante no existe");
+                    MessageBox.Show("El Comprobante no existe", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            
+            if(BLL.ComprobaanteRecepcionCacaosBLL.Buscar(ToInt(NumeroComprobanteTextBox.Text)) != null)
+            {
+                if (BLL.ComprobaanteRecepcionCacaosBLL.Eliminar(BLL.ComprobaanteRecepcionCacaosBLL.Buscar(ToInt(NumeroComprobanteTextBox.Text))))
+                    BLL.PesadasBLL.Eliminar(ToInt(NumeroComprobanteTextBox.Text));
+            }
+            else
+                MessageBox.Show("No se pudo eliminar el registro solicitado", "-- Transaccion Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            LimpiarCampos();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private Double ToDouble(string texto)
+        {
+            Double numero;
+            Double.TryParse(texto, out numero);
+            return numero;
+        }
+
+        private Pesadas LlenarPesada()
+        {
+            Pesadas pesada = new Pesadas();
+            pesada.ComprobanteId = BLL.ComprobaanteRecepcionCacaosBLL.UltimoComprobante() + 1;
+            pesada.Sacos = ToInt(SacostextBox1.Text);
+            pesada.CamionLleno = ToInt(CamionLlenotextBox2.Text);
+            pesada.CamionVacio = ToInt(CamionVaciotextBox3.Text);
+            pesada.KgBruto = ToInt(KgBrutotextBox4.Text);
+            pesada.Convercion = ToInt(FactorConversiontextBox5.Text);
+            pesada.QuinSecos = ToDouble(QuintalesSecostextBox.Text);
+            return pesada;
+        }
+
+        private void Agregarbutton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(SacostextBox1.Text))
+            {
+                if (!string.IsNullOrEmpty(CamionLlenotextBox2.Text))
+                {
+                    if (!string.IsNullOrEmpty(CamionVaciotextBox3.Text))
+                    {
+                        if (!string.IsNullOrEmpty(KgBrutotextBox4.Text))
+                        {
+                            if (!string.IsNullOrEmpty(FactorConversiontextBox5.Text))
+                            {
+                                if (!string.IsNullOrEmpty(QuintalesSecostextBox.Text))
+                                {
+                                    int noComprobante = BLL.ComprobaanteRecepcionCacaosBLL.UltimoComprobante();
+                                    pesadas.Add(LlenarPesada());
+                                    PesadasdataGridView1.DataSource = null;
+                                    PesadasdataGridView1.DataSource = pesadas;
+                                }
+                                else { }
+                            }
+                            else { }
+                        }
+                        else { }
+                    }
+                    else { }
+                }
+                else { }
+            }
+            else { }
+        }
+
+        private void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            var reporte = new VentanasReportes.ReporteComprobanteRecepcionCacao();
+            reporte.NumeroComprobante = ToInt(NumeroComprobanteTextBox.Text);
+            reporte.Show();
         }
     }
 }

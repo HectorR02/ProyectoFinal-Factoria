@@ -83,5 +83,65 @@ namespace BLL
             }
             return lista;
         }
+
+        public static bool Insertar(List<Pesadas> pesadas)
+        {
+            bool resultado = false;
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    foreach (var pesada in pesadas)
+                    {
+                        conexion.Pesada.Add(pesada);
+                    }
+
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return resultado;
+        }
+        public static List<Pesadas> GetList(int noComprobante)
+        {
+            List<Pesadas> lista = new List<Pesadas>();
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    lista = conexion.Pesada.Where(p => p.ComprobanteId == noComprobante).ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
+        }
+        public static bool Eliminar(int noComprobante)
+        {
+            bool resultado = false;
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    conexion.Pesada.RemoveRange(conexion.Pesada.Where(p => p.ComprobanteId == noComprobante));
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return resultado;
+        }
     }
 }

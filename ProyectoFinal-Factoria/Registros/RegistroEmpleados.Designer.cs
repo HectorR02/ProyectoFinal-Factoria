@@ -40,12 +40,12 @@
             this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.DireccionTextBox = new System.Windows.Forms.TextBox();
             this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.TipoEmpleadoComboBox = new System.Windows.Forms.ComboBox();
             this.FactoriaComboBox = new System.Windows.Forms.ComboBox();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
+            this.TipoEmpleadoComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label
@@ -179,19 +179,11 @@
             this.TelefonoMaskedTextBox.TabIndex = 11;
             this.TelefonoMaskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TipoEmpleadoComboBox
-            // 
-            this.TipoEmpleadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TipoEmpleadoComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipoEmpleadoComboBox.FormattingEnabled = true;
-            this.TipoEmpleadoComboBox.Location = new System.Drawing.Point(212, 174);
-            this.TipoEmpleadoComboBox.Name = "TipoEmpleadoComboBox";
-            this.TipoEmpleadoComboBox.Size = new System.Drawing.Size(178, 27);
-            this.TipoEmpleadoComboBox.TabIndex = 12;
-            // 
             // FactoriaComboBox
             // 
+            this.FactoriaComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FactoriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FactoriaComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FactoriaComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FactoriaComboBox.FormattingEnabled = true;
             this.FactoriaComboBox.Location = new System.Drawing.Point(415, 175);
@@ -201,6 +193,7 @@
             // 
             // NuevoButton
             // 
+            this.NuevoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NuevoButton.FlatAppearance.BorderSize = 0;
             this.NuevoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NuevoButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,6 +210,7 @@
             // 
             // BuscarButton
             // 
+            this.BuscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BuscarButton.FlatAppearance.BorderSize = 0;
             this.BuscarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BuscarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,6 +227,7 @@
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EliminarButton.FlatAppearance.BorderSize = 0;
             this.EliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EliminarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,6 +244,7 @@
             // 
             // GuardarButton
             // 
+            this.GuardarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GuardarButton.FlatAppearance.BorderSize = 0;
             this.GuardarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GuardarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,6 +259,19 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
+            // TipoEmpleadoComboBox
+            // 
+            this.TipoEmpleadoComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TipoEmpleadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TipoEmpleadoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TipoEmpleadoComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TipoEmpleadoComboBox.FormattingEnabled = true;
+            this.TipoEmpleadoComboBox.Location = new System.Drawing.Point(212, 175);
+            this.TipoEmpleadoComboBox.MaxDropDownItems = 10;
+            this.TipoEmpleadoComboBox.Name = "TipoEmpleadoComboBox";
+            this.TipoEmpleadoComboBox.Size = new System.Drawing.Size(167, 27);
+            this.TipoEmpleadoComboBox.TabIndex = 18;
+            // 
             // RegistroEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,12 +279,12 @@
             this.BackgroundImage = global::ProyectoFinal_Factoria.Properties.Resources.cacao_1_318x212;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(619, 431);
+            this.Controls.Add(this.TipoEmpleadoComboBox);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.FactoriaComboBox);
-            this.Controls.Add(this.TipoEmpleadoComboBox);
             this.Controls.Add(this.TelefonoMaskedTextBox);
             this.Controls.Add(this.DireccionTextBox);
             this.Controls.Add(this.CedulaMaskedTextBox);
@@ -309,11 +318,11 @@
         private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
         private System.Windows.Forms.TextBox DireccionTextBox;
         private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
-        private System.Windows.Forms.ComboBox TipoEmpleadoComboBox;
         private System.Windows.Forms.ComboBox FactoriaComboBox;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.ComboBox TipoEmpleadoComboBox;
     }
 }

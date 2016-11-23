@@ -38,10 +38,10 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ReciboRecepcionDeProducto";
+            reportDataSource1.Name = "ReciboRecepcionCacao";
             reportDataSource1.Value = this.RecibosRecepcionProductosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoFinal_Factoria.Reportes.Report3.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoFinal_Factoria.Reportes.ReciboRecepcionCacao.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(777, 409);

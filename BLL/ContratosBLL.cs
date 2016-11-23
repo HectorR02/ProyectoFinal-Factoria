@@ -81,5 +81,24 @@ namespace BLL
             }
             return lista;
         }
+
+        public static int UltimoContrato()
+        {
+            int Id = 0;
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    if (GetList().Count() > 0)
+                        Id = conexion.Contrato.Max(c => c.NumeroContrato);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return Id;
+        }
     }
 }

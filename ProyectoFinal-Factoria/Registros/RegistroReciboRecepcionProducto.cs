@@ -25,34 +25,61 @@ namespace ProyectoFinal_Factoria.Registros
 
         }
 
+        private Int64 ToInt64(string texto)
+        {
+            Int64 numero;
+            Int64.TryParse(texto, out numero);
+            return numero;
+        }
+
+        private Decimal ToDecimal(string texto)
+        {
+            Decimal numero;
+            Decimal.TryParse(texto, out numero);
+            return numero;
+        }
+
+        private void GenerarRecibo(ComprobanteRecepcionCacaos comprobante, List<Pesadas> pesadas)
+        {
+            int KgBruto = 0;
+            int Sacos = 0;
+            foreach (var pesada in pesadas)
+            {
+                KgBruto += pesada.KgBruto;
+                Sacos += pesada.Sacos;
+            }
+            AsociacionTextBox.Text = comprobante.Asociacion;
+            DetalleTextBox.Text = KgBruto.ToString() + "Kg Bruto - " + comprobante.TipoProducto + " - " + comprobante.EstadoProducto + " - Certificacion: " + comprobante.CertificacionProducto;
+            X100SacosTextBox.Text = Sacos.ToString();
+            X100MohoTextBox.Text = comprobante.DescuentoMoho.ToString();
+            X100ImpurezaTextBox.Text = comprobante.DescuentoBasura.ToString();
+            X100HumedadTextBox.Text = comprobante.DescuentoHumedad.ToString();
+            DescSacosTextBox.Text = ((Decimal)(Sacos * 0.25)).ToString();
+            DescMohoTextBox.Text = ((Decimal)(comprobante.DescuentoMoho * 0.25)).ToString();
+            DescImpurezaTextBox.Text = ((Decimal)(comprobante.DescuentoBasura * 0.25)).ToString();
+            DescHumedadTextBox.Text = ((Decimal)(comprobante.DescuentoHumedad * 0.25)).ToString();
+            TotalTaraTextBox.Text = (((Decimal)(Sacos * 0.25)) + ((Decimal)(comprobante.DescuentoMoho * 0.25)) + ((Decimal)(comprobante.DescuentoBasura * 0.25)) + ((Decimal)(comprobante.DescuentoHumedad * 0.25))).ToString();
+            FechaRecepcionDateTimePicker.Value = comprobante.Fecha;
+            var kilos = (Decimal)comprobante.TotalQuintales * 50 - ToDecimal(DescSacosTextBox.Text);
+            var RD = (Decimal)kilos * 120;
+            ApagarRichTextBox.AppendText(kilos + " Kilos = " + comprobante.TotalQuintales + " Quintales por valor de " + RD + " PESOS DOMINICANOS\n" + "6000.00 precio por Quintal");
+            NotasTextBox.Text = "No." + comprobante.NumeroComprobante.ToString();
+            GuardarButton.Enabled = ImprimirButton.Enabled = EliminarButton.Enabled = true;
+        }
+
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(RecibimosDeComboBox.SelectedItem.ToString()) || CedulaProductorMaskedTextBox.MaskFull)
+            if (!string.IsNullOrEmpty(RecibimosDeComboBox.SelectedItem.ToString()) || CedulaProductorMaskedTextBox.MaskFull)
             {
                 if (!string.IsNullOrEmpty(RecibimosDeComboBox.SelectedItem.ToString()) && CedulaProductorMaskedTextBox.MaskFull)
                 {
                     var Ced = CedulaProductorMaskedTextBox.Text.Split('-');
                     var cdula = Ced[0] + Ced[1] + Ced[2];
-                    var Comp = BLL.ComprobaanteRecepcionCacaosBLL.Buscar(RecibimosDeComboBox.SelectedItem.ToString(), Convert.ToInt64(cdula));
-                    if(Comp != null)
+                    var comp = BLL.ComprobaanteRecepcionCacaosBLL.Buscar(RecibimosDeComboBox.Text, ToInt64(cdula));
+                    if (comp != null)
                     {
-                        AsociacionTextBox.Text = Comp.Asociacion;
-                        DetalleTextBox.Text = Comp.KgBruto.ToString() + "Kg Bruto - " + Comp.TipoProducto + " - " + Comp.EstadoProducto + " - Certificacion: " + Comp.CertificacionProducto;
-                        X100SacosTextBox.Text = Comp.Sacos.ToString();
-                        X100MohoTextBox.Text = Comp.DescuentoMoho.ToString();
-                        X100ImpurezaTextBox.Text = Comp.DescuentoBasura.ToString();
-                        X100HumedadTextBox.Text = Comp.DescuentoHumedad.ToString();
-                        DescSacosTextBox.Text = ((Decimal)(Comp.Sacos * 0.25)).ToString();
-                        DescMohoTextBox.Text = ((Decimal)(Comp.DescuentoMoho * 0.25)).ToString();
-                        DescImpurezaTextBox.Text = ((Decimal)(Comp.DescuentoBasura * 0.25)).ToString();
-                        DescHumedadTextBox.Text = ((Decimal)(Comp.DescuentoHumedad * 0.25)).ToString();
-                        TotalTaraTextBox.Text = (((Decimal)(Comp.Sacos * 0.25)) + ((Decimal)(Comp.DescuentoMoho * 0.25)) + ((Decimal)(Comp.DescuentoBasura * 0.25)) + ((Decimal)(Comp.DescuentoHumedad * 0.25))).ToString();
-                        FechaRecepcionDateTimePicker.Value = Comp.Fecha;
-                        var kilos = (Decimal)Comp.Quintales * 50 - Convert.ToDecimal(DescSacosTextBox.Text);
-                        var RD = (Decimal)kilos * 120;
-                        ApagarRichTextBox.AppendText(kilos + " Kilos = " + Comp.Quintales + " Quintales por valor de " + RD + " PESOS DOMINICANOS\n" + "6000.00 precio por Quintal");
-                        NotasTextBox.Text = "No." + Comp.NumeroComprobante.ToString();
-                        GuardarButton.Enabled = ImprimirButton.Enabled = EliminarButton.Enabled = true;
+                        var pesadas = BLL.PesadasBLL.GetList(comp.NumeroComprobante);
+                        GenerarRecibo(comp, pesadas);
                     }
                 }
             }

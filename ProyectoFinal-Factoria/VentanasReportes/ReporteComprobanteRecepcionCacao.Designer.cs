@@ -30,18 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ComprobanteRecepcionCacaosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PesadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ComprobanteRecepcionCacaosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PesadasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ComprobanteRecepcionDeCacao";
+            reportDataSource1.Name = "EncabezadoPie";
             reportDataSource1.Value = this.ComprobanteRecepcionCacaosBindingSource;
+            reportDataSource2.Name = "Pesadas";
+            reportDataSource2.Value = this.PesadasBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoFinal_Factoria.Reportes.Report2.rdlc";
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoFinal_Factoria.Reportes.ComprobanteRecepcion.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(563, 415);
@@ -50,6 +56,10 @@
             // ComprobanteRecepcionCacaosBindingSource
             // 
             this.ComprobanteRecepcionCacaosBindingSource.DataSource = typeof(Entidades.ComprobanteRecepcionCacaos);
+            // 
+            // PesadasBindingSource
+            // 
+            this.PesadasBindingSource.DataSource = typeof(Entidades.Pesadas);
             // 
             // ReporteComprobanteRecepcionCacao
             // 
@@ -61,13 +71,14 @@
             this.Text = "ReporteComprobanteRecepcionCacao";
             this.Load += new System.EventHandler(this.ReporteComprobanteRecepcionCacao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ComprobanteRecepcionCacaosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PesadasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource ComprobanteRecepcionCacaosBindingSource;
+        private System.Windows.Forms.BindingSource PesadasBindingSource;
     }
 }

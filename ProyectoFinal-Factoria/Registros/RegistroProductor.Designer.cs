@@ -35,7 +35,7 @@
             this.NombresTextBox = new System.Windows.Forms.TextBox();
             this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.ProductorIdTextBox = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.FactoriaComboBox = new System.Windows.Forms.ComboBox();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(26, 52);
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 24);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(26, 140);
+            this.label2.Location = new System.Drawing.Point(12, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 24);
             this.label2.TabIndex = 1;
@@ -72,12 +72,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(252, 140);
+            this.label3.Location = new System.Drawing.Point(238, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cédula";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -85,7 +84,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(252, 52);
+            this.label4.Location = new System.Drawing.Point(238, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 24);
             this.label4.TabIndex = 3;
@@ -94,7 +93,7 @@
             // NombresTextBox
             // 
             this.NombresTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombresTextBox.Location = new System.Drawing.Point(30, 167);
+            this.NombresTextBox.Location = new System.Drawing.Point(16, 156);
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(190, 26);
             this.NombresTextBox.TabIndex = 4;
@@ -102,29 +101,30 @@
             // CedulaMaskedTextBox
             // 
             this.CedulaMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(256, 167);
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(242, 156);
             this.CedulaMaskedTextBox.Mask = "999-9999999-9";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(190, 26);
             this.CedulaMaskedTextBox.TabIndex = 5;
+            this.CedulaMaskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ProductorIdTextBox
             // 
             this.ProductorIdTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductorIdTextBox.Location = new System.Drawing.Point(30, 79);
+            this.ProductorIdTextBox.Location = new System.Drawing.Point(16, 68);
             this.ProductorIdTextBox.Name = "ProductorIdTextBox";
             this.ProductorIdTextBox.Size = new System.Drawing.Size(190, 26);
             this.ProductorIdTextBox.TabIndex = 6;
             // 
-            // comboBox1
+            // FactoriaComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(256, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 27);
-            this.comboBox1.TabIndex = 7;
+            this.FactoriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FactoriaComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FactoriaComboBox.FormattingEnabled = true;
+            this.FactoriaComboBox.Location = new System.Drawing.Point(242, 68);
+            this.FactoriaComboBox.Name = "FactoriaComboBox";
+            this.FactoriaComboBox.Size = new System.Drawing.Size(190, 27);
+            this.FactoriaComboBox.TabIndex = 7;
             // 
             // GuardarButton
             // 
@@ -133,7 +133,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonGuardar1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(232, 249);
+            this.GuardarButton.Location = new System.Drawing.Point(218, 207);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(143, 50);
             this.GuardarButton.TabIndex = 8;
@@ -149,7 +149,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(30, 249);
+            this.NuevoButton.Location = new System.Drawing.Point(16, 207);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(130, 50);
             this.NuevoButton.TabIndex = 9;
@@ -165,14 +165,14 @@
             this.EliminarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonCancelar1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(449, 249);
+            this.EliminarButton.Location = new System.Drawing.Point(435, 207);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(147, 50);
             this.EliminarButton.TabIndex = 10;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.button3_Click);
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // BuscarButton
             // 
@@ -181,7 +181,7 @@
             this.BuscarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonBusqueda;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(475, 69);
+            this.BuscarButton.Location = new System.Drawing.Point(461, 58);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(121, 45);
             this.BuscarButton.TabIndex = 11;
@@ -196,12 +196,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_Factoria.Properties.Resources.cacao_1_318x212;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(621, 355);
+            this.ClientSize = new System.Drawing.Size(604, 298);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.FactoriaComboBox);
             this.Controls.Add(this.ProductorIdTextBox);
             this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.NombresTextBox);
@@ -225,7 +225,7 @@
         private System.Windows.Forms.TextBox NombresTextBox;
         private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
         private System.Windows.Forms.TextBox ProductorIdTextBox;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox FactoriaComboBox;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button EliminarButton;

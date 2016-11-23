@@ -17,11 +17,6 @@ namespace ProyectoFinal_Factoria.Registros
             InitializeComponent();
         }
 
-        private void tipoUsuarioIdTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             int Id;
@@ -50,7 +45,12 @@ namespace ProyectoFinal_Factoria.Registros
             BLL.TiposDeUsuariosBLL.Insertar(new Entidades.TiposDeUsuarios(Utileria.ToInt(tipoUsuarioIdTextBox.Text), nombreTextBox.Text));
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
         {
             tipoUsuarioIdTextBox.Clear();
             nombreTextBox.Clear();

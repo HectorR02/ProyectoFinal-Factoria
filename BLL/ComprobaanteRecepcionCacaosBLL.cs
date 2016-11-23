@@ -100,5 +100,24 @@ namespace BLL
             }
             return Comprobante;
         }
+
+        public static int UltimoComprobante()
+        {
+            int id = 0;
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    if (conexion.ComprobanteRecepcionCacao.ToList().Count() > 0)
+                        id = conexion.ComprobanteRecepcionCacao.Max(CRC => CRC.NumeroComprobante);
+                }
+                catch (Exception e)
+                {
+
+                    MessageBox.Show(e.ToString()); throw;
+                }
+            }
+            return id;
+        }
     }
 }
