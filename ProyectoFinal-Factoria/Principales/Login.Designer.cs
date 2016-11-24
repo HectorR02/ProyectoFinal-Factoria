@@ -91,7 +91,7 @@
             this.IniciarSesionbutton.Size = new System.Drawing.Size(30, 26);
             this.IniciarSesionbutton.TabIndex = 7;
             this.IniciarSesionbutton.UseVisualStyleBackColor = false;
-            this.IniciarSesionbutton.Click += new System.EventHandler(this.button1_Click);
+            this.IniciarSesionbutton.Click += new System.EventHandler(this.IniciarSesionbutton_Click);
             // 
             // label1
             // 

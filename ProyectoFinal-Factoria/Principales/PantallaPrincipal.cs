@@ -1,20 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Entidades;
+using System;
 using System.Windows.Forms;
 
 namespace ProyectoFinal_Factoria
 {
     public partial class PantallaPrincipal : Form
     {
+        private Usuarios Usuario;
+        private Form Login;
+        public PantallaPrincipal(Usuarios usuario, Form login)
+        {
+            InitializeComponent();
+            this.Usuario = usuario;
+            this.Login = login;
+            HabilitarMenus(Usuario);
+        }
+
         public PantallaPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void HabilitarMenus(Usuarios usuario)
+        {
+            //Para Registrar
+            if(usuario.RComprobante == 0)
+                comprobanteDeRecepcionToolStripMenuItem.Enabled = comprobanteDeRecepciónDeCacaoToolStripMenuItem.Enabled = false;
+            if(usuario.RContrato == 0)
+                contratoToolStripMenuItem.Enabled = contratoToolStripMenuItem1.Enabled = false;
+            if (usuario.REmpleado == 0)
+                empleadoToolStripMenuItem1.Enabled = empleadoToolStripMenuItem.Enabled = false;
+            if (usuario.RProductores == 0)
+                productorToolStripMenuItem1.Enabled = productorToolStripMenuItem.Enabled = false;
+            if (usuario.RReciboRecepcion == 0)
+                reciboDeRecepciónDeProductoToolStripMenuItem.Enabled = reciboRecepciónDeProductoToolStripMenuItem.Enabled = false;
+            if (usuario.RTipoUsuario == 0)
+                tipoDeUsuarioToolStripMenuItem.Enabled = toolStripMenuItem2.Enabled = false;
+            if (usuario.RUsuario == 0)
+                usuarioToolStripMenuItem1.Enabled = usuarioToolStripMenuItem.Enabled = false;
+
+            //Para Consultar
+            if (usuario.CComprobante == 0)
+                comprobanteDeRecepciónDeCacaoToolStripMenuItem1.Enabled = false;
+            if (usuario.CContrato == 0)
+                contratosToolStripMenuItem.Enabled = false;
+            if (usuario.CReciboRecepcion == 0)
+                reciboDeRecepciónDeProductoToolStripMenuItem1.Enabled = false;
+
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +177,13 @@ namespace ProyectoFinal_Factoria
         }
 
         private void reciboDeRecepciónDeProductoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var Formulario = new Registros.RegistroReciboRecepcionProducto();
+            Formulario.MdiParent = this;
+            Formulario.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

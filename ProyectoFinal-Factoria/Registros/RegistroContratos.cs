@@ -31,7 +31,7 @@ namespace ProyectoFinal_Factoria.Registros
                 if (BLL.ContratosBLL.Insertar(CrearContrato()))
                 {
                     var rep = new ReporteContrato();
-                    rep.NumeroDeContrato = BLL.ContratosBLL.UltimoContrato();
+                    rep.NumeroDeContrato = BLL.ContratosBLL.Identity();
                     rep.Show();
                 }
             LimpiarCampos();

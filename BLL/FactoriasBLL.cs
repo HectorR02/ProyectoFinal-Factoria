@@ -3,6 +3,7 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace BLL
@@ -83,6 +84,28 @@ namespace BLL
                 }
             }
             return lista;
+        }
+
+        public static int Identity()
+        {
+            int identity = 0;
+            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DataBase\FactoriaDB.mdf;Integrated Security=True;Connect Timeout=30";
+            using (SqlConnection conexion = new SqlConnection(con))
+            {
+                try
+                {
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand("SELECT IDENT_CURRENT('Factorias')", conexion);
+                    identity = Convert.ToInt32(comando.ExecuteScalar());
+                    conexion.Close();
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return identity;
         }
     }
 }

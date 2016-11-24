@@ -118,7 +118,7 @@ namespace ProyectoFinal_Factoria.Registros
             PesadasdataGridView1.DataSource = null;
 
 
-            NumeroComprobanteTextBox.Text = (BLL.ComprobaanteRecepcionCacaosBLL.UltimoComprobante() + 1).ToString();
+            NumeroComprobanteTextBox.Text = (BLL.ComprobaanteRecepcionCacaosBLL.Identity() + 1).ToString();
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -205,7 +205,7 @@ namespace ProyectoFinal_Factoria.Registros
         private void ConfirmarPesadas()
         {
             foreach (var pesada in pesadas)
-                pesada.ComprobanteId = BLL.ComprobaanteRecepcionCacaosBLL.UltimoComprobante();
+                pesada.ComprobanteId = BLL.ComprobaanteRecepcionCacaosBLL.Identity();
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -267,7 +267,7 @@ namespace ProyectoFinal_Factoria.Registros
         private Pesadas LlenarPesada()
         {
             Pesadas pesada = new Pesadas();
-            pesada.ComprobanteId = BLL.ComprobaanteRecepcionCacaosBLL.UltimoComprobante() + 1;
+            pesada.ComprobanteId = BLL.ComprobaanteRecepcionCacaosBLL.Identity() + 1;
             pesada.Sacos = ToInt(SacostextBox1.Text);
             pesada.CamionLleno = ToInt(CamionLlenotextBox2.Text);
             pesada.CamionVacio = ToInt(CamionVaciotextBox3.Text);
@@ -291,7 +291,7 @@ namespace ProyectoFinal_Factoria.Registros
                             {
                                 if (!string.IsNullOrEmpty(QuintalesSecostextBox.Text))
                                 {
-                                    int noComprobante = BLL.ComprobaanteRecepcionCacaosBLL.UltimoComprobante();
+                                    int noComprobante = BLL.ComprobaanteRecepcionCacaosBLL.Identity();
                                     pesadas.Add(LlenarPesada());
                                     PesadasdataGridView1.DataSource = null;
                                     PesadasdataGridView1.DataSource = pesadas;

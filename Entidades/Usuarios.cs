@@ -136,5 +136,39 @@ namespace Entidades
             this.CTipoEmpleado = 0;
             this.CUsuario = 0;
         }
+        public Usuarios(string nombre, string contraseña, int tipoUsuarioId)
+        {
+            this.Nombre = nombre;
+            this.Contraseña = contraseña;
+            this.TipoUsuarioId = tipoUsuarioId;
+            this.RCertificacion = 0;
+            this.RComprobante = 0;
+            this.RContrato = 0;
+            this.REmpleado = 0;
+            this.REstadoProducto = 0;
+            this.RFactoria = 0;
+            this.RFinca = 0;
+            this.RPesada = 0;
+            this.RProductores = 0;
+            this.RReciboRecepcion = 0;
+            this.RTipoProducto = 0;
+            this.RTipoUsuario = 0;
+            this.RTipoEmpleado = 0;
+            this.RUsuario = 0;
+            this.CCertificacion = 0;
+            this.CComprobante = 0;
+            this.CContrato = 0;
+            this.CEmpleado = 0;
+            this.CEstadoProducto = 0;
+            this.CFactoria = 0;
+            this.CFinca = 0;
+            this.CPesada = 0;
+            this.CProductores = 0;
+            this.CReciboRecepcion = 0;
+            this.CTipoProducto = 0;
+            this.CTipoUsuario = 0;
+            this.CTipoEmpleado = 0;
+            this.CUsuario = 0;
+        }
     }
 }

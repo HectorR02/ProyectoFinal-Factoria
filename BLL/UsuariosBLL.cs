@@ -3,6 +3,7 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,9 +24,8 @@ namespace BLL
                     conexion.SaveChanges();
                     resultado = true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.ToString());
                     throw;
                 }
             }
@@ -41,9 +41,8 @@ namespace BLL
                 {
                     User = conexion.Usuario.Find(usuarioId);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    MessageBox.Show(e.ToString());
                     throw;
                 }
             }
@@ -86,6 +85,46 @@ namespace BLL
                 }
             }
             return lista;
+        }
+
+        public static int Identity()
+        {
+            int identity = 0;
+            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DataBase\FactoriaDB.mdf;Integrated Security=True;Connect Timeout=30";
+            using (SqlConnection conexion = new SqlConnection(con))
+            {
+                try
+                {
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand("SELECT IDENT_CURRENT('Usuarios')", conexion);
+                    identity = Convert.ToInt32(comando.ExecuteScalar());
+                    conexion.Close();
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return identity;
+        }
+
+        public static Usuarios Buscar(string nombre, string contraseña)
+        {
+            Usuarios user = null;
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    user = conexion.Usuario.Where(u => u.Nombre.Equals(nombre) && u.Contraseña.Equals(contraseña)).FirstOrDefault();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return user;
         }
     }
 }

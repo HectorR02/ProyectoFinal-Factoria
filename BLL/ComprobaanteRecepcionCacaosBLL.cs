@@ -3,6 +3,7 @@ using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -101,23 +102,27 @@ namespace BLL
             return Comprobante;
         }
 
-        public static int UltimoComprobante()
+        public static int Identity()
         {
-            int id = 0;
-            using (var conexion = new FactoriaDB())
+            int identity = 0;
+            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DataBase\FactoriaDB.mdf;Integrated Security=True;Connect Timeout=30";
+            using (SqlConnection conexion = new SqlConnection(con))
             {
                 try
                 {
-                    if (conexion.ComprobanteRecepcionCacao.ToList().Count() > 0)
-                        id = conexion.ComprobanteRecepcionCacao.Max(CRC => CRC.NumeroComprobante);
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand("SELECT IDENT_CURRENT('ComprobanteRecepcionCacaos')", conexion);
+                    identity = Convert.ToInt32(comando.ExecuteScalar());
+                    conexion.Close();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-
-                    MessageBox.Show(e.ToString()); throw;
+                    throw;
                 }
             }
-            return id;
+            return identity;
         }
+
+
     }
 }

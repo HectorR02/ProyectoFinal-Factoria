@@ -260,10 +260,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\FactoriaDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\FactoriaDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>FactoriaDB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\FlechaDerecha25x25.png" />

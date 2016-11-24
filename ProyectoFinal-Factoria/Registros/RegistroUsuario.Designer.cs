@@ -86,7 +86,7 @@
             this.BuscarButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonBusqueda;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(582, 12);
+            this.BuscarButton.Location = new System.Drawing.Point(581, 12);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(117, 43);
             this.BuscarButton.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(12, 580);
+            this.NuevoButton.Location = new System.Drawing.Point(12, 510);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(119, 47);
             this.NuevoButton.TabIndex = 1;
@@ -120,7 +120,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonGuardar1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(281, 580);
+            this.GuardarButton.Location = new System.Drawing.Point(281, 510);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(132, 47);
             this.GuardarButton.TabIndex = 2;
@@ -137,7 +137,7 @@
             this.EliminarButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonCancelar1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(569, 580);
+            this.EliminarButton.Location = new System.Drawing.Point(569, 510);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(130, 47);
             this.EliminarButton.TabIndex = 3;
@@ -152,7 +152,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(137, 27);
+            this.label1.Location = new System.Drawing.Point(144, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 19);
             this.label1.TabIndex = 4;
@@ -164,7 +164,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(99, 72);
+            this.label2.Location = new System.Drawing.Point(106, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.TabIndex = 5;
@@ -176,7 +176,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(74, 117);
+            this.label3.Location = new System.Drawing.Point(81, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 19);
             this.label3.TabIndex = 6;
@@ -188,7 +188,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(2, 169);
+            this.label4.Location = new System.Drawing.Point(9, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 19);
             this.label4.TabIndex = 7;
@@ -200,7 +200,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.IdTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IdTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.IdTextBox.Location = new System.Drawing.Point(174, 24);
+            this.IdTextBox.Location = new System.Drawing.Point(173, 34);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.Size = new System.Drawing.Size(393, 22);
             this.IdTextBox.TabIndex = 8;
@@ -213,7 +213,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UsuarioTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuarioTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.UsuarioTextBox.Location = new System.Drawing.Point(174, 69);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(173, 69);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(525, 22);
             this.UsuarioTextBox.TabIndex = 9;
@@ -226,7 +226,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ContraseñaTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContraseñaTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.ContraseñaTextBox.Location = new System.Drawing.Point(174, 114);
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(173, 101);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
             this.ContraseñaTextBox.Size = new System.Drawing.Size(525, 22);
             this.ContraseñaTextBox.TabIndex = 10;
@@ -239,7 +239,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConfirmarTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmarTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.ConfirmarTextBox.Location = new System.Drawing.Point(174, 166);
+            this.ConfirmarTextBox.Location = new System.Drawing.Point(173, 133);
             this.ConfirmarTextBox.Name = "ConfirmarTextBox";
             this.ConfirmarTextBox.Size = new System.Drawing.Size(525, 22);
             this.ConfirmarTextBox.TabIndex = 11;
@@ -252,7 +252,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(121, 222);
+            this.label5.Location = new System.Drawing.Point(128, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 19);
             this.label5.TabIndex = 12;
@@ -265,7 +265,7 @@
             this.TipoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoComboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoComboBox.FormattingEnabled = true;
-            this.TipoComboBox.Location = new System.Drawing.Point(174, 218);
+            this.TipoComboBox.Location = new System.Drawing.Point(173, 164);
             this.TipoComboBox.Name = "TipoComboBox";
             this.TipoComboBox.Size = new System.Drawing.Size(525, 23);
             this.TipoComboBox.TabIndex = 13;
@@ -665,7 +665,7 @@
             this.groupBox3.Controls.Add(this.groupBox1);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox3.Location = new System.Drawing.Point(6, 253);
+            this.groupBox3.Location = new System.Drawing.Point(6, 197);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(699, 303);
             this.groupBox3.TabIndex = 16;
@@ -678,7 +678,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_Factoria.Properties.Resources.cacao_3_318x212;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(712, 637);
+            this.ClientSize = new System.Drawing.Size(712, 567);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.TipoComboBox);
             this.Controls.Add(this.label5);
@@ -699,6 +699,7 @@
             this.Name = "RegistroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroUsuario";
+            this.Load += new System.EventHandler(this.RegistroUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

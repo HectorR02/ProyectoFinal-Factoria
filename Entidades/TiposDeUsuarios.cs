@@ -15,6 +15,11 @@ namespace Entidades
             Nombre = nombre;
         }
 
+        public TiposDeUsuarios(string nombre)
+        {
+            this.Nombre = nombre;
+        }
+
         public TiposDeUsuarios()
         {
         }

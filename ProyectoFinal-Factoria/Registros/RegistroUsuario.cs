@@ -7,23 +7,25 @@ namespace ProyectoFinal_Factoria.Registros
 {
     public partial class RegistroUsuario : Form
     {
+
         public RegistroUsuario()
         {
             InitializeComponent();
-            CargarTiposUsuario();
             ValidarCampos();
+            CleanCampos();
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             var User = BLL.UsuariosBLL.Buscar(Utileria.ToInt(IdTextBox.Text));
-            if(User != null)
+            if (User != null)
             {
                 UsuarioTextBox.Text = User.Nombre;
                 ContraseñaTextBox.Text = ConfirmarTextBox.Text = User.Contraseña;
                 TipoComboBox.SelectedValue = User.TipoUsuarioId;
                 MostrarPermisos(User);
-            }else
+            }
+            else
             {
                 MessageBox.Show("No se encontró ningun Usuario con Id = " + Utileria.ToInt(IdTextBox.Text), "-- Consulta Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 CleanCampos();
@@ -37,9 +39,47 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios(Utileria.ToInt(IdTextBox.Text), UsuarioTextBox.Text, ContraseñaTextBox.Text, (int)TipoComboBox.SelectedValue);
-            AsignarPermisos(usuario);
-            BLL.UsuariosBLL.Insertar(usuario);
+            Usuarios usuario = null;
+            if (!string.IsNullOrEmpty(UsuarioTextBox.Text))
+            {
+                if (!string.IsNullOrEmpty(ContraseñaTextBox.Text))
+                    if (!string.IsNullOrEmpty(ConfirmarTextBox.Text))
+                    {
+                        if(ContraseñaTextBox.Text.Equals(ConfirmarTextBox.Text))
+                        {
+                            usuario = new Usuarios(UsuarioTextBox.Text, ContraseñaTextBox.Text, 1);
+                            AsignarPermisos(usuario);
+                            if (BLL.UsuariosBLL.Insertar(usuario))
+                                MessageBox.Show("Ha registrado un nuevo 'Usuario'", "-- Transaccion Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            else
+                                MessageBox.Show("No se ha podido registrar el 'Usuario'", "-- Transaccion Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            CleanCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Las contraseñas son distintas", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            ConfirmarTextBox.Clear();
+                            ContraseñaTextBox.Clear();
+                            ContraseñaTextBox.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puedes dejar campos vacíos", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ConfirmarTextBox.Focus();
+                    }
+                else
+                {
+                    MessageBox.Show("No puedes dejar campos vacíos", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ContraseñaTextBox.Focus();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No puedes dejar campos vacíos", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UsuarioTextBox.Focus();
+            }
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -55,13 +95,13 @@ namespace ProyectoFinal_Factoria.Registros
             else
                 MessageBox.Show("El usuario no existe", "-- Consulta Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        
+
         private void AsignarPermisos(Usuarios usuario)
         {
             //Para Registros
             PermisosRegistro(usuario);
             //Para Consultas
-            PermisosConsulta(usuario);            
+            PermisosConsulta(usuario);
         }
 
         private void PermisosRegistro(Usuarios usuario)
@@ -138,9 +178,23 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void CargarTiposUsuario()
         {
-            TipoComboBox.DataSource = BLL.TiposDeUsuariosBLL.GetList();
-            TipoComboBox.DisplayMember = "Nombre";
-            TipoComboBox.ValueMember = "TipoUsuarioId";
+            while (true)
+            {
+                var tipos = BLL.TiposDeUsuariosBLL.GetList();
+                if (tipos.Count <= 0)
+                {
+                    MessageBox.Show("No hay 'Tipos de Usuario' registrados", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var ventana = new RegistroTipoUsuario();
+                    ventana.ShowDialog();
+                }
+                else
+                {
+                    TipoComboBox.DataSource = tipos;
+                    TipoComboBox.DisplayMember = "Nombre";
+                    TipoComboBox.ValueMember = "TipoUsuarioId";
+                    break;
+                }
+            }
         }
 
         private void CleanCampos()
@@ -149,8 +203,10 @@ namespace ProyectoFinal_Factoria.Registros
             UsuarioTextBox.Text = "Ej.: Juan Pérez";
             ContraseñaTextBox.Text = ConfirmarTextBox.Text = "Contraseña";
             IdTextBox.ForeColor = UsuarioTextBox.ForeColor = ContraseñaTextBox.ForeColor = ConfirmarTextBox.ForeColor = Color.Silver;
-            IdTextBox.Focus();
             CleanPermisos();
+            IdTextBox.Text = (BLL.UsuariosBLL.Identity() + 1).ToString();
+            UsuarioTextBox.Focus();
+            IdTextBox.ForeColor = Color.Black;
         }
 
         private void CleanPermisos()
@@ -201,7 +257,7 @@ namespace ProyectoFinal_Factoria.Registros
             MostrarPermisosR(usuario);
             //Para subir los permisos de consulta del usuario
             MostrarPermisosC(usuario);
-        }        
+        }
 
         private void MostrarPermisosR(Usuarios usuario)
         {
@@ -237,6 +293,11 @@ namespace ProyectoFinal_Factoria.Registros
             CTipoEmpleadocheckBox.Checked = Convert.ToBoolean(usuario.CTipoEmpleado);
             CTipoUsuariocheckBox.Checked = Convert.ToBoolean(usuario.CTipoUsuario);
             CUsuariocheckBox.Checked = Convert.ToBoolean(usuario.CUsuario);
+        }
+
+        private void RegistroUsuario_Load(object sender, EventArgs e)
+        {
+            CargarTiposUsuario();
         }
     }
 }

@@ -15,13 +15,14 @@ namespace ProyectoFinal_Factoria.Registros
         public RegistroTipoUsuario()
         {
             InitializeComponent();
+            LimpiarCampos();
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             int Id;
             int.TryParse(tipoUsuarioIdTextBox.Text, out Id);
-            var user =  BLL.TiposDeUsuariosBLL.Buscar(Id);
+            var user = BLL.TiposDeUsuariosBLL.Buscar(Id);
             if (user != null)
                 nombreTextBox.Text = user.Nombre;
             else
@@ -38,11 +39,16 @@ namespace ProyectoFinal_Factoria.Registros
                     MessageBox.Show("Ha ocurrido un error", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 MessageBox.Show("El registro al que ha intentado acceder\nno existe...", "-- AVISO --", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            LimpiarCampos();
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            BLL.TiposDeUsuariosBLL.Insertar(new Entidades.TiposDeUsuarios(Utileria.ToInt(tipoUsuarioIdTextBox.Text), nombreTextBox.Text));
+            if (!string.IsNullOrEmpty(nombreTextBox.Text))
+                BLL.TiposDeUsuariosBLL.Insertar(new Entidades.TiposDeUsuarios(nombreTextBox.Text));
+            else
+                MessageBox.Show("No puede dejar campos vacíos", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LimpiarCampos();
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -54,7 +60,8 @@ namespace ProyectoFinal_Factoria.Registros
         {
             tipoUsuarioIdTextBox.Clear();
             nombreTextBox.Clear();
-            tipoUsuarioIdTextBox.Focus();
+            tipoUsuarioIdTextBox.Text = (BLL.TiposDeUsuariosBLL.Identity() + 1).ToString();
+            nombreTextBox.Focus();
         }
     }
 }
