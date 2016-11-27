@@ -1,33 +1,43 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal_Factoria.Registros
 {
     public partial class RegistroProductor : Form
     {
+        List<Fincas> lista = null;
+
+        int fila = -1;
+
         public RegistroProductor()
         {
             InitializeComponent();
+
+            CargarFactorias();
+            Validaciones();
+            LimpiarCampos();
+        }
+
+        private void Validaciones()
+        {
             var val = new Utileria(ProductorIdTextBox, "Ejemplo: 0001", NombresTextBox, "N");
             var val1 = new Utileria(NombresTextBox, "Ejemplo: Juan Pérez", CedulaMaskedTextBox, "L");
-            CargarFactorias();
         }
 
         private void CargarFactorias()
         {
-            var fact = new Factorias(354684, "Tenares", "La Zursa, #3 Sto. Dgo.", 8095878767);
+            var lista = BLL.FactoriasBLL.GetList();
+            if (lista.Count() <= 0)
+            {
+                var fact = new Factorias(354684, "Tenares", "La Zursa, #3 Sto. Dgo.", 8095878767);
+                BLL.FactoriasBLL.Insertar(fact);
+                lista = BLL.FactoriasBLL.GetList();
+            }
 
-            BLL.FactoriasBLL.Insertar(fact);
-
-            FactoriaComboBox.DataSource = BLL.FactoriasBLL.GetList();
+            FactoriaComboBox.DataSource = lista;
             FactoriaComboBox.ValueMember = "FactoriaRNC";
             FactoriaComboBox.DisplayMember = "NombreSucursal";
         }
@@ -48,9 +58,21 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void LimpiarCampos()
         {
+            lista = new List<Fincas>();
+            FincasdataGridView.DataSource = null;
+            int id = BLL.ProductoresBLL.Identity();
             ProductorIdTextBox.Clear();
             NombresTextBox.Clear();
             CedulaMaskedTextBox.Clear();
+            NumeroParcelatextBox.Clear();
+            SectortextBox.Clear();
+            AsociaciontextBox.Clear();
+            PropietariotextBox.Clear();
+            if (id > 1 || BLL.ProductoresBLL.GetList().Count > 0)
+                ProductorIdTextBox.Text = (id + 1).ToString();
+            else
+                ProductorIdTextBox.Text = id.ToString();
+            NombresTextBox.Focus();
         }
 
         public Productores CrearProductor()
@@ -61,10 +83,13 @@ namespace ProyectoFinal_Factoria.Registros
             {
                 if (CedulaMaskedTextBox.MaskFull)
                 {
+                    productor = new Productores();
+                    productor.ProductorId = ToInt(ProductorIdTextBox.Text);
                     var cedula = CedulaMaskedTextBox.Text.Split('-');
                     string Ced = cedula[0] + cedula[1] + cedula[2];
                     productor.FactoriaRNC = (int)FactoriaComboBox.SelectedValue;
                     productor.Nombres = NombresTextBox.Text;
+                    productor.Asociacion = AsociaciontextBox.Text;
                     productor.Cedula = ToInt64(Ced);
                 }
                 else
@@ -80,16 +105,30 @@ namespace ProyectoFinal_Factoria.Registros
             return productor;
         }
 
+        public void VerificarProductorId()
+        {
+            int id = BLL.ProductoresBLL.Identity();
+            foreach (var finca in lista)
+            {
+                finca.ProductorId = id;
+            }
+        }
+
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             Productores productor = CrearProductor();
             if (productor != null)
             {
                 if (BLL.ProductoresBLL.Insertar(productor))
-                    MessageBox.Show("Ha Registrado Un Productor", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                {
+                    VerificarProductorId();
+                    if (BLL.FincasBLL.Insertar(lista))
+                        MessageBox.Show("Ha Registrado Un Productor", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                     MessageBox.Show("No se pudo realizar la operacion solicitada", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            LimpiarCampos();
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -102,10 +141,14 @@ namespace ProyectoFinal_Factoria.Registros
             if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
             {
                 var productor = BLL.ProductoresBLL.Buscar(ToInt(ProductorIdTextBox.Text));
+                lista = BLL.FincasBLL.GetList(ToInt(ProductorIdTextBox.Text));
                 if (productor != null)
                 {
                     NombresTextBox.Text = productor.Nombres;
                     CedulaMaskedTextBox.Text = productor.Cedula.ToString();
+                    FincasdataGridView.DataSource = null;
+                    FincasdataGridView.DataSource = lista;
+                    AsociaciontextBox.Text = productor.Asociacion;
                 }
                 else
                 {
@@ -119,17 +162,59 @@ namespace ProyectoFinal_Factoria.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             var productor = BLL.ProductoresBLL.Buscar(ToInt(ProductorIdTextBox.Text));
-            if(productor != null)
+            if (fila >= 0 && productor != null)
             {
-                if (BLL.ProductoresBLL.Eliminar(productor))
+                BLL.FincasBLL.Eliminar(BLL.FincasBLL.Buscar(lista.ElementAt(fila).FincaId));
+                fila = -1;
+                lista = BLL.FincasBLL.GetList(ToInt(ProductorIdTextBox.Text));
+                FincasdataGridView.DataSource = null;
+                FincasdataGridView.DataSource = lista;
+            }
+            else
+            {
+                if (productor != null)
                 {
-                    MessageBox.Show("Productor Eliminado", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (BLL.FincasBLL.Eliminar(productor.ProductorId))
+                        if (BLL.ProductoresBLL.Eliminar(productor))
+                        {
+                            MessageBox.Show("Productor Eliminado", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se ha podido eliminar", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                }
+            }
+        }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(NumeroParcelatextBox.Text))
+            {
+                if (!string.IsNullOrEmpty(SectortextBox.Text))
+                {
+                    var finca = new Fincas(ToInt(ProductorIdTextBox.Text), ToInt(NumeroParcelatextBox.Text), SectortextBox.Text, NombresTextBox.Text);
+                    if (!string.IsNullOrEmpty(PropietariotextBox.Text))
+                        finca.Propietario = PropietariotextBox.Text;
+                    lista.Add(finca);
+                    FincasdataGridView.DataSource = null;
+                    FincasdataGridView.DataSource = lista;
                 }
                 else
                 {
-                    MessageBox.Show("No se ha podido eliminar", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
+            else
+            {
+
+            }
+        }
+
+        private void FincasdataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fila = e.RowIndex;
         }
     }
 }

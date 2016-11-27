@@ -11,63 +11,107 @@ namespace ProyectoFinal_Factoria.Registros
         public RegistroCompobanteRecepcionCacao()
         {
             InitializeComponent();
+
             Validaciones();
             CargarTipoProducto();
             CargarCertificacionProd();
             CargarEstadoProd();
-            ProductorComboBox.Items.Add("Juan Perez");
+            LimpiarCampos();
+            CargarProductores();
             pesadas = new List<Pesadas>();
         }
-        //         Temporales
+        
+        private void CargarProductores()
+        {
+            while (true)
+            {
+                List<Productores> lista = BLL.ProductoresBLL.GetList();
+                if (lista.Count <= 0)
+                {
+                    MessageBox.Show("No hay productores registrados debes registrar alguno\nantes de seguir con este proceso", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    var ventana = new RegistroProductor();
+                    ventana.ShowDialog();
+                }
+                else
+                {
+                    ProductorComboBox.ValueMember = "ProductorId";
+                    ProductorComboBox.DisplayMember = "Nombres";
+                    ProductorComboBox.DataSource = lista;
+                    break;
+                }
+            }
+        }
+
         private void CargarTipoProducto()
         {
-            var tp = new TipoProductos("Sánchez");
-            var tp1 = new TipoProductos("Hispaniola");
+            var lista = BLL.TipoProductosBLL.GetList();
 
-            BLL.TipoProductosBLL.Insertar(tp);
-            BLL.TipoProductosBLL.Insertar(tp1);
+            if (lista.Count <= 0)
+            {
+                var tp = new TipoProductos("Sánchez");
+                var tp1 = new TipoProductos("Hispaniola");
 
-            TipoProductoComboBox.DataSource = BLL.TipoProductosBLL.GetList();
+                BLL.TipoProductosBLL.Insertar(tp);
+                BLL.TipoProductosBLL.Insertar(tp1);
+
+                lista = BLL.TipoProductosBLL.GetList();
+            }
+
+            TipoProductoComboBox.DataSource = lista;
             TipoProductoComboBox.ValueMember = "TipoId";
             TipoProductoComboBox.DisplayMember = "Tipo";
         }
 
         private void CargarCertificacionProd()
         {
-            var CCFP = new CertificacionProductos(0, "Orgánico");
-            var CCFP1 = new CertificacionProductos(0, "Rain Forest");
-            var CCFP2 = new CertificacionProductos(0, "UTZ");
-            var CCFP3 = new CertificacionProductos(0, "FLO");
-            var CCFP4 = new CertificacionProductos(0, "Convencional");
-            var CCFP5 = new CertificacionProductos(0, "Ninguna");
+            var lista = BLL.CertificacionProductosBLL.GetList();
 
-            BLL.CertificacionProductosBLL.Insertar(CCFP);
-            BLL.CertificacionProductosBLL.Insertar(CCFP1);
-            BLL.CertificacionProductosBLL.Insertar(CCFP2);
-            BLL.CertificacionProductosBLL.Insertar(CCFP3);
-            BLL.CertificacionProductosBLL.Insertar(CCFP4);
-            BLL.CertificacionProductosBLL.Insertar(CCFP5);
+            if (lista.Count <= 0)
+            {
+                var CCFP = new CertificacionProductos(0, "Ninguna");
+                var CCFP5 = new CertificacionProductos(0, "Orgánico");
+                var CCFP1 = new CertificacionProductos(0, "Rain Forest");
+                var CCFP2 = new CertificacionProductos(0, "UTZ");
+                var CCFP3 = new CertificacionProductos(0, "FLO");
+                var CCFP4 = new CertificacionProductos(0, "Convencional");
 
-            CertificacionProductoComboBox.DataSource = BLL.CertificacionProductosBLL.GetList();
+                BLL.CertificacionProductosBLL.Insertar(CCFP);
+                BLL.CertificacionProductosBLL.Insertar(CCFP1);
+                BLL.CertificacionProductosBLL.Insertar(CCFP2);
+                BLL.CertificacionProductosBLL.Insertar(CCFP3);
+                BLL.CertificacionProductosBLL.Insertar(CCFP4);
+                BLL.CertificacionProductosBLL.Insertar(CCFP5);
+
+                lista = BLL.CertificacionProductosBLL.GetList();
+            }
+
+            CertificacionProductoComboBox.DataSource = lista;
             CertificacionProductoComboBox.ValueMember = "CertificacionId";
             CertificacionProductoComboBox.DisplayMember = "Certificacion";
         }
 
         private void CargarEstadoProd()
         {
-            var CEP = new EstadoProductos("Baba");
-            var CEP1 = new EstadoProductos("Fermentado");
-            var CEP2 = new EstadoProductos("Seco");
-            var CEP3 = new EstadoProductos("Con Gomo");
-            var CEP4 = new EstadoProductos("Oreado");
-            
-            BLL.EstadoProductosBLL.Insertar(CEP);
-            BLL.EstadoProductosBLL.Insertar(CEP1);
-            BLL.EstadoProductosBLL.Insertar(CEP2);
-            BLL.EstadoProductosBLL.Insertar(CEP3);
-            BLL.EstadoProductosBLL.Insertar(CEP4);
+            var lista = BLL.EstadoProductosBLL.GetList();
 
-            EstadoProductoComboBox.DataSource = BLL.EstadoProductosBLL.GetList();
+            if (lista.Count <= 0)
+            {
+                var CEP = new EstadoProductos("Baba");
+                var CEP1 = new EstadoProductos("Fermentado");
+                var CEP2 = new EstadoProductos("Seco");
+                var CEP3 = new EstadoProductos("Con Gomo");
+                var CEP4 = new EstadoProductos("Oreado");
+
+                BLL.EstadoProductosBLL.Insertar(CEP);
+                BLL.EstadoProductosBLL.Insertar(CEP1);
+                BLL.EstadoProductosBLL.Insertar(CEP2);
+                BLL.EstadoProductosBLL.Insertar(CEP3);
+                BLL.EstadoProductosBLL.Insertar(CEP4);
+
+                lista = BLL.EstadoProductosBLL.GetList();
+            }
+
+            EstadoProductoComboBox.DataSource = lista;
             EstadoProductoComboBox.ValueMember = "EstadoId";
             EstadoProductoComboBox.DisplayMember = "Estado";
         }
@@ -83,8 +127,7 @@ namespace ProyectoFinal_Factoria.Registros
             var val32 = new Utileria(BasuraTextBox, "Ej.: 3", MohoTextBox, "N");
             var val33 = new Utileria(MohoTextBox, "Ej.: 4", ChoferTextBox, "N");
         }
-
-        //          Fin Temporales
+        
         private void RegistroCompobanteRecepcionCacao_Load(object sender, EventArgs e)
         {
 
@@ -92,11 +135,12 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void LimpiarCampos()
         {
+            int id = BLL.ComprobaanteRecepcionCacaosBLL.Identity();
             NumeroComprobanteTextBox.Clear();
             FechaDateTimePicker.Value = DateTime.Today;
             AsociacionTextBox.Clear();
             ProductorIdTextBox.Clear();
-            ProductorComboBox.SelectedIndex = 0;
+            //ProductorComboBox.SelectedIndex = 0;
             CedulaMaskedTextBox.Clear();
             TipoProductoComboBox.SelectedIndex = 0;
             CertificacionProductoComboBox.SelectedIndex = 0;
@@ -116,9 +160,11 @@ namespace ProyectoFinal_Factoria.Registros
             QuintalesSecostextBox.Clear();
             pesadas = new List<Pesadas>();
             PesadasdataGridView1.DataSource = null;
-
-
-            NumeroComprobanteTextBox.Text = (BLL.ComprobaanteRecepcionCacaosBLL.Identity() + 1).ToString();
+            if (id > 1 || BLL.ComprobaanteRecepcionCacaosBLL.GetList().Count > 0)
+                NumeroComprobanteTextBox.Text = (id + 1).ToString();
+            else
+                NumeroComprobanteTextBox.Text = id.ToString();
+            AsociacionTextBox.Focus();
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -218,8 +264,9 @@ namespace ProyectoFinal_Factoria.Registros
                     BLL.PesadasBLL.Insertar(pesadas);
                 }
                 LimpiarCampos();
-            }else
-                MessageBox.Show("No Puede Dejar Ningun Campo Vacío","-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+                MessageBox.Show("No Puede Dejar Ningun Campo Vacío", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -242,7 +289,7 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            if(BLL.ComprobaanteRecepcionCacaosBLL.Buscar(ToInt(NumeroComprobanteTextBox.Text)) != null)
+            if (BLL.ComprobaanteRecepcionCacaosBLL.Buscar(ToInt(NumeroComprobanteTextBox.Text)) != null)
             {
                 if (BLL.ComprobaanteRecepcionCacaosBLL.Eliminar(BLL.ComprobaanteRecepcionCacaosBLL.Buscar(ToInt(NumeroComprobanteTextBox.Text))))
                     BLL.PesadasBLL.Eliminar(ToInt(NumeroComprobanteTextBox.Text));
@@ -314,6 +361,17 @@ namespace ProyectoFinal_Factoria.Registros
             var reporte = new VentanasReportes.ReporteComprobanteRecepcionCacao();
             reporte.NumeroComprobante = ToInt(NumeroComprobanteTextBox.Text);
             reporte.Show();
+        }
+
+        private void ProductorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var productor = BLL.ProductoresBLL.Buscar((int)ProductorComboBox.SelectedValue);
+            if(productor != null)
+            {
+                AsociacionTextBox.Text = productor.Asociacion;
+                ProductorIdTextBox.Text = productor.ProductorId.ToString();
+                CedulaMaskedTextBox.Text = productor.Cedula.ToString();
+            }
         }
     }
 }

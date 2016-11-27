@@ -119,5 +119,12 @@ namespace ProyectoFinal_Factoria
 
             return numero;
         }
+        public static Int64 ToInt64(string texto)
+        {
+            Int64 numero;
+            Int64.TryParse(texto, out numero);
+
+            return numero;
+        }
     }
 }

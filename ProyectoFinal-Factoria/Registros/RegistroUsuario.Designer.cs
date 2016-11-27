@@ -73,6 +73,10 @@
             this.CComprobantecheckBox = new System.Windows.Forms.CheckBox();
             this.CCertificacioncheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.FactoriascomboBox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.EmpleadoscomboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,7 +90,7 @@
             this.BuscarButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonBusqueda;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(581, 12);
+            this.BuscarButton.Location = new System.Drawing.Point(665, 12);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(117, 43);
             this.BuscarButton.TabIndex = 0;
@@ -103,7 +107,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(12, 510);
+            this.NuevoButton.Location = new System.Drawing.Point(12, 577);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(119, 47);
             this.NuevoButton.TabIndex = 1;
@@ -120,7 +124,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonGuardar1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(281, 510);
+            this.GuardarButton.Location = new System.Drawing.Point(323, 577);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(132, 47);
             this.GuardarButton.TabIndex = 2;
@@ -137,7 +141,7 @@
             this.EliminarButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonCancelar1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(569, 510);
+            this.EliminarButton.Location = new System.Drawing.Point(653, 577);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(130, 47);
             this.EliminarButton.TabIndex = 3;
@@ -164,7 +168,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(106, 72);
+            this.label2.Location = new System.Drawing.Point(106, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.TabIndex = 5;
@@ -176,7 +180,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(81, 104);
+            this.label3.Location = new System.Drawing.Point(81, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 19);
             this.label3.TabIndex = 6;
@@ -188,7 +192,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(9, 136);
+            this.label4.Location = new System.Drawing.Point(9, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 19);
             this.label4.TabIndex = 7;
@@ -202,7 +206,7 @@
             this.IdTextBox.ForeColor = System.Drawing.Color.Silver;
             this.IdTextBox.Location = new System.Drawing.Point(173, 34);
             this.IdTextBox.Name = "IdTextBox";
-            this.IdTextBox.Size = new System.Drawing.Size(393, 22);
+            this.IdTextBox.Size = new System.Drawing.Size(477, 22);
             this.IdTextBox.TabIndex = 8;
             this.IdTextBox.Text = "Ej.: 01";
             this.IdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -213,9 +217,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UsuarioTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuarioTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.UsuarioTextBox.Location = new System.Drawing.Point(173, 69);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(173, 96);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
-            this.UsuarioTextBox.Size = new System.Drawing.Size(525, 22);
+            this.UsuarioTextBox.Size = new System.Drawing.Size(609, 22);
             this.UsuarioTextBox.TabIndex = 9;
             this.UsuarioTextBox.Text = "Ej.: Juan Pérez";
             this.UsuarioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -226,9 +230,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ContraseñaTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContraseñaTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.ContraseñaTextBox.Location = new System.Drawing.Point(173, 101);
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(173, 128);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
-            this.ContraseñaTextBox.Size = new System.Drawing.Size(525, 22);
+            this.ContraseñaTextBox.Size = new System.Drawing.Size(609, 22);
             this.ContraseñaTextBox.TabIndex = 10;
             this.ContraseñaTextBox.Text = "Contraseña";
             this.ContraseñaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -239,9 +243,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConfirmarTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmarTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.ConfirmarTextBox.Location = new System.Drawing.Point(173, 133);
+            this.ConfirmarTextBox.Location = new System.Drawing.Point(173, 160);
             this.ConfirmarTextBox.Name = "ConfirmarTextBox";
-            this.ConfirmarTextBox.Size = new System.Drawing.Size(525, 22);
+            this.ConfirmarTextBox.Size = new System.Drawing.Size(609, 22);
             this.ConfirmarTextBox.TabIndex = 11;
             this.ConfirmarTextBox.Text = "Contraseña";
             this.ConfirmarTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -252,7 +256,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(128, 168);
+            this.label5.Location = new System.Drawing.Point(128, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 19);
             this.label5.TabIndex = 12;
@@ -265,9 +269,9 @@
             this.TipoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoComboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoComboBox.FormattingEnabled = true;
-            this.TipoComboBox.Location = new System.Drawing.Point(173, 164);
+            this.TipoComboBox.Location = new System.Drawing.Point(173, 191);
             this.TipoComboBox.Name = "TipoComboBox";
-            this.TipoComboBox.Size = new System.Drawing.Size(525, 23);
+            this.TipoComboBox.Size = new System.Drawing.Size(609, 23);
             this.TipoComboBox.TabIndex = 13;
             // 
             // groupBox1
@@ -660,17 +664,66 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Controls.Add(this.groupBox1);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox3.Location = new System.Drawing.Point(6, 197);
+            this.groupBox3.Location = new System.Drawing.Point(48, 253);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(699, 303);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERMISOS";
+            // 
+            // FactoriascomboBox
+            // 
+            this.FactoriascomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FactoriascomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FactoriascomboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FactoriascomboBox.FormattingEnabled = true;
+            this.FactoriascomboBox.Location = new System.Drawing.Point(173, 224);
+            this.FactoriascomboBox.Name = "FactoriascomboBox";
+            this.FactoriascomboBox.Size = new System.Drawing.Size(609, 23);
+            this.FactoriascomboBox.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label6.Location = new System.Drawing.Point(103, 228);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 19);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Factoria";
+            // 
+            // EmpleadoscomboBox
+            // 
+            this.EmpleadoscomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EmpleadoscomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EmpleadoscomboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmpleadoscomboBox.FormattingEnabled = true;
+            this.EmpleadoscomboBox.Location = new System.Drawing.Point(173, 65);
+            this.EmpleadoscomboBox.Name = "EmpleadoscomboBox";
+            this.EmpleadoscomboBox.Size = new System.Drawing.Size(609, 23);
+            this.EmpleadoscomboBox.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.Location = new System.Drawing.Point(92, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 19);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Empleado";
             // 
             // RegistroUsuario
             // 
@@ -678,7 +731,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_Factoria.Properties.Resources.cacao_3_318x212;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(712, 567);
+            this.ClientSize = new System.Drawing.Size(796, 634);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.EmpleadoscomboBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.FactoriascomboBox);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.TipoComboBox);
             this.Controls.Add(this.label5);
@@ -757,5 +814,9 @@
         private System.Windows.Forms.CheckBox CComprobantecheckBox;
         private System.Windows.Forms.CheckBox CCertificacioncheckBox;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox FactoriascomboBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox EmpleadoscomboBox;
+        private System.Windows.Forms.Label label7;
     }
 }

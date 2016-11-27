@@ -10,14 +10,17 @@ namespace BLL
 {
     public class EstadoProductosBLL
     {
-        public static bool Insertar(EstadoProductos Nuevo)
+        public static bool Insertar(EstadoProductos nuevo)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.EstadoProducto.Add(Nuevo);
+                    if (Buscar(nuevo.EstadoId) == null)
+                        conexion.EstadoProducto.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -29,14 +32,14 @@ namespace BLL
             }
             return resultado;
         }
-        public static EstadoProductos Buscar(string Estado)
+        public static EstadoProductos Buscar(int estadoId)
         {
             var estado = new EstadoProductos();
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    estado = conexion.EstadoProducto.Find(Estado);
+                    estado = conexion.EstadoProducto.Find(estadoId);
                 }
                 catch (Exception)
                 {
@@ -46,14 +49,14 @@ namespace BLL
             }
             return estado;
         }
-        public static bool Elimiar(EstadoProductos Existente)
+        public static bool Elimiar(EstadoProductos existente)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Entry(Existente).State = EntityState.Deleted;
+                    conexion.Entry(existente).State = EntityState.Deleted;
                     conexion.SaveChanges();
                     resultado = true;
                 }

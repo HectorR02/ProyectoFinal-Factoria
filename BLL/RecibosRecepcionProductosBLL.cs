@@ -10,14 +10,17 @@ namespace BLL
 {
     public class RecibosRecepcionProductosBLL
     {
-        public static bool Insertar(RecibosRecepcionProductos Nuevo)
+        public static bool Insertar(RecibosRecepcionProductos nuevo)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.ReciboRecepcionProducto.Add(Nuevo);
+                    if (Buscar(nuevo.NumeroRecibo) == null)
+                        conexion.ReciboRecepcionProducto.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -29,14 +32,14 @@ namespace BLL
             }
             return resultado;
         }
-        public static RecibosRecepcionProductos Buscar(int NumeroRecibo)
+        public static RecibosRecepcionProductos Buscar(int numeroRecibo)
         {
             var recibo = new RecibosRecepcionProductos();
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    recibo = conexion.ReciboRecepcionProducto.Find(NumeroRecibo);
+                    recibo = conexion.ReciboRecepcionProducto.Find(numeroRecibo);
                 }
                 catch (Exception)
                 {
@@ -46,14 +49,14 @@ namespace BLL
             }
             return recibo;
         }
-        public static bool Eliminar(RecibosRecepcionProductos Existente)
+        public static bool Eliminar(RecibosRecepcionProductos existente)
         {
             bool Resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Entry(Existente).State = EntityState.Deleted;
+                    conexion.Entry(existente).State = EntityState.Deleted;
                     conexion.SaveChanges();
                     Resultado = true;
                 }

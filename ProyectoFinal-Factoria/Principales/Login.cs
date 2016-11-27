@@ -17,6 +17,7 @@ namespace ProyectoFinal_Factoria.Principales
         public Login()
         {
             InitializeComponent();
+            CrearUsuarioAdmin();
             intentos = 0;
         }
 
@@ -61,6 +62,14 @@ namespace ProyectoFinal_Factoria.Principales
             {
                 MessageBox.Show("No puedes dejar campos vacios", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 nombreTextBox.Focus();
+            }
+        }
+
+        private void CrearUsuarioAdmin()
+        {
+            if(BLL.UsuariosBLL.GetList().Count() <= 0)
+            {
+                BLL.UsuariosBLL.Insertar(new Usuarios(1, "Admin", "1234", 1, 6, "Admin"));
             }
         }
     }

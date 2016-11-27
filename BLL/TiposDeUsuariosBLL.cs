@@ -17,7 +17,10 @@ namespace BLL
             {
                 try
                 {
-                    conexion.TipoUsuario.Add(nuevo);
+                    if (Buscar(nuevo.TipoUsuarioId) == null)
+                        conexion.TipoUsuario.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -29,7 +32,6 @@ namespace BLL
             }
             return resultado;
         }
-
         public static TiposDeUsuarios Buscar(int tipoUsuarioId)
         {
             var tipo = new TiposDeUsuarios();
@@ -47,7 +49,6 @@ namespace BLL
             }
             return tipo;
         }
-
         public static bool Eliminar(TiposDeUsuarios existente)
         {
             bool resultado = false;
@@ -67,7 +68,6 @@ namespace BLL
             }
             return resultado;
         }
-
         public static List<TiposDeUsuarios> GetList()
         {
             var lista = new List<TiposDeUsuarios>();

@@ -45,6 +45,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.factoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -189,6 +190,7 @@
             // 
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.empleadoToolStripMenuItem1,
+            this.factoriaToolStripMenuItem,
             this.productorToolStripMenuItem1,
             this.usuarioToolStripMenuItem1,
             this.toolStripSeparator6,
@@ -207,6 +209,13 @@
             this.empleadoToolStripMenuItem1.Size = new System.Drawing.Size(322, 22);
             this.empleadoToolStripMenuItem1.Text = "Empleado";
             this.empleadoToolStripMenuItem1.Click += new System.EventHandler(this.empleadoToolStripMenuItem1_Click);
+            // 
+            // factoriaToolStripMenuItem
+            // 
+            this.factoriaToolStripMenuItem.Name = "factoriaToolStripMenuItem";
+            this.factoriaToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.factoriaToolStripMenuItem.Text = "Factoria";
+            this.factoriaToolStripMenuItem.Click += new System.EventHandler(this.factoriaToolStripMenuItem_Click);
             // 
             // productorToolStripMenuItem1
             // 
@@ -316,7 +325,7 @@
             this.Name = "PantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INICIO  |  Proyecto Final - Factoria";
-            this.Load += new System.EventHandler(this.PantallaPrincipal_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaPrincipal_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -357,6 +366,7 @@
         private System.Windows.Forms.ToolStripMenuItem tipoDeUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem factoriaToolStripMenuItem;
     }
 }
 

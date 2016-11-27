@@ -10,14 +10,17 @@ namespace BLL
 {
     public class ContratosBLL
     {
-        public static bool Insertar(Contratos Nuevo)
+        public static bool Insertar(Contratos nuevo)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Contrato.Add(Nuevo);
+                    if (Buscar(nuevo.NumeroContrato) == null)
+                        conexion.Contrato.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -29,14 +32,14 @@ namespace BLL
             }
             return resultado;
         }
-        public static Contratos Buscar(int NumeroContrato)
+        public static Contratos Buscar(int numeroContrato)
         {
             var contrato = new Contratos();
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    contrato = conexion.Contrato.Find(NumeroContrato);
+                    contrato = conexion.Contrato.Find(numeroContrato);
                 }
                 catch (Exception)
                 {
@@ -46,14 +49,14 @@ namespace BLL
             }
             return contrato;
         }
-        public static bool Eliminar(Contratos Existente)
+        public static bool Eliminar(Contratos existente)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Entry(Existente).State = EntityState.Deleted;
+                    conexion.Entry(existente).State = EntityState.Deleted;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -103,6 +106,23 @@ namespace BLL
                 }
             }
             return identity;
+        }
+        public static List<Contratos> GetList(int rnc, DateTime desde, DateTime hasta)
+        {
+            var lista = new List<Contratos>();
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    lista.AddRange(conexion.Contrato.Where(c => c.FactoriaRNC == rnc && (c.FechaEmision.Day >= desde.Day && c.FechaEmision.Month >= desde.Month && c.FechaEmision.Year >= desde.Year) && (c.FechaEmision.Day <= hasta.Day && c.FechaEmision.Month <= hasta.Month && c.FechaEmision.Year <= hasta.Year)));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
         }
     }
 }

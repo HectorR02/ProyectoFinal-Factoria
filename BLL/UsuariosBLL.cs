@@ -20,7 +20,10 @@ namespace BLL
             {
                 try
                 {
-                    conexion.Usuario.Add(nuevo);
+                    if (Buscar(nuevo.UsuarioId) == null)
+                        conexion.Usuario.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -31,7 +34,6 @@ namespace BLL
             }
             return resultado;
         }
-
         public static Usuarios Buscar(int usuarioId)
         {
             var User = new Usuarios();
@@ -48,7 +50,6 @@ namespace BLL
             }
             return User;
         }
-
         public static bool Eliminar(Usuarios existente)
         {
             bool resultado = false;
@@ -68,7 +69,6 @@ namespace BLL
             }
             return resultado;
         }
-
         public static List<Usuarios> GetList()
         {
             var lista = new List<Usuarios>();
@@ -108,7 +108,6 @@ namespace BLL
             }
             return identity;
         }
-
         public static Usuarios Buscar(string nombre, string contraseña)
         {
             Usuarios user = null;

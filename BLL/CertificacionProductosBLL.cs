@@ -10,14 +10,17 @@ namespace BLL
 {
     public class CertificacionProductosBLL
     {
-        public static bool Insertar(CertificacionProductos Nuevo)
+        public static bool Insertar(CertificacionProductos nuevo)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.CertificadoProducto.Add(Nuevo);
+                    if (Buscar(nuevo.CertificacionId) == null)
+                        conexion.CertificadoProducto.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -29,14 +32,14 @@ namespace BLL
             }
             return resultado;
         }
-        public static CertificacionProductos Buscar(string Certificacion)
+        public static CertificacionProductos Buscar(int certificacionId)
         {
             var certificado = new CertificacionProductos();
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    certificado = conexion.CertificadoProducto.Find(Certificacion);
+                    certificado = conexion.CertificadoProducto.Find(certificacionId);
                 }
                 catch (Exception)
                 {
@@ -46,14 +49,14 @@ namespace BLL
             }
             return certificado;
         }
-        public static bool Eliminar(CertificacionProductos Existente)
+        public static bool Eliminar(CertificacionProductos existente)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Entry(Existente).State = EntityState.Deleted;
+                    conexion.Entry(existente).State = EntityState.Deleted;
                     conexion.SaveChanges();
                     resultado = true;
                 }

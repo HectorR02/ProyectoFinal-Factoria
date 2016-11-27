@@ -76,23 +76,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\ConsultaComprobantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaComprobantes.Designer.cs">
+      <DependentUpon>ConsultaComprobantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaContratos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consultas\ConsultaContratos.Designer.cs">
       <DependentUpon>ConsultaContratos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ConsultaEmpleados.cs">
+    <Compile Include="Consultas\ConsultaReciboRecepcionProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultaEmpleados.Designer.cs">
-      <DependentUpon>ConsultaEmpleados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Consultas\ConsultaProductores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Consultas\ConsultaProductores.Designer.cs">
-      <DependentUpon>ConsultaProductores.cs</DependentUpon>
+    <Compile Include="Consultas\ConsultaReciboRecepcionProducto.Designer.cs">
+      <DependentUpon>ConsultaReciboRecepcionProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Principales\Login.cs">
       <SubType>Form</SubType>
@@ -125,6 +125,12 @@
     </Compile>
     <Compile Include="Registros\RegistroEmpleados.Designer.cs">
       <DependentUpon>RegistroEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RegistroFactorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroFactorias.Designer.cs">
+      <DependentUpon>RegistroFactorias.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\RegistroProductor.cs">
       <SubType>Form</SubType>
@@ -169,14 +175,14 @@
     <Compile Include="VentanasReportes\ReporteReciboRecepcionProducto.Designer.cs">
       <DependentUpon>ReporteReciboRecepcionProducto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultas\ConsultaComprobantes.resx">
+      <DependentUpon>ConsultaComprobantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaContratos.resx">
       <DependentUpon>ConsultaContratos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ConsultaEmpleados.resx">
-      <DependentUpon>ConsultaEmpleados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ConsultaProductores.resx">
-      <DependentUpon>ConsultaProductores.cs</DependentUpon>
+    <EmbeddedResource Include="Consultas\ConsultaReciboRecepcionProducto.resx">
+      <DependentUpon>ConsultaReciboRecepcionProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principales\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\RegistroEmpleados.resx">
       <DependentUpon>RegistroEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\RegistroFactorias.resx">
+      <DependentUpon>RegistroFactorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\RegistroProductor.resx">
       <DependentUpon>RegistroProductor.cs</DependentUpon>

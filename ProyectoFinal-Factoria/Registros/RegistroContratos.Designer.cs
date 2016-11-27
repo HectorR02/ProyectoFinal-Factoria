@@ -40,7 +40,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.NoContratoTextBox = new System.Windows.Forms.TextBox();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.NombreProductorTextBox = new System.Windows.Forms.TextBox();
             this.CedulaProductorMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.QuintalesTextBox = new System.Windows.Forms.TextBox();
             this.PrecioXqUintalTextBox = new System.Windows.Forms.TextBox();
@@ -52,6 +51,7 @@
             this.ProductorIdTextBox = new System.Windows.Forms.TextBox();
             this.DetallesRichTextBox = new System.Windows.Forms.RichTextBox();
             this.FactoriaRNCTextBox = new System.Windows.Forms.TextBox();
+            this.ProductorescomboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -96,7 +96,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(181, 175);
+            this.label4.Location = new System.Drawing.Point(179, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(178, 24);
             this.label4.TabIndex = 3;
@@ -104,11 +104,12 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(429, 175);
+            this.label5.Location = new System.Drawing.Point(428, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 24);
             this.label5.TabIndex = 4;
@@ -128,11 +129,12 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(331, 244);
+            this.label7.Location = new System.Drawing.Point(330, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(177, 24);
             this.label7.TabIndex = 6;
@@ -192,18 +194,12 @@
             this.FechaDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.FechaDateTimePicker.TabIndex = 11;
             // 
-            // NombreProductorTextBox
-            // 
-            this.NombreProductorTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreProductorTextBox.Location = new System.Drawing.Point(185, 203);
-            this.NombreProductorTextBox.Name = "NombreProductorTextBox";
-            this.NombreProductorTextBox.Size = new System.Drawing.Size(234, 26);
-            this.NombreProductorTextBox.TabIndex = 13;
-            // 
             // CedulaProductorMaskedTextBox
             // 
+            this.CedulaProductorMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CedulaProductorMaskedTextBox.Enabled = false;
             this.CedulaProductorMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CedulaProductorMaskedTextBox.Location = new System.Drawing.Point(432, 202);
+            this.CedulaProductorMaskedTextBox.Location = new System.Drawing.Point(431, 202);
             this.CedulaProductorMaskedTextBox.Mask = "999-9999999-9";
             this.CedulaProductorMaskedTextBox.Name = "CedulaProductorMaskedTextBox";
             this.CedulaProductorMaskedTextBox.Size = new System.Drawing.Size(165, 26);
@@ -212,22 +208,27 @@
             // 
             // QuintalesTextBox
             // 
+            this.QuintalesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.QuintalesTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuintalesTextBox.Location = new System.Drawing.Point(41, 270);
             this.QuintalesTextBox.Name = "QuintalesTextBox";
-            this.QuintalesTextBox.Size = new System.Drawing.Size(241, 26);
+            this.QuintalesTextBox.Size = new System.Drawing.Size(240, 26);
             this.QuintalesTextBox.TabIndex = 15;
             // 
             // PrecioXqUintalTextBox
             // 
+            this.PrecioXqUintalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PrecioXqUintalTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrecioXqUintalTextBox.Location = new System.Drawing.Point(335, 271);
+            this.PrecioXqUintalTextBox.Location = new System.Drawing.Point(334, 271);
             this.PrecioXqUintalTextBox.Name = "PrecioXqUintalTextBox";
             this.PrecioXqUintalTextBox.Size = new System.Drawing.Size(263, 26);
             this.PrecioXqUintalTextBox.TabIndex = 16;
             // 
             // FirmaAutoridadTextBox
             // 
+            this.FirmaAutoridadTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FirmaAutoridadTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirmaAutoridadTextBox.Location = new System.Drawing.Point(295, 133);
             this.FirmaAutoridadTextBox.Name = "FirmaAutoridadTextBox";
@@ -237,12 +238,13 @@
             // 
             // NuevoButton
             // 
+            this.NuevoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.NuevoButton.FlatAppearance.BorderSize = 0;
             this.NuevoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NuevoButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(39, 470);
+            this.NuevoButton.Location = new System.Drawing.Point(43, 468);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(128, 48);
             this.NuevoButton.TabIndex = 20;
@@ -253,12 +255,13 @@
             // 
             // GuardarButton
             // 
+            this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.GuardarButton.FlatAppearance.BorderSize = 0;
             this.GuardarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GuardarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonGuardar1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(243, 470);
+            this.GuardarButton.Location = new System.Drawing.Point(237, 468);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(143, 48);
             this.GuardarButton.TabIndex = 21;
@@ -269,12 +272,13 @@
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.EliminarButton.FlatAppearance.BorderSize = 0;
             this.EliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EliminarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonCancelar1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(453, 470);
+            this.EliminarButton.Location = new System.Drawing.Point(451, 468);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(144, 48);
             this.EliminarButton.TabIndex = 22;
@@ -285,6 +289,7 @@
             // 
             // BuscarButton
             // 
+            this.BuscarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscarButton.FlatAppearance.BorderSize = 0;
             this.BuscarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BuscarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -301,23 +306,30 @@
             // 
             // ProductorIdTextBox
             // 
+            this.ProductorIdTextBox.Enabled = false;
             this.ProductorIdTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductorIdTextBox.Location = new System.Drawing.Point(40, 202);
             this.ProductorIdTextBox.Name = "ProductorIdTextBox";
-            this.ProductorIdTextBox.Size = new System.Drawing.Size(128, 26);
+            this.ProductorIdTextBox.Size = new System.Drawing.Size(126, 26);
             this.ProductorIdTextBox.TabIndex = 24;
             // 
             // DetallesRichTextBox
             // 
+            this.DetallesRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DetallesRichTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetallesRichTextBox.Location = new System.Drawing.Point(42, 338);
+            this.DetallesRichTextBox.Location = new System.Drawing.Point(42, 343);
             this.DetallesRichTextBox.Name = "DetallesRichTextBox";
-            this.DetallesRichTextBox.Size = new System.Drawing.Size(556, 89);
+            this.DetallesRichTextBox.Size = new System.Drawing.Size(555, 84);
             this.DetallesRichTextBox.TabIndex = 25;
             this.DetallesRichTextBox.Text = "";
             // 
             // FactoriaRNCTextBox
             // 
+            this.FactoriaRNCTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FactoriaRNCTextBox.Enabled = false;
             this.FactoriaRNCTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FactoriaRNCTextBox.Location = new System.Drawing.Point(185, 64);
             this.FactoriaRNCTextBox.Name = "FactoriaRNCTextBox";
@@ -325,13 +337,27 @@
             this.FactoriaRNCTextBox.TabIndex = 26;
             this.FactoriaRNCTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // ProductorescomboBox
+            // 
+            this.ProductorescomboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProductorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductorescomboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductorescomboBox.FormattingEnabled = true;
+            this.ProductorescomboBox.Location = new System.Drawing.Point(183, 202);
+            this.ProductorescomboBox.Name = "ProductorescomboBox";
+            this.ProductorescomboBox.Size = new System.Drawing.Size(228, 27);
+            this.ProductorescomboBox.TabIndex = 27;
+            this.ProductorescomboBox.SelectedValueChanged += new System.EventHandler(this.ProductorescomboBox_SelectedValueChanged);
+            // 
             // RegistroContratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_Factoria.Properties.Resources.cacao_1_318x212;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(636, 556);
+            this.ClientSize = new System.Drawing.Size(639, 556);
+            this.Controls.Add(this.ProductorescomboBox);
             this.Controls.Add(this.FactoriaRNCTextBox);
             this.Controls.Add(this.DetallesRichTextBox);
             this.Controls.Add(this.ProductorIdTextBox);
@@ -343,7 +369,6 @@
             this.Controls.Add(this.PrecioXqUintalTextBox);
             this.Controls.Add(this.QuintalesTextBox);
             this.Controls.Add(this.CedulaProductorMaskedTextBox);
-            this.Controls.Add(this.NombreProductorTextBox);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.NoContratoTextBox);
             this.Controls.Add(this.label10);
@@ -356,7 +381,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(655, 595);
             this.Name = "RegistroContratos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Contratos";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -377,7 +404,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox NoContratoTextBox;
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
-        private System.Windows.Forms.TextBox NombreProductorTextBox;
         private System.Windows.Forms.MaskedTextBox CedulaProductorMaskedTextBox;
         private System.Windows.Forms.TextBox QuintalesTextBox;
         private System.Windows.Forms.TextBox PrecioXqUintalTextBox;
@@ -389,5 +415,6 @@
         private System.Windows.Forms.TextBox ProductorIdTextBox;
         private System.Windows.Forms.RichTextBox DetallesRichTextBox;
         private System.Windows.Forms.TextBox FactoriaRNCTextBox;
+        private System.Windows.Forms.ComboBox ProductorescomboBox;
     }
 }

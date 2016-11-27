@@ -11,8 +11,12 @@ namespace ProyectoFinal_Factoria.Registros
         public RegistroUsuario()
         {
             InitializeComponent();
+
             ValidarCampos();
             CleanCampos();
+            CargarTiposUsuario();
+            CargarFactorias();
+            CargarEmpleados();
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -45,10 +49,11 @@ namespace ProyectoFinal_Factoria.Registros
                 if (!string.IsNullOrEmpty(ContraseñaTextBox.Text))
                     if (!string.IsNullOrEmpty(ConfirmarTextBox.Text))
                     {
-                        if(ContraseñaTextBox.Text.Equals(ConfirmarTextBox.Text))
+                        if (ContraseñaTextBox.Text.Equals(ConfirmarTextBox.Text))
                         {
-                            usuario = new Usuarios(UsuarioTextBox.Text, ContraseñaTextBox.Text, 1);
+                            usuario = new Usuarios(UsuarioTextBox.Text, ContraseñaTextBox.Text,(int)TipoComboBox.SelectedValue,(int)FactoriascomboBox.SelectedValue,EmpleadoscomboBox.Text);
                             AsignarPermisos(usuario);
+                            usuario.UsuarioId = Utileria.ToInt(IdTextBox.Text);
                             if (BLL.UsuariosBLL.Insertar(usuario))
                                 MessageBox.Show("Ha registrado un nuevo 'Usuario'", "-- Transaccion Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             else
@@ -197,16 +202,62 @@ namespace ProyectoFinal_Factoria.Registros
             }
         }
 
+        private void CargarEmpleados()
+        {
+            while (true)
+            {
+                var empleados = BLL.EmpleadosBLL.GetList();
+                if (empleados.Count <= 0)
+                {
+                    MessageBox.Show("No hay 'Empleados' registrados", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var ventana = new RegistroEmpleados();
+                    ventana.ShowDialog();
+                }
+                else
+                {
+                    EmpleadoscomboBox.DataSource = empleados;
+                    EmpleadoscomboBox.ValueMember = "EmpleadoId";
+                    EmpleadoscomboBox.DisplayMember = "Nombres";
+                    break;
+                }
+            }
+        }
+
+        private void CargarFactorias()
+        {
+            while (true)
+            {
+                var factorias = BLL.FactoriasBLL.GetList();
+                if (factorias.Count <= 0)
+                {
+                    MessageBox.Show("No hay 'Tipos de Usuario' registrados", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var ventana = new Registros.RegistroFactorias();
+                    ventana.ShowDialog();
+                }
+                else
+                {
+                    FactoriascomboBox.DataSource = factorias;
+                    FactoriascomboBox.DisplayMember = "NombreSucursal";
+                    FactoriascomboBox.ValueMember = "FactoriaId";
+                    break;
+                }
+            }
+        }
+
         private void CleanCampos()
         {
+            int id = BLL.UsuariosBLL.Identity();
             IdTextBox.Text = "Ej.: 01";
             UsuarioTextBox.Text = "Ej.: Juan Pérez";
             ContraseñaTextBox.Text = ConfirmarTextBox.Text = "Contraseña";
-            IdTextBox.ForeColor = UsuarioTextBox.ForeColor = ContraseñaTextBox.ForeColor = ConfirmarTextBox.ForeColor = Color.Silver;
+            UsuarioTextBox.ForeColor = ContraseñaTextBox.ForeColor = ConfirmarTextBox.ForeColor = Color.Silver;
             CleanPermisos();
-            IdTextBox.Text = (BLL.UsuariosBLL.Identity() + 1).ToString();
+            if (id > 1 || BLL.UsuariosBLL.GetList().Count > 0)
+                IdTextBox.Text = (id + 1).ToString();
+            else
+                IdTextBox.Text = id.ToString();
             UsuarioTextBox.Focus();
-            IdTextBox.ForeColor = Color.Black;
+            //IdTextBox.ForeColor = Color.Black;
         }
 
         private void CleanPermisos()
@@ -276,7 +327,6 @@ namespace ProyectoFinal_Factoria.Registros
             RTipoUsuariocheckBox.Checked = Convert.ToBoolean(usuario.RTipoUsuario);
             RUsuariocheckBox.Checked = Convert.ToBoolean(usuario.RUsuario);
         }
-
         private void MostrarPermisosC(Usuarios usuario)
         {
             CCertificacioncheckBox.Checked = Convert.ToBoolean(usuario.CCertificacion);

@@ -90,11 +90,12 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(554, 22);
+            this.label1.Location = new System.Drawing.Point(544, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 27);
             this.label1.TabIndex = 0;
@@ -102,11 +103,12 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(317, 21);
+            this.label2.Location = new System.Drawing.Point(311, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 27);
             this.label2.TabIndex = 1;
@@ -130,7 +132,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(317, 111);
+            this.label4.Location = new System.Drawing.Point(320, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 27);
             this.label4.TabIndex = 3;
@@ -138,11 +140,12 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(672, 111);
+            this.label5.Location = new System.Drawing.Point(662, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 27);
             this.label5.TabIndex = 4;
@@ -162,11 +165,12 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(317, 145);
+            this.label7.Location = new System.Drawing.Point(299, 145);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(266, 27);
             this.label7.TabIndex = 6;
@@ -174,11 +178,12 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(672, 145);
+            this.label8.Location = new System.Drawing.Point(662, 145);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(207, 27);
             this.label8.TabIndex = 7;
@@ -186,12 +191,13 @@
             // 
             // BuscarButton
             // 
+            this.BuscarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscarButton.FlatAppearance.BorderSize = 0;
             this.BuscarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BuscarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonBusqueda;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(824, 17);
+            this.BuscarButton.Location = new System.Drawing.Point(814, 17);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(127, 40);
             this.BuscarButton.TabIndex = 15;
@@ -202,8 +208,9 @@
             // 
             // NumeroComprobanteTextBox
             // 
+            this.NumeroComprobanteTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NumeroComprobanteTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumeroComprobanteTextBox.Location = new System.Drawing.Point(358, 22);
+            this.NumeroComprobanteTextBox.Location = new System.Drawing.Point(348, 22);
             this.NumeroComprobanteTextBox.Name = "NumeroComprobanteTextBox";
             this.NumeroComprobanteTextBox.Size = new System.Drawing.Size(182, 26);
             this.NumeroComprobanteTextBox.TabIndex = 16;
@@ -211,17 +218,22 @@
             // 
             // AsociacionTextBox
             // 
+            this.AsociacionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AsociacionTextBox.Enabled = false;
             this.AsociacionTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AsociacionTextBox.Location = new System.Drawing.Point(326, 66);
             this.AsociacionTextBox.Name = "AsociacionTextBox";
-            this.AsociacionTextBox.Size = new System.Drawing.Size(625, 26);
+            this.AsociacionTextBox.Size = new System.Drawing.Size(615, 26);
             this.AsociacionTextBox.TabIndex = 17;
             this.AsociacionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CedulaMaskedTextBox
             // 
+            this.CedulaMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CedulaMaskedTextBox.Enabled = false;
             this.CedulaMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(794, 111);
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(784, 111);
             this.CedulaMaskedTextBox.Mask = "999-9999999-9";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(157, 26);
@@ -230,25 +242,32 @@
             // 
             // ProductorComboBox
             // 
+            this.ProductorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ProductorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductorComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductorComboBox.FormattingEnabled = true;
             this.ProductorComboBox.Location = new System.Drawing.Point(424, 111);
             this.ProductorComboBox.Name = "ProductorComboBox";
-            this.ProductorComboBox.Size = new System.Drawing.Size(229, 27);
+            this.ProductorComboBox.Size = new System.Drawing.Size(219, 27);
             this.ProductorComboBox.TabIndex = 20;
+            this.ProductorComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductorComboBox_SelectedIndexChanged);
             // 
             // FechaDateTimePicker
             // 
+            this.FechaDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaDateTimePicker.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechaDateTimePicker.Location = new System.Drawing.Point(630, 22);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
-            this.FechaDateTimePicker.Size = new System.Drawing.Size(173, 29);
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(163, 29);
             this.FechaDateTimePicker.TabIndex = 21;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
@@ -268,7 +287,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 209);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(709, 252);
+            this.groupBox1.Size = new System.Drawing.Size(699, 252);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PESADAS";
@@ -277,7 +296,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(542, 28);
+            this.label14.Location = new System.Drawing.Point(537, 28);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(82, 22);
             this.label14.TabIndex = 13;
@@ -287,7 +306,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(457, 28);
+            this.label13.Location = new System.Drawing.Point(455, 28);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 22);
             this.label13.TabIndex = 12;
@@ -297,7 +316,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(359, 28);
+            this.label12.Location = new System.Drawing.Point(357, 28);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 22);
             this.label12.TabIndex = 11;
@@ -307,7 +326,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(249, 28);
+            this.label11.Location = new System.Drawing.Point(247, 28);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 22);
             this.label11.TabIndex = 10;
@@ -317,7 +336,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(118, 28);
+            this.label10.Location = new System.Drawing.Point(116, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(125, 22);
             this.label10.TabIndex = 9;
@@ -335,11 +354,12 @@
             // 
             // Agregarbutton
             // 
+            this.Agregarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Agregarbutton.BackColor = System.Drawing.SystemColors.Control;
             this.Agregarbutton.FlatAppearance.BorderSize = 0;
             this.Agregarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Agregarbutton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir1;
-            this.Agregarbutton.Location = new System.Drawing.Point(638, 53);
+            this.Agregarbutton.Location = new System.Drawing.Point(628, 53);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(54, 33);
             this.Agregarbutton.TabIndex = 7;
@@ -348,26 +368,28 @@
             // 
             // QuintalesSecostextBox
             // 
+            this.QuintalesSecostextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.QuintalesSecostextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuintalesSecostextBox.Location = new System.Drawing.Point(546, 58);
+            this.QuintalesSecostextBox.Location = new System.Drawing.Point(545, 58);
             this.QuintalesSecostextBox.Name = "QuintalesSecostextBox";
-            this.QuintalesSecostextBox.Size = new System.Drawing.Size(81, 26);
+            this.QuintalesSecostextBox.Size = new System.Drawing.Size(72, 26);
             this.QuintalesSecostextBox.TabIndex = 6;
             // 
             // FactorConversiontextBox5
             // 
             this.FactorConversiontextBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FactorConversiontextBox5.Location = new System.Drawing.Point(461, 57);
+            this.FactorConversiontextBox5.Location = new System.Drawing.Point(461, 58);
             this.FactorConversiontextBox5.Name = "FactorConversiontextBox5";
-            this.FactorConversiontextBox5.Size = new System.Drawing.Size(76, 26);
+            this.FactorConversiontextBox5.Size = new System.Drawing.Size(77, 26);
             this.FactorConversiontextBox5.TabIndex = 5;
             // 
             // KgBrutotextBox4
             // 
             this.KgBrutotextBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KgBrutotextBox4.Location = new System.Drawing.Point(363, 57);
+            this.KgBrutotextBox4.Location = new System.Drawing.Point(363, 58);
             this.KgBrutotextBox4.Name = "KgBrutotextBox4";
-            this.KgBrutotextBox4.Size = new System.Drawing.Size(87, 26);
+            this.KgBrutotextBox4.Size = new System.Drawing.Size(88, 26);
             this.KgBrutotextBox4.TabIndex = 4;
             // 
             // CamionVaciotextBox3
@@ -375,7 +397,7 @@
             this.CamionVaciotextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CamionVaciotextBox3.Location = new System.Drawing.Point(253, 58);
             this.CamionVaciotextBox3.Name = "CamionVaciotextBox3";
-            this.CamionVaciotextBox3.Size = new System.Drawing.Size(100, 26);
+            this.CamionVaciotextBox3.Size = new System.Drawing.Size(101, 26);
             this.CamionVaciotextBox3.TabIndex = 3;
             // 
             // CamionLlenotextBox2
@@ -383,7 +405,7 @@
             this.CamionLlenotextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CamionLlenotextBox2.Location = new System.Drawing.Point(118, 58);
             this.CamionLlenotextBox2.Name = "CamionLlenotextBox2";
-            this.CamionLlenotextBox2.Size = new System.Drawing.Size(125, 26);
+            this.CamionLlenotextBox2.Size = new System.Drawing.Size(126, 26);
             this.CamionLlenotextBox2.TabIndex = 2;
             this.CamionLlenotextBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -392,7 +414,7 @@
             this.SacostextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SacostextBox1.Location = new System.Drawing.Point(18, 58);
             this.SacostextBox1.Name = "SacostextBox1";
-            this.SacostextBox1.Size = new System.Drawing.Size(88, 26);
+            this.SacostextBox1.Size = new System.Drawing.Size(89, 26);
             this.SacostextBox1.TabIndex = 1;
             // 
             // PesadasdataGridView1
@@ -406,11 +428,16 @@
             this.PesadasdataGridView1.GridColor = System.Drawing.SystemColors.ControlText;
             this.PesadasdataGridView1.Location = new System.Drawing.Point(10, 96);
             this.PesadasdataGridView1.Name = "PesadasdataGridView1";
-            this.PesadasdataGridView1.Size = new System.Drawing.Size(693, 150);
+            this.PesadasdataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PesadasdataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.PesadasdataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PesadasdataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.PesadasdataGridView1.Size = new System.Drawing.Size(683, 150);
             this.PesadasdataGridView1.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.MohoTextBox);
             this.groupBox2.Controls.Add(this.BasuraTextBox);
@@ -420,9 +447,9 @@
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(727, 209);
+            this.groupBox2.Location = new System.Drawing.Point(721, 209);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(241, 202);
+            this.groupBox2.Size = new System.Drawing.Size(237, 202);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DESCUENTO";
@@ -486,6 +513,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.ZonaTextBox);
             this.groupBox3.Controls.Add(this.PlacaTextBox);
@@ -499,7 +528,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox3.Location = new System.Drawing.Point(12, 467);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(956, 113);
+            this.groupBox3.Size = new System.Drawing.Size(946, 113);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DATOS TRANSPORTE";
@@ -508,7 +537,7 @@
             // 
             this.ZonaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ZonaTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ZonaTextBox.Location = new System.Drawing.Point(557, 76);
+            this.ZonaTextBox.Location = new System.Drawing.Point(547, 76);
             this.ZonaTextBox.Name = "ZonaTextBox";
             this.ZonaTextBox.Size = new System.Drawing.Size(389, 26);
             this.ZonaTextBox.TabIndex = 7;
@@ -518,7 +547,7 @@
             // 
             this.PlacaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PlacaTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlacaTextBox.Location = new System.Drawing.Point(557, 29);
+            this.PlacaTextBox.Location = new System.Drawing.Point(547, 29);
             this.PlacaTextBox.Name = "PlacaTextBox";
             this.PlacaTextBox.Size = new System.Drawing.Size(389, 26);
             this.PlacaTextBox.TabIndex = 6;
@@ -526,19 +555,23 @@
             // 
             // TipoTransporteTextBox
             // 
+            this.TipoTransporteTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TipoTransporteTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoTransporteTextBox.Location = new System.Drawing.Point(158, 77);
             this.TipoTransporteTextBox.Name = "TipoTransporteTextBox";
-            this.TipoTransporteTextBox.Size = new System.Drawing.Size(287, 26);
+            this.TipoTransporteTextBox.Size = new System.Drawing.Size(294, 26);
             this.TipoTransporteTextBox.TabIndex = 5;
             this.TipoTransporteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ChoferTextBox
             // 
+            this.ChoferTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ChoferTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChoferTextBox.Location = new System.Drawing.Point(79, 28);
             this.ChoferTextBox.Name = "ChoferTextBox";
-            this.ChoferTextBox.Size = new System.Drawing.Size(361, 26);
+            this.ChoferTextBox.Size = new System.Drawing.Size(368, 26);
             this.ChoferTextBox.TabIndex = 4;
             this.ChoferTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -547,7 +580,7 @@
             this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(499, 75);
+            this.label26.Location = new System.Drawing.Point(489, 75);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(56, 24);
             this.label26.TabIndex = 3;
@@ -558,7 +591,7 @@
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(495, 27);
+            this.label25.Location = new System.Drawing.Point(485, 27);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(61, 24);
             this.label25.TabIndex = 2;
@@ -586,32 +619,36 @@
             // 
             // TipoProductoComboBox
             // 
+            this.TipoProductoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TipoProductoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoProductoComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TipoProductoComboBox.FormattingEnabled = true;
             this.TipoProductoComboBox.Location = new System.Drawing.Point(31, 177);
             this.TipoProductoComboBox.Name = "TipoProductoComboBox";
-            this.TipoProductoComboBox.Size = new System.Drawing.Size(260, 27);
+            this.TipoProductoComboBox.Size = new System.Drawing.Size(250, 27);
             this.TipoProductoComboBox.TabIndex = 25;
             // 
             // EstadoProductoComboBox
             // 
+            this.EstadoProductoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EstadoProductoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EstadoProductoComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EstadoProductoComboBox.FormattingEnabled = true;
-            this.EstadoProductoComboBox.Location = new System.Drawing.Point(677, 177);
+            this.EstadoProductoComboBox.Location = new System.Drawing.Point(671, 177);
             this.EstadoProductoComboBox.Name = "EstadoProductoComboBox";
-            this.EstadoProductoComboBox.Size = new System.Drawing.Size(275, 27);
+            this.EstadoProductoComboBox.Size = new System.Drawing.Size(271, 27);
             this.EstadoProductoComboBox.TabIndex = 26;
             // 
             // CertificacionProductoComboBox
             // 
+            this.CertificacionProductoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CertificacionProductoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CertificacionProductoComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CertificacionProductoComboBox.FormattingEnabled = true;
-            this.CertificacionProductoComboBox.Location = new System.Drawing.Point(322, 177);
+            this.CertificacionProductoComboBox.Location = new System.Drawing.Point(306, 177);
             this.CertificacionProductoComboBox.Name = "CertificacionProductoComboBox";
-            this.CertificacionProductoComboBox.Size = new System.Drawing.Size(331, 27);
+            this.CertificacionProductoComboBox.Size = new System.Drawing.Size(337, 27);
             this.CertificacionProductoComboBox.TabIndex = 27;
             // 
             // label27
@@ -628,6 +665,7 @@
             // 
             // ProductorIdTextBox
             // 
+            this.ProductorIdTextBox.Enabled = false;
             this.ProductorIdTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductorIdTextBox.Location = new System.Drawing.Point(166, 109);
             this.ProductorIdTextBox.Name = "ProductorIdTextBox";
@@ -637,12 +675,13 @@
             // 
             // NuevoButton
             // 
+            this.NuevoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.NuevoButton.FlatAppearance.BorderSize = 0;
             this.NuevoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NuevoButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonAñadir;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(198, 607);
+            this.NuevoButton.Location = new System.Drawing.Point(80, 606);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(124, 49);
             this.NuevoButton.TabIndex = 30;
@@ -653,12 +692,13 @@
             // 
             // GuardarButton
             // 
+            this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.GuardarButton.FlatAppearance.BorderSize = 0;
             this.GuardarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GuardarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonGuardar1;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(414, 607);
+            this.GuardarButton.Location = new System.Drawing.Point(407, 606);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(144, 49);
             this.GuardarButton.TabIndex = 31;
@@ -669,12 +709,13 @@
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.EliminarButton.FlatAppearance.BorderSize = 0;
             this.EliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EliminarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::ProyectoFinal_Factoria.Properties.Resources.BotonCancelar1;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(643, 607);
+            this.EliminarButton.Location = new System.Drawing.Point(748, 606);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(144, 49);
             this.EliminarButton.TabIndex = 32;
@@ -706,7 +747,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_Factoria.Properties.Resources.cacao_1_318x212;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(980, 680);
+            this.ClientSize = new System.Drawing.Size(968, 680);
             this.Controls.Add(this.ImprimirButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
@@ -733,7 +774,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(963, 719);
             this.Name = "RegistroCompobanteRecepcionCacao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Comprobante de Recepcion Cacao";
             this.Load += new System.EventHandler(this.RegistroCompobanteRecepcionCacao_Load);
             this.groupBox1.ResumeLayout(false);

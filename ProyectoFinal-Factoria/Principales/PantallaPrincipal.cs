@@ -38,6 +38,8 @@ namespace ProyectoFinal_Factoria
                 tipoDeUsuarioToolStripMenuItem.Enabled = toolStripMenuItem2.Enabled = false;
             if (usuario.RUsuario == 0)
                 usuarioToolStripMenuItem1.Enabled = usuarioToolStripMenuItem.Enabled = false;
+            if (usuario.RFactoria == 0)
+                factoriaToolStripMenuItem.Enabled = false;
 
             //Para Consultar
             if (usuario.CComprobante == 0)
@@ -65,12 +67,7 @@ namespace ProyectoFinal_Factoria
             Formulario.MdiParent = this;
             Formulario.Show();
         }
-
-        private void PantallaPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void comprobanteDeRecepciónDeCacaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Formulario = new Registros.RegistroCompobanteRecepcionCacao();
@@ -80,7 +77,7 @@ namespace ProyectoFinal_Factoria
 
         private void contratoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var Formulario = new Registros.RegistroContratos();
+            var Formulario = new Registros.RegistroContratos(Usuario);
             Formulario.MdiParent = this;
             Formulario.Show();
         }
@@ -101,7 +98,7 @@ namespace ProyectoFinal_Factoria
 
         private void reciboRecepciónDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Formulario = new Registros.RegistroReciboRecepcionProducto();
+            var Formulario = new Registros.ConsultaReciboRecepcionProducto();
             Formulario.MdiParent = this;
             Formulario.Show();
         }
@@ -122,7 +119,7 @@ namespace ProyectoFinal_Factoria
 
         private void contratoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Formulario = new Registros.RegistroContratos();
+            var Formulario = new Registros.RegistroContratos(Usuario);
             Formulario.MdiParent = this;
             Formulario.Show();
         }
@@ -136,7 +133,7 @@ namespace ProyectoFinal_Factoria
 
         private void reciboDeRecepciónDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Formulario = new Registros.RegistroReciboRecepcionProducto();
+            var Formulario = new Registros.ConsultaReciboRecepcionProducto();
             Formulario.MdiParent = this;
             Formulario.Show();
         }
@@ -171,21 +168,33 @@ namespace ProyectoFinal_Factoria
 
         private void comprobanteDeRecepciónDeCacaoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //var Formulario = new Consultas.ConsultaContratos();
-            //Formulario.MdiParent = this;
-            //Formulario.Show();
+            var Formulario = new Consultas.ConsultaComprobantes();
+            Formulario.MdiParent = this;
+            Formulario.Show();
         }
 
         private void reciboDeRecepciónDeProductoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var Formulario = new Registros.RegistroReciboRecepcionProducto();
+            var Formulario = new Registros.ConsultaReciboRecepcionProducto();
             Formulario.MdiParent = this;
             Formulario.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Login.Close();
+        }
 
+        private void factoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Formulario = new Registros.RegistroFactorias();
+            Formulario.MdiParent = this;
+            Formulario.Show();
+        }
+
+        private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Login.Close();
         }
     }
 }

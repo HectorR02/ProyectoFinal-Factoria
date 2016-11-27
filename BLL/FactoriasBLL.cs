@@ -10,14 +10,17 @@ namespace BLL
 {
     public class FactoriasBLL
     {
-        public static bool Insertar(Factorias Nuevo)
+        public static bool Insertar(Factorias nuevo)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Factoria.Add(Nuevo);
+                    if (Buscar(nuevo.FactoriaId) == null)
+                        conexion.Factoria.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -29,14 +32,14 @@ namespace BLL
             }
             return resultado;
         }
-        public static Factorias Buscar(int RNC)
+        public static Factorias Buscar(int factoriaId)
         {
             var factoria = new Factorias();
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                   factoria = conexion.Factoria.Find(RNC);
+                   factoria = conexion.Factoria.Find(factoriaId);
                 }
                 catch (Exception)
                 {
@@ -46,14 +49,14 @@ namespace BLL
             }
             return factoria;
         }
-        public static bool Eliminar(Factorias Existente)
+        public static bool Eliminar(Factorias existente)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Entry(Existente).State = EntityState.Deleted;
+                    conexion.Entry(existente).State = EntityState.Deleted;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -106,6 +109,24 @@ namespace BLL
                 }
             }
             return identity;
+        }
+        public static int RNC(int factoriaId)
+        {
+            int rnc = 0;
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    Factorias fact = conexion.Factoria.Where(f => f.FactoriaId == factoriaId).FirstOrDefault();
+                    rnc = fact.FactoriaRNC;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return rnc;
         }
     }
 }

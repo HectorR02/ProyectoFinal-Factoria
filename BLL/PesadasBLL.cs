@@ -19,7 +19,10 @@ namespace BLL
             {
                 try
                 {
-                    conexion.Pesada.Add(pesada);
+                    if (Buscar(pesada.PesadaId) == null)
+                        conexion.Pesada.Add(pesada);
+                    else
+                        conexion.Entry(pesada).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }

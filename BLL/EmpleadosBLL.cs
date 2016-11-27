@@ -10,14 +10,17 @@ namespace BLL
 {
     public class EmpleadosBLL
     {
-        public static bool Insertar(Empleados Nuevo)
+        public static bool Insertar(Empleados nuevo)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Empleado.Add(Nuevo);
+                    if (Buscar(nuevo.EmpleadoId) == null)
+                        conexion.Empleado.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -29,14 +32,14 @@ namespace BLL
             }
             return resultado;
         }
-        public static Empleados Buscar(int EmpleadoId)
+        public static Empleados Buscar(int empleadoId)
         {
             var empleado = new Empleados();
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    empleado = conexion.Empleado.Find(EmpleadoId);
+                    empleado = conexion.Empleado.Find(empleadoId);
                 }
                 catch (Exception)
                 {
@@ -46,14 +49,14 @@ namespace BLL
             }
             return empleado;
         }
-        public static bool Eliminar(Empleados Existente)
+        public static bool Eliminar(Empleados existente)
         {
             bool resultado = false;
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    conexion.Entry(Existente).State = EntityState.Deleted;
+                    conexion.Entry(existente).State = EntityState.Deleted;
                     conexion.SaveChanges();
                     resultado = true;
                 }

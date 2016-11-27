@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinal_Factoria.Registros
 {
-    partial class RegistroReciboRecepcionProducto
+    partial class ConsultaReciboRecepcionProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -505,12 +505,14 @@
             // RecibimosDeComboBox
             // 
             this.RecibimosDeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RecibimosDeComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RecibimosDeComboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecibimosDeComboBox.FormattingEnabled = true;
             this.RecibimosDeComboBox.Location = new System.Drawing.Point(186, 130);
             this.RecibimosDeComboBox.Name = "RecibimosDeComboBox";
             this.RecibimosDeComboBox.Size = new System.Drawing.Size(303, 23);
             this.RecibimosDeComboBox.TabIndex = 42;
+            this.RecibimosDeComboBox.SelectedIndexChanged += new System.EventHandler(this.RecibimosDeComboBox_SelectedIndexChanged);
             // 
             // RegistroReciboRecepcionProducto
             // 
@@ -559,7 +561,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegistroReciboRecepcionProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroReciboRecepcionProducto";
+            this.Load += new System.EventHandler(this.RegistroReciboRecepcionProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

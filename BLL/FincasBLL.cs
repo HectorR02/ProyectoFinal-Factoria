@@ -17,7 +17,10 @@ namespace BLL
             {
                 try
                 {
-                    conexion.Finca.Add(nuevo);
+                    if (Buscar(nuevo.FincaId) == null)
+                        conexion.Finca.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
@@ -28,14 +31,14 @@ namespace BLL
             }
             return resultado;
         }
-        public static Fincas Buscar(int NumeroParcela)
+        public static Fincas Buscar(int fincaId)
         {
             var finca = new Fincas();
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    finca = conexion.Finca.Find(NumeroParcela);
+                    finca = conexion.Finca.Find(fincaId);
                 }
                 catch (Exception)
                 {
@@ -102,6 +105,61 @@ namespace BLL
                 }
             }
             return identity;
+        }
+        public static bool Insertar(List<Fincas> fincas)
+        {
+            bool resultado = false;
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    conexion.Finca.AddRange(fincas);
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return resultado;
+        }
+        public static List<Fincas> GetList(int productorId)
+        {
+            var lista = new List<Fincas>();
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    lista = conexion.Finca.Where(f => f.ProductorId == productorId).ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
+        }
+        public static bool Eliminar(int productorId)
+        {
+            bool resultado = false;
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    conexion.Finca.RemoveRange(conexion.Finca.Where(f => f.ProductorId == productorId));
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return resultado;
         }
     }
 }

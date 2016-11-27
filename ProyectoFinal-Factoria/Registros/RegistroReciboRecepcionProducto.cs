@@ -1,23 +1,41 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal_Factoria.Registros
 {
-    public partial class RegistroReciboRecepcionProducto : Form
+    public partial class ConsultaReciboRecepcionProducto : Form
     {
-        public RegistroReciboRecepcionProducto()
+        public ConsultaReciboRecepcionProducto()
         {
             InitializeComponent();
-            EntradaNoTextBox.Focus();
-            RecibimosDeComboBox.Items.Add("Juan Perez");
+            int id = BLL.RecibosRecepcionProductosBLL.Identity();
+            if (id > 1 || BLL.RecibosRecepcionProductosBLL.GetList().Count > 0)
+                EntradaNoTextBox.Text = (id + 1).ToString();
+            else
+                EntradaNoTextBox.Text = id.ToString();            
+        }
+
+        private void CargarProductores()
+        {
+            while (true)
+            {
+                List<Productores> lista = BLL.ProductoresBLL.GetList();
+                if (lista.Count <= 0)
+                {
+                    MessageBox.Show("No hay productores registrados debes registrar alguno\nantes de seguir con este proceso", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    var ventana = new RegistroProductor();
+                    ventana.ShowDialog();
+                }
+                else
+                {
+                    RecibimosDeComboBox.ValueMember = "ProductorId";
+                    RecibimosDeComboBox.DisplayMember = "Nombres";
+                    RecibimosDeComboBox.DataSource = lista;
+                    break;
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,7 +108,7 @@ namespace ProyectoFinal_Factoria.Registros
             var Ced = CedulaProductorMaskedTextBox.Text.Split('-');
             var cdula = Ced[0] + Ced[1] + Ced[2];
             var Recibo = new RecibosRecepcionProductos();
-            Recibo.NumeroRecibo = 1;//Convert.ToInt32(EntradaNoTextBox.Text);
+            Recibo.NumeroRecibo = Utileria.ToInt(EntradaNoTextBox.Text);
             Recibo.Fecha = FechaDateTimePicker.Value;
             Recibo.NombreProductor = RecibimosDeComboBox.SelectedItem.ToString();
             Recibo.CedulaProductor = Convert.ToInt64(cdula);
@@ -116,6 +134,20 @@ namespace ProyectoFinal_Factoria.Registros
             var Rep = new VentanasReportes.ReporteReciboRecepcionProducto();
             Rep.NumeroRecibo = Convert.ToInt32(EntradaNoTextBox.Text);
             Rep.Show();
+        }
+        
+        private void RegistroReciboRecepcionProducto_Load(object sender, EventArgs e)
+        {
+            CargarProductores();
+        }
+
+        private void RecibimosDeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var productor = BLL.ProductoresBLL.Buscar((int)RecibimosDeComboBox.SelectedValue);
+            if (productor != null)
+            {
+                CedulaProductorMaskedTextBox.Text = productor.Cedula.ToString();
+            }
         }
     }
 }

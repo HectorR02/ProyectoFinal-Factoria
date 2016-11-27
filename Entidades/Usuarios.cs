@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entidades
 {
@@ -9,9 +10,13 @@ namespace Entidades
 
         public string Nombre { get; set; }
 
+        public string Nombres { get; set; }
+
         public string Contraseña { get; set; }
 
         public int TipoUsuarioId { get; set; }
+
+        public int FactoriaId { get; set; }
 
         //Permisos especificacion - [R = Registro, C = Consulta.]
         public int RCertificacion { get; set; }
@@ -70,12 +75,13 @@ namespace Entidades
 
         public int CUsuario { get; set; }
 
-        public Usuarios(int usuarioId, string nombre, string contraseña, int tipoUsuarioId)
+        public Usuarios(int usuarioId, string nombre, string contraseña, int tipoUsuarioId, int factoriaId, string Nombres)
         {
             this.UsuarioId = usuarioId;
             this.Nombre = nombre;
             this.Contraseña = contraseña;
             this.TipoUsuarioId = tipoUsuarioId;
+            this.FactoriaId = factoriaId;
             this.RCertificacion = 0;
             this.RComprobante = 0;
             this.RContrato = 0;
@@ -136,11 +142,12 @@ namespace Entidades
             this.CTipoEmpleado = 0;
             this.CUsuario = 0;
         }
-        public Usuarios(string nombre, string contraseña, int tipoUsuarioId)
+        public Usuarios(string nombre, string contraseña, int tipoUsuarioId, int factoriaId, string Nombres)
         {
             this.Nombre = nombre;
             this.Contraseña = contraseña;
             this.TipoUsuarioId = tipoUsuarioId;
+            this.FactoriaId = factoriaId;
             this.RCertificacion = 0;
             this.RComprobante = 0;
             this.RContrato = 0;

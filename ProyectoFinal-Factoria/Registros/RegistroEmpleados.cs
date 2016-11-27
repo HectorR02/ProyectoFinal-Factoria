@@ -1,12 +1,6 @@
 ﻿using Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal_Factoria.Registros
@@ -16,39 +10,60 @@ namespace ProyectoFinal_Factoria.Registros
         public RegistroEmpleados()
         {
             InitializeComponent();
+
+            Validaciones();
+            CargarTiposEmpleados();
+            CargarFactorias();
+            LimpiarCampos();
+        }
+
+        private void Validaciones()
+        {
             var val = new Utileria(EmpleadoIdTextBox, "Ejemplo: 0001", NombresTextBox, "N");
             var val1 = new Utileria(NombresTextBox, "Ejemplo: Juan Perez", CedulaMaskedTextBox, "L");
             var val3 = new Utileria(DireccionTextBox, "Ejemplo: La Zursa, #3 Sto. Dgo.", TelefonoMaskedTextBox, "LN");
-
-            CargarTiposEmpleados();
-            CargarFactorias();
         }
 
-        //Temporales
         private void CargarTiposEmpleados()
         {
-            var te = new TiposEmpleados("Recepcionista");
-            var te1 = new TiposEmpleados("Pesador");
-            var te2 = new TiposEmpleados("Obrero");
+            var lista = BLL.TiposEmpleadosBLL.GetList();
+            if(lista.Count() <= 0)
+            {
+                var te = new TiposEmpleados("Recepcionista");
+                var te1 = new TiposEmpleados("Pesador");
+                var te2 = new TiposEmpleados("Obrero");
 
-            BLL.TiposEmpleadosBLL.Insertar(te);
-            BLL.TiposEmpleadosBLL.Insertar(te1);
-            BLL.TiposEmpleadosBLL.Insertar(te2);
+                BLL.TiposEmpleadosBLL.Insertar(te);
+                BLL.TiposEmpleadosBLL.Insertar(te1);
+                BLL.TiposEmpleadosBLL.Insertar(te2);
+                lista = BLL.TiposEmpleadosBLL.GetList();
+            }
 
-            TipoEmpleadoComboBox.DataSource = BLL.TiposEmpleadosBLL.GetList();
+            TipoEmpleadoComboBox.DataSource = lista;
             TipoEmpleadoComboBox.ValueMember = "TipoEmpleadoId";
             TipoEmpleadoComboBox.DisplayMember = "TipoEmpleado";
         }
 
         private void CargarFactorias()
         {
-            var fact = new Factorias(354684, "Tenares", "La Zursa, #3 Sto. Dgo.", 8095878767);
+            while(true)
+            {
+                var lista = BLL.FactoriasBLL.GetList();
 
-            BLL.FactoriasBLL.Insertar(fact);
-
-            FactoriaComboBox.DataSource = BLL.FactoriasBLL.GetList();
-            FactoriaComboBox.ValueMember = "FactoriaRNC";
-            FactoriaComboBox.DisplayMember = "NombreSucursal";
+                if (lista.Count() <= 0)
+                {
+                    var ventana = new RegistroFactorias();
+                    ventana.ShowDialog();
+                    lista = BLL.FactoriasBLL.GetList();
+                }
+                else
+                {
+                    FactoriaComboBox.DataSource = lista;
+                    FactoriaComboBox.ValueMember = "FactoriaRNC";
+                    FactoriaComboBox.DisplayMember = "NombreSucursal";
+                    break;
+                }
+            }
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -143,6 +158,7 @@ namespace ProyectoFinal_Factoria.Registros
                             empleado.Direccion = DireccionTextBox.Text;
                             empleado.Telefono = ToInt64(Telf);
                             empleado.TipoEmpleado = "Cajero";
+                            empleado.EmpleadoId = ToInt(EmpleadoIdTextBox.Text);
                             
                             empleado.FactoriaRNC = (int) FactoriaComboBox.SelectedValue;
                         }
@@ -171,6 +187,7 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void LimpiarCampos()
         {
+            int id = BLL.EmpleadosBLL.Identity();
             EmpleadoIdTextBox.Clear();
             NombresTextBox.Clear();
             CedulaMaskedTextBox.Clear();
@@ -178,7 +195,11 @@ namespace ProyectoFinal_Factoria.Registros
             TelefonoMaskedTextBox.Clear();
             TipoEmpleadoComboBox.SelectedItem = 1;
             FactoriaComboBox.SelectedItem = 1;
-            EmpleadoIdTextBox.Focus();
+            if (id > 1 || BLL.EmpleadosBLL.GetList().Count > 0)
+                EmpleadoIdTextBox.Text = (id + 1).ToString();
+            else
+                EmpleadoIdTextBox.Text = id.ToString();
+            NombresTextBox.Focus();
         }
     }
 }

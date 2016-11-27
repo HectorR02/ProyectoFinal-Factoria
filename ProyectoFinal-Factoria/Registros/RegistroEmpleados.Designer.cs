@@ -98,11 +98,12 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(22, 279);
+            this.label5.Location = new System.Drawing.Point(22, 272);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 24);
             this.label5.TabIndex = 4;
@@ -134,6 +135,8 @@
             // 
             // EmpleadoIdTextBox
             // 
+            this.EmpleadoIdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.EmpleadoIdTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmpleadoIdTextBox.Location = new System.Drawing.Point(26, 50);
             this.EmpleadoIdTextBox.Name = "EmpleadoIdTextBox";
@@ -143,6 +146,8 @@
             // 
             // NombresTextBox
             // 
+            this.NombresTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NombresTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NombresTextBox.Location = new System.Drawing.Point(26, 111);
             this.NombresTextBox.Name = "NombresTextBox";
@@ -164,6 +169,8 @@
             // 
             this.DireccionTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DireccionTextBox.Location = new System.Drawing.Point(26, 240);
+            this.DireccionTextBox.MaximumSize = new System.Drawing.Size(566, 26);
+            this.DireccionTextBox.MinimumSize = new System.Drawing.Size(566, 26);
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(566, 26);
             this.DireccionTextBox.TabIndex = 10;
@@ -171,8 +178,10 @@
             // 
             // TelefonoMaskedTextBox
             // 
+            this.TelefonoMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TelefonoMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(26, 306);
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(26, 299);
             this.TelefonoMaskedTextBox.Mask = "(999) 999 - 9999";
             this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
             this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(566, 26);
@@ -181,6 +190,8 @@
             // 
             // FactoriaComboBox
             // 
+            this.FactoriaComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FactoriaComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FactoriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FactoriaComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -193,6 +204,7 @@
             // 
             // NuevoButton
             // 
+            this.NuevoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.NuevoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NuevoButton.FlatAppearance.BorderSize = 0;
             this.NuevoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -210,6 +222,7 @@
             // 
             // BuscarButton
             // 
+            this.BuscarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BuscarButton.FlatAppearance.BorderSize = 0;
             this.BuscarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -227,6 +240,7 @@
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.EliminarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EliminarButton.FlatAppearance.BorderSize = 0;
             this.EliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -244,6 +258,7 @@
             // 
             // GuardarButton
             // 
+            this.GuardarButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.GuardarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GuardarButton.FlatAppearance.BorderSize = 0;
             this.GuardarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -278,7 +293,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoFinal_Factoria.Properties.Resources.cacao_1_318x212;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(619, 431);
+            this.ClientSize = new System.Drawing.Size(617, 422);
             this.Controls.Add(this.TipoEmpleadoComboBox);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
@@ -297,7 +312,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(633, 461);
+            this.MinimumSize = new System.Drawing.Size(633, 461);
             this.Name = "RegistroEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Empleados";
             this.ResumeLayout(false);
             this.PerformLayout();

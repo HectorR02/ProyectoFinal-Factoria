@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -17,27 +18,30 @@ namespace BLL
             {
                 try
                 {
-                    conexion.Productor.Add(nuevo);
+                    if (Buscar(nuevo.ProductorId) == null)
+                        conexion.Productor.Add(nuevo);
+                    else
+                        conexion.Entry(nuevo).State = EntityState.Modified;
                     conexion.SaveChanges();
                     resultado = true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    MessageBox.Show(e.ToString());
                     throw;
                 }
             }
 
             return resultado;
         }
-        public static Productores Buscar(int ProductorId)
+        public static Productores Buscar(int productorId)
         {
             var productor = new Productores();
             using (var conexion = new FactoriaDB())
             {
                 try
                 {
-                    productor = conexion.Productor.Find(ProductorId);
+                    productor = conexion.Productor.Find(productorId);
                 }
                 catch (Exception)
                 {

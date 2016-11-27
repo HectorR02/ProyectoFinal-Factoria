@@ -1,15 +1,17 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entidades
 {
     public class ComprobanteRecepcionCacaos
     {
-        [Key]
+        [Key] [Browsable(false)]
         public int NumeroComprobante { get; set; }
 
         public DateTime Fecha { get; set; }
 
+        [Browsable(false)]
         public string  Asociacion { get; set; }
 
         public string NombreProductor { get; set; }
@@ -40,6 +42,7 @@ namespace Entidades
 
         public string EntregadoPor { get; set; }
 
+        [Browsable(false)]
         public int ProductorId { get; set; }
 
         public Double TotalQuintales { get; set; }

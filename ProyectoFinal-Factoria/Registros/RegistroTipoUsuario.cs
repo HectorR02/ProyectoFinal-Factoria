@@ -58,9 +58,13 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void LimpiarCampos()
         {
+            int id = BLL.TiposDeUsuariosBLL.Identity();
             tipoUsuarioIdTextBox.Clear();
             nombreTextBox.Clear();
-            tipoUsuarioIdTextBox.Text = (BLL.TiposDeUsuariosBLL.Identity() + 1).ToString();
+            if (id > 1 || BLL.TiposDeUsuariosBLL.GetList().Count > 0)
+                tipoUsuarioIdTextBox.Text = (id + 1).ToString();
+            else
+                tipoUsuarioIdTextBox.Text = id.ToString();
             nombreTextBox.Focus();
         }
     }

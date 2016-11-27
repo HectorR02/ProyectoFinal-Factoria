@@ -16,50 +16,39 @@ namespace ProyectoFinal_Factoria.Consultas
         public ConsultaContratos()
         {
             InitializeComponent();
-            BLL.ContratosBLL.Insertar(new Contratos()
+
+            CargarFactorias();
+            DesdedateTimePicker.Value = HastadateTimePicker.Value = DateTime.Now;
+        }
+
+        private void CargarFactorias()
+        {
+            while (true)
             {
-                NumeroContrato = 1,
-                FechaEmision = DateTime.Today,
-                Detalle = "Algo ahi",
-                NombreProductor = "Jose Mendes",
-                CedulaProductor = 96325874102,
-                Quintales = 15,
-                PrecioPorQuintal = 12554,
-                FirmaAutorizada = "Juan Alberto",
-                ProductorId = 2,
-                FactoriaRNC = 365461321
-            });
-            BLL.ContratosBLL.Insertar(new Contratos()
-            {
-                NumeroContrato = 1,
-                FechaEmision = DateTime.Today,
-                Detalle = "Algo ahi",
-                NombreProductor = "Joselito",
-                CedulaProductor = 96325874102,
-                Quintales = 15,
-                PrecioPorQuintal = 12554,
-                FirmaAutorizada = "Juan Alberto",
-                ProductorId = 2,
-                FactoriaRNC = 365461321
-            });
-            BLL.ContratosBLL.Insertar(new Contratos()
-            {
-                NumeroContrato = 1,
-                FechaEmision = DateTime.Today,
-                Detalle = "Algo ahi",
-                NombreProductor = "Hector",
-                CedulaProductor = 96325874102,
-                Quintales = 15,
-                PrecioPorQuintal = 12554,
-                FirmaAutorizada = "Juan Alberto",
-                ProductorId = 2,
-                FactoriaRNC = 365461321
-            });
+                var lista = BLL.FactoriasBLL.GetList();
+
+                if(lista.Count() <= 0)
+                {
+                    MessageBox.Show("Para continuar con este proceso registre\nal menos una 'Factoria'", "-- No hay 'Factorias' registradas --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    var ventana = new Registros.RegistroFactorias();
+                    ventana.ShowDialog();
+                }
+                else
+                {
+                    FactoriascomboBox.DataSource = lista;
+                    FactoriascomboBox.ValueMember = "FactoriaId";
+                    FactoriascomboBox.DisplayMember = "NombreSucursal";
+                    break;
+                }
+            }
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            var contratos = BLL.ContratosBLL.GetList();
+            var factoria = BLL.FactoriasBLL.Buscar((int)FactoriascomboBox.SelectedValue);
+            var contratos = BLL.ContratosBLL.GetList(factoria.FactoriaRNC, DesdedateTimePicker.Value, HastadateTimePicker.Value);
+            ContratosDataGridView.DataSource = null;
             ContratosDataGridView.DataSource = contratos;
         }
     }
