@@ -8,6 +8,7 @@ namespace ProyectoFinal_Factoria.Registros
     public partial class RegistroCompobanteRecepcionCacao : Form
     {
         private List<Pesadas> pesadas;
+        private ErrorProvider campoObligatorio;
         public RegistroCompobanteRecepcionCacao()
         {
             InitializeComponent();
@@ -18,9 +19,10 @@ namespace ProyectoFinal_Factoria.Registros
             CargarEstadoProd();
             LimpiarCampos();
             CargarProductores();
+            campoObligatorio = new ErrorProvider();
             pesadas = new List<Pesadas>();
         }
-        
+
         private void CargarProductores()
         {
             while (true)
@@ -115,19 +117,30 @@ namespace ProyectoFinal_Factoria.Registros
             EstadoProductoComboBox.ValueMember = "EstadoId";
             EstadoProductoComboBox.DisplayMember = "Estado";
         }
-
+        
         private void Validaciones()
         {
             var val = new Utileria(NumeroComprobanteTextBox, "Ejemplo: 001", AsociacionTextBox, "N");
             var val1 = new Utileria(AsociacionTextBox, "Ejemplo: Productores Independientes", ProductorIdTextBox, "LN");
             var val2 = new Utileria(ProductorIdTextBox, "Ejemplo: 001", CedulaMaskedTextBox, "N");
 
+            var val3 = new Utileria(SacostextBox1, "Ej.: 001", CamionLlenotextBox2, "N");
+            var val4 = new Utileria(CamionLlenotextBox2, "Ej.: 001", CamionVaciotextBox3, "N");
+            var val5 = new Utileria(CamionVaciotextBox3, "Ej.: 001", KgBrutotextBox4, "N");
+            var val6 = new Utileria(KgBrutotextBox4, "Ej.: 001", FactorConversiontextBox5, "N");
+            var val7 = new Utileria(FactorConversiontextBox5, "Ej.: 001", QuintalesSecostextBox, "N");
+            var val8 = new Utileria(QuintalesSecostextBox, "Ej.: 001", SacostextBox1, "N");
 
             var val31 = new Utileria(HumedadTextBox, "Ej.: 2", BasuraTextBox, "N");
             var val32 = new Utileria(BasuraTextBox, "Ej.: 3", MohoTextBox, "N");
             var val33 = new Utileria(MohoTextBox, "Ej.: 4", ChoferTextBox, "N");
+
+            var val34 = new Utileria(ChoferTextBox, "Ej.: 4", TipoTransporteTextBox, "L");
+            var val35 = new Utileria(TipoTransporteTextBox, "Ej.: 4", PlacaTextBox, "L");
+            var val36 = new Utileria(PlacaTextBox, "Ej.: 4", ZonaTextBox, "LN");
+            var val37 = new Utileria(ZonaTextBox, "Ej.: 4", ChoferTextBox, "LN");
         }
-        
+
         private void RegistroCompobanteRecepcionCacao_Load(object sender, EventArgs e)
         {
 
@@ -232,19 +245,32 @@ namespace ProyectoFinal_Factoria.Registros
         private bool CamposLlenos()
         {
             bool resultado = false;
-            if (!string.IsNullOrEmpty(NumeroComprobanteTextBox.Text))
-                if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
-                    if (!string.IsNullOrEmpty(ProductorComboBox.Text))
-                        if (CedulaMaskedTextBox.MaskFull)
-                            if (!string.IsNullOrEmpty(TipoProductoComboBox.Text))
-                                if (!string.IsNullOrEmpty(CertificacionProductoComboBox.Text))
-                                    if (!string.IsNullOrEmpty(EstadoProductoComboBox.Text))
+            if (NumeroComprobanteTextBox.Text != string.Empty)
+                if (ProductorIdTextBox.Text != string.Empty)
+                    if (CedulaMaskedTextBox.MaskFull)
+                        if (ChoferTextBox.Text != string.Empty)
+                            if (TipoTransporteTextBox.Text != string.Empty)
+                                if (PlacaTextBox.Text != string.Empty)
+                                    if (ZonaTextBox.Text != string.Empty)
                                         if (pesadas.Count > 0)
-                                            if (!string.IsNullOrEmpty(ChoferTextBox.Text))
-                                                if (!string.IsNullOrEmpty(PlacaTextBox.Text))
-                                                    if (!string.IsNullOrEmpty(ZonaTextBox.Text))
-                                                        if (!string.IsNullOrEmpty(TipoTransporteTextBox.Text))
-                                                            resultado = true;
+                                            resultado = true;
+                                        else
+                                            MessageBox.Show("No hay pesadas registradas");
+                                    else
+                                        campoObligatorio.SetError(ZonaTextBox, "Este campo es obligatorio");
+                                else
+                                    campoObligatorio.SetError(PlacaTextBox, "Este campo es obligatorio");
+                            else
+                                campoObligatorio.SetError(TipoTransporteTextBox, "Este campo es obligatorio");
+                        else
+                            campoObligatorio.SetError(ChoferTextBox, "Este campo es obligatorio");
+                    else
+                        campoObligatorio.SetError(CedulaMaskedTextBox, "Este campo es obligatorio");
+                else
+                    campoObligatorio.SetError(ProductorIdTextBox, "Este campo es obligatorio");
+            else
+                campoObligatorio.SetError(NumeroComprobanteTextBox, "Este campo es obligatorio");
+
             return resultado;
         }
 
@@ -366,7 +392,7 @@ namespace ProyectoFinal_Factoria.Registros
         private void ProductorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var productor = BLL.ProductoresBLL.Buscar((int)ProductorComboBox.SelectedValue);
-            if(productor != null)
+            if (productor != null)
             {
                 AsociacionTextBox.Text = productor.Asociacion;
                 ProductorIdTextBox.Text = productor.ProductorId.ToString();

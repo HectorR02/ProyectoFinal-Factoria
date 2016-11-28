@@ -11,7 +11,18 @@ namespace ProyectoFinal_Factoria.Registros
         {
             InitializeComponent();
 
+            ValidarCampos();
             LimpiarCampos();
+        }
+
+        private void ValidarCampos()
+        {
+            var val = new Utileria(IDtextBox, "Ej.: 0001", RNCtextBox, "N");
+            var val1 = new Utileria(RNCtextBox, "Ej.: 4789", NombretextBox, "N");
+            var val2 = new Utileria(NombretextBox, "Ej.: Juan González", DirecciontextBox, "L");
+            var val3 = new Utileria(DirecciontextBox, "Ej.: SFM, Rep. Dom.", TelefonotextBox, "LN");
+            var val4 = new Utileria(TelefonotextBox, "Ej.: 8095746213", NombretextBox, "N");
+
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -28,27 +39,41 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void LlenarCampos(Factorias factoria)
         {
-            if(!string.IsNullOrEmpty(RNCtextBox.Text))
+            string mensaje = "Este campo es obligatorio";
+            if(RNCtextBox.Text != string.Empty)
             {
-                if(!string.IsNullOrEmpty(NombretextBox.Text))
+                if(NombretextBox.Text != string.Empty)
                 {
-                    if(!string.IsNullOrEmpty(DirecciontextBox.Text))
+                    if(DirecciontextBox.Text != string.Empty)
                     {
-                        if(!string.IsNullOrEmpty(TelefonotextBox.Text))
+                        if(TelefonotextBox.Text != string.Empty)
                         {
+                            factoria = new Factorias();
                             factoria.FactoriaRNC = Utileria.ToInt(RNCtextBox.Text);
                             factoria.NombreSucursal = NombretextBox.Text;
                             factoria.Direccion = DirecciontextBox.Text;
                             factoria.Telefono = Utileria.ToInt64(TelefonotextBox.Text);
                             factoria.FactoriaId = Utileria.ToInt(IDtextBox.Text);
                         }
-                        else { }
+                        else {
+                            CampoObligatorioerrorProvider.SetError(TelefonotextBox, mensaje);
+                            TelefonotextBox.Focus();
+                        }
                     }
-                    else { }
+                    else {
+                        CampoObligatorioerrorProvider.SetError(DirecciontextBox, mensaje);
+                        DirecciontextBox.Focus();
+                    }
                 }
-                else { }
+                else {
+                    CampoObligatorioerrorProvider.SetError(NombretextBox, mensaje);
+                    NombretextBox.Focus();
+                }
             }
-            else { }            
+            else {
+                CampoObligatorioerrorProvider.SetError(RNCtextBox, mensaje);
+                RNCtextBox.Focus();
+            }            
         }
 
         private void CargarCampos(Factorias factoria)
@@ -81,14 +106,17 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            var factoria = new Factorias();
+            Factorias factoria = null;
             LlenarCampos(factoria);
-            if (BLL.FactoriasBLL.Insertar(factoria))
+            if(factoria != null)
             {
-                MessageBox.Show("Ha registrado una nueva 'Factoria'", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (BLL.FactoriasBLL.Insertar(factoria))
+                {
+                    MessageBox.Show("Ha registrado una nueva 'Factoria'", "-- Transacción Exitosa --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("No se pudo registrar", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-                MessageBox.Show("No se pudo registrar", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)

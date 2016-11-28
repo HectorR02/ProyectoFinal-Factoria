@@ -108,15 +108,16 @@ namespace ProyectoFinal_Factoria.Registros
 
         private Contratos CrearContrato()
         {
+            string mensaje = "Este campo es obligatorio";
             Contratos nuevo = null;
-            if (!string.IsNullOrEmpty(NoContratoTextBox.Text))
-                if (!string.IsNullOrEmpty(FactoriaRNCTextBox.Text))
-                    if (!string.IsNullOrEmpty(FirmaAutoridadTextBox.Text))
-                        if (!string.IsNullOrEmpty(ProductorIdTextBox.Text))
+            if (NoContratoTextBox.Text != string.Empty)
+                if (FactoriaRNCTextBox.Text != string.Empty)
+                    if (FirmaAutoridadTextBox.Text != string.Empty)
+                        if (ProductorIdTextBox.Text != string.Empty)
                             if (CedulaProductorMaskedTextBox.MaskFull)
-                                if (!string.IsNullOrEmpty(QuintalesTextBox.Text))
-                                    if (!string.IsNullOrEmpty(PrecioXqUintalTextBox.Text))
-                                        if (!string.IsNullOrEmpty(DetallesRichTextBox.Text))
+                                if (QuintalesTextBox.Text != string.Empty)
+                                    if (PrecioXqUintalTextBox.Text != string.Empty)
+                                        if (DetallesRichTextBox.Text != string.Empty)
                                         {
                                             nuevo = new Contratos();
                                             char[] separator = { '(', ')', ' ', '-' };
@@ -135,35 +136,43 @@ namespace ProyectoFinal_Factoria.Registros
                                         }
                                         else
                                         {
-
+                                            CampoObligatorioerrorProvider.SetError(DetallesRichTextBox, mensaje);
+                                            DetallesRichTextBox.Focus();
                                         }
                                     else
                                     {
-
+                                        CampoObligatorioerrorProvider.SetError(PrecioXqUintalTextBox, mensaje);
+                                        PrecioXqUintalTextBox.Focus();
                                     }
                                 else
                                 {
-
+                                    CampoObligatorioerrorProvider.SetError(QuintalesTextBox, mensaje);
+                                    QuintalesTextBox.Focus();
                                 }
                             else
                             {
-
+                                CampoObligatorioerrorProvider.SetError(CedulaProductorMaskedTextBox, mensaje);
+                                CedulaProductorMaskedTextBox.Focus();
                             }
                         else
                         {
-
+                            CampoObligatorioerrorProvider.SetError(ProductorIdTextBox, mensaje);
+                            ProductorIdTextBox.Focus();
                         }
                     else
                     {
-
+                        CampoObligatorioerrorProvider.SetError(FirmaAutoridadTextBox, mensaje);
+                        FirmaAutoridadTextBox.Focus();
                     }
                 else
                 {
-
+                    CampoObligatorioerrorProvider.SetError(FactoriaRNCTextBox, mensaje);
+                    FactoriaRNCTextBox.Focus();
                 }
             else
             {
-
+                CampoObligatorioerrorProvider.SetError(NoContratoTextBox, mensaje);
+                NoContratoTextBox.Focus();
             }
             return nuevo;
         }
@@ -210,10 +219,12 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void ValidarCampos()
         {
-            var val = new Utileria(NoContratoTextBox, "Ej.: 0001", FirmaAutoridadTextBox, "N");
+            var val = new Utileria(NoContratoTextBox, "Ej.: 0001", FactoriaRNCTextBox, "N");
+            var val5 = new Utileria(FactoriaRNCTextBox, "Ej.: 0001", FirmaAutoridadTextBox, "N");
             var val1 = new Utileria(FirmaAutoridadTextBox, "Ej.: Jose González", QuintalesTextBox, "L");
+            var val4 = new Utileria(ProductorIdTextBox, "Ej.: 13", DetallesRichTextBox, "LN");
             var val2 = new Utileria(QuintalesTextBox, "Ej.: 13", PrecioXqUintalTextBox, "N");
-            var val3 = new Utileria(PrecioXqUintalTextBox, "Ej.: 13", DetallesRichTextBox, "LN");
+            var val3 = new Utileria(PrecioXqUintalTextBox, "Ej.: 13", ProductorIdTextBox, "LN");
         }
 
         private void ProductorescomboBox_SelectedValueChanged(object sender, EventArgs e)

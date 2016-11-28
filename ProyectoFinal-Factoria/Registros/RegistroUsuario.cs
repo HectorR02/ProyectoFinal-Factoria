@@ -44,10 +44,12 @@ namespace ProyectoFinal_Factoria.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             Usuarios usuario = null;
-            if (!string.IsNullOrEmpty(UsuarioTextBox.Text))
+            string Mensaje = "Este campo es obligatorio";
+
+            if (UsuarioTextBox.Text != string.Empty)
             {
-                if (!string.IsNullOrEmpty(ContraseñaTextBox.Text))
-                    if (!string.IsNullOrEmpty(ConfirmarTextBox.Text))
+                if (ContraseñaTextBox.Text != string.Empty)
+                    if (ConfirmarTextBox.Text != string.Empty)
                     {
                         if (ContraseñaTextBox.Text.Equals(ConfirmarTextBox.Text))
                         {
@@ -62,7 +64,8 @@ namespace ProyectoFinal_Factoria.Registros
                         }
                         else
                         {
-                            MessageBox.Show("Las contraseñas son distintas", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            CampoObligatorioerrorProvider.SetError(ContraseñaTextBox, "Las contraseñas no coinciden");
+                            CampoObligatorioerrorProvider.SetError(ConfirmarTextBox, "Las contraseñas no coinciden");
                             ConfirmarTextBox.Clear();
                             ContraseñaTextBox.Clear();
                             ContraseñaTextBox.Focus();
@@ -70,19 +73,18 @@ namespace ProyectoFinal_Factoria.Registros
                     }
                     else
                     {
-                        MessageBox.Show("No puedes dejar campos vacíos", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CampoObligatorioerrorProvider.SetError(ConfirmarTextBox, Mensaje);
                         ConfirmarTextBox.Focus();
                     }
                 else
                 {
-                    MessageBox.Show("No puedes dejar campos vacíos", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CampoObligatorioerrorProvider.SetError(ContraseñaTextBox, Mensaje);
                     ContraseñaTextBox.Focus();
                 }
-
             }
             else
             {
-                MessageBox.Show("No puedes dejar campos vacíos", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CampoObligatorioerrorProvider.SetError(UsuarioTextBox,Mensaje);
                 UsuarioTextBox.Focus();
             }
         }

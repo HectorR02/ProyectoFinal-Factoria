@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +53,8 @@
             this.DetallesRichTextBox = new System.Windows.Forms.RichTextBox();
             this.FactoriaRNCTextBox = new System.Windows.Forms.TextBox();
             this.ProductorescomboBox = new System.Windows.Forms.ComboBox();
+            this.CampoObligatorioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -350,6 +353,10 @@
             this.ProductorescomboBox.TabIndex = 27;
             this.ProductorescomboBox.SelectedValueChanged += new System.EventHandler(this.ProductorescomboBox_SelectedValueChanged);
             // 
+            // CampoObligatorioerrorProvider
+            // 
+            this.CampoObligatorioerrorProvider.ContainerControl = this;
+            // 
             // RegistroContratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,6 +392,7 @@
             this.Name = "RegistroContratos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Contratos";
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,5 +424,6 @@
         private System.Windows.Forms.RichTextBox DetallesRichTextBox;
         private System.Windows.Forms.TextBox FactoriaRNCTextBox;
         private System.Windows.Forms.ComboBox ProductorescomboBox;
+        private System.Windows.Forms.ErrorProvider CampoObligatorioerrorProvider;
     }
 }

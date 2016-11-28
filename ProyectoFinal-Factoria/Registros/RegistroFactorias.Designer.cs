@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -42,6 +43,8 @@
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.IDtextBox = new System.Windows.Forms.TextBox();
             this.RNCtextBox = new System.Windows.Forms.TextBox();
+            this.CampoObligatorioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // BuscarButton
@@ -173,38 +176,52 @@
             // 
             // TelefonotextBox
             // 
-            this.TelefonotextBox.Location = new System.Drawing.Point(105, 190);
+            this.TelefonotextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelefonotextBox.Location = new System.Drawing.Point(105, 187);
             this.TelefonotextBox.Name = "TelefonotextBox";
-            this.TelefonotextBox.Size = new System.Drawing.Size(366, 20);
+            this.TelefonotextBox.Size = new System.Drawing.Size(366, 22);
             this.TelefonotextBox.TabIndex = 9;
+            this.TelefonotextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DirecciontextBox
             // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(105, 133);
+            this.DirecciontextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DirecciontextBox.Location = new System.Drawing.Point(105, 130);
             this.DirecciontextBox.Name = "DirecciontextBox";
-            this.DirecciontextBox.Size = new System.Drawing.Size(366, 20);
+            this.DirecciontextBox.Size = new System.Drawing.Size(366, 22);
             this.DirecciontextBox.TabIndex = 10;
+            this.DirecciontextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(105, 83);
+            this.NombretextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombretextBox.Location = new System.Drawing.Point(105, 80);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(366, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(366, 22);
             this.NombretextBox.TabIndex = 11;
+            this.NombretextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // IDtextBox
             // 
-            this.IDtextBox.Location = new System.Drawing.Point(105, 36);
+            this.IDtextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDtextBox.Location = new System.Drawing.Point(105, 33);
             this.IDtextBox.Name = "IDtextBox";
-            this.IDtextBox.Size = new System.Drawing.Size(100, 20);
+            this.IDtextBox.Size = new System.Drawing.Size(100, 22);
             this.IDtextBox.TabIndex = 12;
+            this.IDtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RNCtextBox
             // 
-            this.RNCtextBox.Location = new System.Drawing.Point(252, 36);
+            this.RNCtextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RNCtextBox.Location = new System.Drawing.Point(252, 33);
             this.RNCtextBox.Name = "RNCtextBox";
-            this.RNCtextBox.Size = new System.Drawing.Size(132, 20);
+            this.RNCtextBox.Size = new System.Drawing.Size(132, 22);
             this.RNCtextBox.TabIndex = 13;
+            this.RNCtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CampoObligatorioerrorProvider
+            // 
+            this.CampoObligatorioerrorProvider.ContainerControl = this;
             // 
             // RegistroFactorias
             // 
@@ -231,6 +248,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroFactorias";
             this.Load += new System.EventHandler(this.RegistroFactorias_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +270,6 @@
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.TextBox IDtextBox;
         private System.Windows.Forms.TextBox RNCtextBox;
+        private System.Windows.Forms.ErrorProvider CampoObligatorioerrorProvider;
     }
 }

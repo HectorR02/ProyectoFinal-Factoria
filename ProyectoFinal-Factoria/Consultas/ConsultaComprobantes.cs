@@ -47,5 +47,12 @@ namespace ProyectoFinal_Factoria.Consultas
 
             
         }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            var reporte = new VentanasReportes.ReporteComprobante();
+            reporte.ProductorId = (int)ProductorescomboBox.SelectedValue;
+            reporte.Show();
+        }
     }
 }

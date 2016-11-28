@@ -51,5 +51,12 @@ namespace ProyectoFinal_Factoria.Consultas
             ContratosDataGridView.DataSource = null;
             ContratosDataGridView.DataSource = contratos;
         }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            var ventana = new VentanasReportes.ReporteContratoCliente();
+            var fact = BLL.FactoriasBLL.Buscar((int)FactoriascomboBox.SelectedValue);
+            ventana.FactoriaId = fact.FactoriaRNC;
+        }
     }
 }

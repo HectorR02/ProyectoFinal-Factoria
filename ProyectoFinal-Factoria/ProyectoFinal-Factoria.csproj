@@ -157,6 +157,12 @@
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Utileria.cs" />
+    <Compile Include="VentanasReportes\ReporteComprobante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasReportes\ReporteComprobante.Designer.cs">
+      <DependentUpon>ReporteComprobante.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanasReportes\ReporteComprobanteRecepcionCacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     </Compile>
     <Compile Include="VentanasReportes\ReporteContrato.Designer.cs">
       <DependentUpon>ReporteContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasReportes\ReporteContratoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasReportes\ReporteContratoCliente.Designer.cs">
+      <DependentUpon>ReporteContratoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanasReportes\ReporteReciboRecepcionProducto.cs">
       <SubType>Form</SubType>
@@ -225,13 +237,21 @@
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ComprobanteRecepcion.rdlc" />
+    <EmbeddedResource Include="Reportes\ConsultaComprobante.rdlc" />
     <EmbeddedResource Include="Reportes\ReciboRecepcionCacao.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteContrato.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteContratosCliente.rdlc" />
+    <EmbeddedResource Include="VentanasReportes\ReporteComprobante.resx">
+      <DependentUpon>ReporteComprobante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanasReportes\ReporteComprobanteRecepcionCacao.resx">
       <DependentUpon>ReporteComprobanteRecepcionCacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasReportes\ReporteContrato.resx">
       <DependentUpon>ReporteContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasReportes\ReporteContratoCliente.resx">
+      <DependentUpon>ReporteContratoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanasReportes\ReporteReciboRecepcionProducto.resx">
       <DependentUpon>ReporteReciboRecepcionProducto.cs</DependentUpon>

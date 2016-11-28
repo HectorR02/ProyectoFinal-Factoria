@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.TipoEmpleadoComboBox = new System.Windows.Forms.ComboBox();
+            this.CampoObligatorioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label
@@ -287,6 +290,10 @@
             this.TipoEmpleadoComboBox.Size = new System.Drawing.Size(167, 27);
             this.TipoEmpleadoComboBox.TabIndex = 18;
             // 
+            // CampoObligatorioerrorProvider
+            // 
+            this.CampoObligatorioerrorProvider.ContainerControl = this;
+            // 
             // RegistroEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +325,7 @@
             this.Name = "RegistroEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Empleados";
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,5 +351,6 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.ComboBox TipoEmpleadoComboBox;
+        private System.Windows.Forms.ErrorProvider CampoObligatorioerrorProvider;
     }
 }

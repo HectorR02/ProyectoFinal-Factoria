@@ -33,6 +33,25 @@ namespace BLL
             }
             return resultado;
         }
+
+        public static List<ComprobanteRecepcionCacaos> GetList(int productorId)
+        {
+            var lista = new List<ComprobanteRecepcionCacaos>();
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    lista.AddRange(conexion.ComprobanteRecepcionCacao.Where(c => c.ProductorId == productorId));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
+        }
+
         public static ComprobanteRecepcionCacaos Buscar(int numeroComprobante)
         {
             var Comprobante = new ComprobanteRecepcionCacaos();
@@ -94,7 +113,7 @@ namespace BLL
             {
                 try
                 {
-                    Comprobante = conexion.ComprobanteRecepcionCacao.Where(x => x.NombreProductor == nombreProductor && x.CedulaProductor == numeroCedula).SingleOrDefault();
+                    Comprobante = conexion.ComprobanteRecepcionCacao.Where(x => x.NombreProductor == nombreProductor && x.CedulaProductor == numeroCedula).FirstOrDefault();
                 }
                 catch (Exception)
                 {

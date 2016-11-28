@@ -124,5 +124,22 @@ namespace BLL
             }
             return lista;
         }
+        public static List<Contratos> GetList(int factoriaId)
+        {
+            var lista = new List<Contratos>();
+            using (var conexion = new FactoriaDB())
+            {
+                try
+                {
+                    lista.AddRange(conexion.Contrato.Where(c => c.FactoriaRNC == factoriaId));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return lista;
+        }
     }
 }

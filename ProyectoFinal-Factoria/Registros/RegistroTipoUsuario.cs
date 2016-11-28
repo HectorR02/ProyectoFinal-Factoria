@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal_Factoria.Registros
@@ -15,7 +8,15 @@ namespace ProyectoFinal_Factoria.Registros
         public RegistroTipoUsuario()
         {
             InitializeComponent();
+
+            ValidarCampos();
             LimpiarCampos();
+        }
+
+        private void ValidarCampos()
+        {
+            var val = new Utileria(tipoUsuarioIdTextBox, "Ej.: 0001", nombreTextBox, "N");
+            var val1 = new Utileria(nombreTextBox, "Ej.: Juan Isidro", tipoUsuarioIdTextBox, "L");
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -44,10 +45,22 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(nombreTextBox.Text))
-                BLL.TiposDeUsuariosBLL.Insertar(new Entidades.TiposDeUsuarios(nombreTextBox.Text));
+            string mensaje = "Este campo es obligatorio";
+
+            if (tipoUsuarioIdTextBox.Text != string.Empty)
+                if (nombreTextBox.Text != string.Empty)
+                    BLL.TiposDeUsuariosBLL.Insertar(new Entidades.TiposDeUsuarios(nombreTextBox.Text));
+                else
+                {
+                    CampoObligatorioerrorProvider.SetError(nombreTextBox, mensaje);
+                    nombreTextBox.Focus();
+                }
             else
-                MessageBox.Show("No puede dejar campos vacíos", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                CampoObligatorioerrorProvider.SetError(tipoUsuarioIdTextBox, mensaje);
+                tipoUsuarioIdTextBox.Focus();
+            }
+
             LimpiarCampos();
         }
 

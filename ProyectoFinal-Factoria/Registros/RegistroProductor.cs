@@ -25,6 +25,10 @@ namespace ProyectoFinal_Factoria.Registros
         {
             var val = new Utileria(ProductorIdTextBox, "Ejemplo: 0001", NombresTextBox, "N");
             var val1 = new Utileria(NombresTextBox, "Ejemplo: Juan Pérez", CedulaMaskedTextBox, "L");
+            var val2 = new Utileria(AsociaciontextBox, "Ejemplo: Los Organicos", NumeroParcelatextBox, "LN");
+            var val3 = new Utileria(NumeroParcelatextBox, "Ejemplo: 2145", SectortextBox, "N");
+            var val4 = new Utileria(SectortextBox, "Ejemplo: 2145", PropietariotextBox, "LN");
+            var val5 = new Utileria(PropietariotextBox, "Ejemplo: 2145", NumeroParcelatextBox, "L");
         }
 
         private void CargarFactorias()
@@ -78,29 +82,40 @@ namespace ProyectoFinal_Factoria.Registros
         public Productores CrearProductor()
         {
             Productores productor = null;
-
-            if (!string.IsNullOrEmpty(NombresTextBox.Text))
+            string mensaje = "Este campo es obligatorio";
+            if(ProductorIdTextBox.Text != string.Empty)
             {
-                if (CedulaMaskedTextBox.MaskFull)
+                if (NombresTextBox.Text != string.Empty)
                 {
-                    productor = new Productores();
-                    productor.ProductorId = ToInt(ProductorIdTextBox.Text);
-                    var cedula = CedulaMaskedTextBox.Text.Split('-');
-                    string Ced = cedula[0] + cedula[1] + cedula[2];
-                    productor.FactoriaRNC = (int)FactoriaComboBox.SelectedValue;
-                    productor.Nombres = NombresTextBox.Text;
-                    productor.Asociacion = AsociaciontextBox.Text;
-                    productor.Cedula = ToInt64(Ced);
+                    if (CedulaMaskedTextBox.MaskFull)
+                    {
+                        productor = new Productores();
+                        productor.ProductorId = ToInt(ProductorIdTextBox.Text);
+                        var cedula = CedulaMaskedTextBox.Text.Split('-');
+                        string Ced = cedula[0] + cedula[1] + cedula[2];
+                        productor.FactoriaRNC = (int)FactoriaComboBox.SelectedValue;
+                        productor.Nombres = NombresTextBox.Text;
+                        productor.Asociacion = AsociaciontextBox.Text;
+                        productor.Cedula = ToInt64(Ced);
+                    }
+                    else
+                    {
+                        CampoObligatorioerrorProvider.SetError(CedulaMaskedTextBox, mensaje);
+                        CedulaMaskedTextBox.Clear();
+                        CedulaMaskedTextBox.Focus();
+                    }
                 }
                 else
                 {
-                    CedulaMaskedTextBox.Focus();
+                    CampoObligatorioerrorProvider.SetError(NombresTextBox, mensaje);
+                    NombresTextBox.Focus();
                 }
             }
-            else
-            {
-                NombresTextBox.Focus();
+            else {
+                CampoObligatorioerrorProvider.SetError(ProductorIdTextBox, mensaje);
+                ProductorIdTextBox.Focus();
             }
+            
 
             return productor;
         }

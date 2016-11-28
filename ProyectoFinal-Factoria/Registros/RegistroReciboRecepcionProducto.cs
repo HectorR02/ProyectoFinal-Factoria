@@ -10,11 +10,18 @@ namespace ProyectoFinal_Factoria.Registros
         public ConsultaReciboRecepcionProducto()
         {
             InitializeComponent();
+
+            ValidarCampos();
             int id = BLL.RecibosRecepcionProductosBLL.Identity();
             if (id > 1 || BLL.RecibosRecepcionProductosBLL.GetList().Count > 0)
                 EntradaNoTextBox.Text = (id + 1).ToString();
             else
                 EntradaNoTextBox.Text = id.ToString();            
+        }
+
+        private void ValidarCampos()
+        {
+            var val = new Utileria(EntradaNoTextBox, "Ej.: 0001", CedulaProductorMaskedTextBox, "N");
         }
 
         private void CargarProductores()
@@ -40,7 +47,9 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var Rep = new VentanasReportes.ReporteReciboRecepcionProducto();
+            Rep.NumeroRecibo = Convert.ToInt32(EntradaNoTextBox.Text);
+            Rep.Show();
         }
 
         private Int64 ToInt64(string texto)
@@ -105,35 +114,53 @@ namespace ProyectoFinal_Factoria.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            var Ced = CedulaProductorMaskedTextBox.Text.Split('-');
-            var cdula = Ced[0] + Ced[1] + Ced[2];
-            var Recibo = new RecibosRecepcionProductos();
-            Recibo.NumeroRecibo = Utileria.ToInt(EntradaNoTextBox.Text);
-            Recibo.Fecha = FechaDateTimePicker.Value;
-            Recibo.NombreProductor = RecibimosDeComboBox.SelectedItem.ToString();
-            Recibo.CedulaProductor = Convert.ToInt64(cdula);
-            Recibo.AsociacionProductor = AsociacionTextBox.Text;
-            Recibo.Detalle = DetalleTextBox.Text;
-            Recibo.PorcientoSaco = Convert.ToInt32(X100SacosTextBox.Text);
-            Recibo.DescuentoMoho = Convert.ToInt32(X100MohoTextBox.Text);
-            Recibo.DescuentoImpureza = Convert.ToInt32(X100ImpurezaTextBox.Text);
-            Recibo.PorcientoHumedad = Convert.ToInt32(X100HumedadTextBox.Text);
-            Recibo.TotalTara = Convert.ToDecimal(TotalTaraTextBox.Text);
-            Recibo.DescuentoSacos = Convert.ToDecimal(DescSacosTextBox.Text);
-            Recibo.DescuentoMoho = Convert.ToDecimal(DescMohoTextBox.Text);
-            Recibo.DescuentoImpureza = Convert.ToDecimal(DescImpurezaTextBox.Text);
-            Recibo.DescuentoHumedad = Convert.ToDecimal(DescHumedadTextBox.Text);
-            Recibo.FechaRecepcion = FechaRecepcionDateTimePicker.Value;
-            Recibo.Apagar = ApagarRichTextBox.Text;
-            Recibo.Notas = NotasTextBox.Text;
-            Recibo.RecibidoPor = RecibimosDeComboBox.SelectedItem.ToString();
-            Recibo.RealizadoPor = "Yorbelyn Micheel";
-            Recibo.ProductorId = 1;
-            Recibo.FactoriaRNC = 963214587;
-            BLL.RecibosRecepcionProductosBLL.Insertar(Recibo);
-            var Rep = new VentanasReportes.ReporteReciboRecepcionProducto();
-            Rep.NumeroRecibo = Convert.ToInt32(EntradaNoTextBox.Text);
-            Rep.Show();
+            string mensaje = "Este campo es obligatorio";
+
+            if(EntradaNoTextBox.Text != string.Empty)
+            {
+                if(CedulaProductorMaskedTextBox.MaskFull)
+                {
+                    var Ced = CedulaProductorMaskedTextBox.Text.Split('-');
+                    var cdula = Ced[0] + Ced[1] + Ced[2];
+                    var Recibo = new RecibosRecepcionProductos();
+                    Recibo.NumeroRecibo = Utileria.ToInt(EntradaNoTextBox.Text);
+                    Recibo.Fecha = FechaDateTimePicker.Value;
+                    Recibo.NombreProductor = RecibimosDeComboBox.SelectedItem.ToString();
+                    Recibo.CedulaProductor = Convert.ToInt64(cdula);
+                    Recibo.AsociacionProductor = AsociacionTextBox.Text;
+                    Recibo.Detalle = DetalleTextBox.Text;
+                    Recibo.PorcientoSaco = Convert.ToInt32(X100SacosTextBox.Text);
+                    Recibo.DescuentoMoho = Convert.ToInt32(X100MohoTextBox.Text);
+                    Recibo.DescuentoImpureza = Convert.ToInt32(X100ImpurezaTextBox.Text);
+                    Recibo.PorcientoHumedad = Convert.ToInt32(X100HumedadTextBox.Text);
+                    Recibo.TotalTara = Convert.ToDecimal(TotalTaraTextBox.Text);
+                    Recibo.DescuentoSacos = Convert.ToDecimal(DescSacosTextBox.Text);
+                    Recibo.DescuentoMoho = Convert.ToDecimal(DescMohoTextBox.Text);
+                    Recibo.DescuentoImpureza = Convert.ToDecimal(DescImpurezaTextBox.Text);
+                    Recibo.DescuentoHumedad = Convert.ToDecimal(DescHumedadTextBox.Text);
+                    Recibo.FechaRecepcion = FechaRecepcionDateTimePicker.Value;
+                    Recibo.Apagar = ApagarRichTextBox.Text;
+                    Recibo.Notas = NotasTextBox.Text;
+                    Recibo.RecibidoPor = RecibimosDeComboBox.SelectedItem.ToString();
+                    Recibo.RealizadoPor = "Yorbelyn Micheel";
+                    Recibo.ProductorId = 1;
+                    Recibo.FactoriaRNC = 963214587;
+                    BLL.RecibosRecepcionProductosBLL.Insertar(Recibo);
+                    var Rep = new VentanasReportes.ReporteReciboRecepcionProducto();
+                    Rep.NumeroRecibo = Convert.ToInt32(EntradaNoTextBox.Text);
+                    Rep.Show();
+                }
+                else
+                {
+                    CampoObligatorioerrorProvider.SetError(CedulaProductorMaskedTextBox, mensaje);
+                    CedulaProductorMaskedTextBox.Clear();
+                    CedulaProductorMaskedTextBox.Focus();
+                }
+            }else
+            {
+                CampoObligatorioerrorProvider.SetError(CedulaProductorMaskedTextBox, mensaje);
+                EntradaNoTextBox.Focus();
+            }
         }
         
         private void RegistroReciboRecepcionProducto_Load(object sender, EventArgs e)

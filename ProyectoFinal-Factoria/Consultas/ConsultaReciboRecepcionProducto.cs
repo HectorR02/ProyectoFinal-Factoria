@@ -40,7 +40,9 @@ namespace ProyectoFinal_Factoria.Consultas
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var Rep = new VentanasReportes.ReporteReciboRecepcionProducto();
+            Rep.NumeroRecibo = Convert.ToInt32(EntradaNoTextBox.Text);
+            Rep.Show();
         }
 
         private Int64 ToInt64(string texto)

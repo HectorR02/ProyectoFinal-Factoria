@@ -21,7 +21,7 @@ namespace ProyectoFinal_Factoria.Registros
         {
             var val = new Utileria(EmpleadoIdTextBox, "Ejemplo: 0001", NombresTextBox, "N");
             var val1 = new Utileria(NombresTextBox, "Ejemplo: Juan Perez", CedulaMaskedTextBox, "L");
-            var val3 = new Utileria(DireccionTextBox, "Ejemplo: La Zursa, #3 Sto. Dgo.", TelefonoMaskedTextBox, "LN");
+            var val3 = new Utileria(DireccionTextBox, "Ejemplo: La Zursa, #3 Sto. Dgo.", TelefonoMaskedTextBox, "LN");            
         }
 
         private void CargarTiposEmpleados()
@@ -139,6 +139,7 @@ namespace ProyectoFinal_Factoria.Registros
         private Empleados CrearEmpleado()
         {
             Empleados empleado = null;
+            string mensaje = "Este campo es obligatorio";
             if (!string.IsNullOrEmpty(EmpleadoIdTextBox.Text))
             {
                 if (!string.IsNullOrEmpty(NombresTextBox.Text))
@@ -164,22 +165,26 @@ namespace ProyectoFinal_Factoria.Registros
                         }
                         else
                         {
+                            CampoObligatorioerrorProvider.SetError(DireccionTextBox, mensaje);
                             DireccionTextBox.Focus();
                         }
                     }
                     else
                     {
+                        CampoObligatorioerrorProvider.SetError(CedulaMaskedTextBox, mensaje);
                         CedulaMaskedTextBox.Clear();
                         CedulaMaskedTextBox.Focus();
                     }
                 }
                 else
                 {
+                    CampoObligatorioerrorProvider.SetError(NombresTextBox, mensaje);
                     NombresTextBox.Focus();
                 }
             }
             else
             {
+                CampoObligatorioerrorProvider.SetError(EmpleadoIdTextBox, mensaje);
                 EmpleadoIdTextBox.Focus();
             }
             return empleado;

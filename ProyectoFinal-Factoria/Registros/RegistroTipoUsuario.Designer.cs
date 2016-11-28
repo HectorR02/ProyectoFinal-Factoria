@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label tipoUsuarioIdLabel;
             this.BuscarButton = new System.Windows.Forms.Button();
@@ -36,8 +37,10 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.tipoUsuarioIdTextBox = new System.Windows.Forms.TextBox();
+            this.CampoObligatorioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             nombreLabel = new System.Windows.Forms.Label();
             tipoUsuarioIdLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreLabel
@@ -46,7 +49,7 @@
             nombreLabel.BackColor = System.Drawing.Color.Transparent;
             nombreLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nombreLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            nombreLabel.Location = new System.Drawing.Point(19, 83);
+            nombreLabel.Location = new System.Drawing.Point(19, 84);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(63, 19);
             nombreLabel.TabIndex = 5;
@@ -58,7 +61,7 @@
             tipoUsuarioIdLabel.BackColor = System.Drawing.Color.Transparent;
             tipoUsuarioIdLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tipoUsuarioIdLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            tipoUsuarioIdLabel.Location = new System.Drawing.Point(59, 35);
+            tipoUsuarioIdLabel.Location = new System.Drawing.Point(59, 33);
             tipoUsuarioIdLabel.Name = "tipoUsuarioIdLabel";
             tipoUsuarioIdLabel.Size = new System.Drawing.Size(23, 19);
             tipoUsuarioIdLabel.TabIndex = 6;
@@ -130,17 +133,25 @@
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(88, 82);
+            this.nombreTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreTextBox.Location = new System.Drawing.Point(88, 80);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(355, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(355, 22);
             this.nombreTextBox.TabIndex = 6;
+            this.nombreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tipoUsuarioIdTextBox
             // 
-            this.tipoUsuarioIdTextBox.Location = new System.Drawing.Point(88, 34);
+            this.tipoUsuarioIdTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipoUsuarioIdTextBox.Location = new System.Drawing.Point(88, 30);
             this.tipoUsuarioIdTextBox.Name = "tipoUsuarioIdTextBox";
-            this.tipoUsuarioIdTextBox.Size = new System.Drawing.Size(213, 20);
+            this.tipoUsuarioIdTextBox.Size = new System.Drawing.Size(213, 22);
             this.tipoUsuarioIdTextBox.TabIndex = 7;
+            this.tipoUsuarioIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CampoObligatorioerrorProvider
+            // 
+            this.CampoObligatorioerrorProvider.ContainerControl = this;
             // 
             // RegistroTipoUsuario
             // 
@@ -160,6 +171,7 @@
             this.Name = "RegistroTipoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroTipoUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +185,6 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.TextBox tipoUsuarioIdTextBox;
+        private System.Windows.Forms.ErrorProvider CampoObligatorioerrorProvider;
     }
 }

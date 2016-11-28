@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,8 +52,10 @@
             this.NumeroParcelatextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.AsociaciontextBox = new System.Windows.Forms.TextBox();
+            this.CampoObligatorioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.FincasdataGridView)).BeginInit();
             this.FincasProductorgroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -331,6 +334,10 @@
             this.AsociaciontextBox.Size = new System.Drawing.Size(416, 26);
             this.AsociaciontextBox.TabIndex = 15;
             // 
+            // CampoObligatorioerrorProvider
+            // 
+            this.CampoObligatorioerrorProvider.ContainerControl = this;
+            // 
             // RegistroProductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.FincasdataGridView)).EndInit();
             this.FincasProductorgroupBox1.ResumeLayout(false);
             this.FincasProductorgroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +397,6 @@
         private System.Windows.Forms.TextBox SectortextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox AsociaciontextBox;
+        private System.Windows.Forms.ErrorProvider CampoObligatorioerrorProvider;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,6 +68,8 @@
             this.EliminarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.RecibimosDeComboBox = new System.Windows.Forms.ComboBox();
+            this.CampoObligatorioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -514,7 +517,11 @@
             this.RecibimosDeComboBox.TabIndex = 42;
             this.RecibimosDeComboBox.SelectedIndexChanged += new System.EventHandler(this.RecibimosDeComboBox_SelectedIndexChanged);
             // 
-            // RegistroReciboRecepcionProducto
+            // CampoObligatorioerrorProvider
+            // 
+            this.CampoObligatorioerrorProvider.ContainerControl = this;
+            // 
+            // ConsultaReciboRecepcionProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -560,10 +567,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "RegistroReciboRecepcionProducto";
+            this.Name = "ConsultaReciboRecepcionProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroReciboRecepcionProducto";
             this.Load += new System.EventHandler(this.RegistroReciboRecepcionProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CampoObligatorioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,5 +618,6 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.ComboBox RecibimosDeComboBox;
+        private System.Windows.Forms.ErrorProvider CampoObligatorioerrorProvider;
     }
 }

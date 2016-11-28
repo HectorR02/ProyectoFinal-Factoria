@@ -155,6 +155,7 @@
             this.Imprimirbutton.Size = new System.Drawing.Size(42, 34);
             this.Imprimirbutton.TabIndex = 9;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // ConsultaComprobantes
             // 
