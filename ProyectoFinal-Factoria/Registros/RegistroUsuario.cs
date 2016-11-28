@@ -87,6 +87,7 @@ namespace ProyectoFinal_Factoria.Registros
                 CampoObligatorioerrorProvider.SetError(UsuarioTextBox,Mensaje);
                 UsuarioTextBox.Focus();
             }
+            CleanCampos();
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -101,6 +102,7 @@ namespace ProyectoFinal_Factoria.Registros
             }
             else
                 MessageBox.Show("El usuario no existe", "-- Consulta Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            CleanCampos();
         }
 
         private void AsignarPermisos(Usuarios usuario)

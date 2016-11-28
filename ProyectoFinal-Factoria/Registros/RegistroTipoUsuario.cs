@@ -60,7 +60,6 @@ namespace ProyectoFinal_Factoria.Registros
                 CampoObligatorioerrorProvider.SetError(tipoUsuarioIdTextBox, mensaje);
                 tipoUsuarioIdTextBox.Focus();
             }
-
             LimpiarCampos();
         }
 

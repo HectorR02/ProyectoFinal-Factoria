@@ -81,7 +81,7 @@ namespace ProyectoFinal_Factoria.Registros
                 else
                     MessageBox.Show("No Se Ha Podido Llevar A Cabo\nLa Operación Solicitada", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            LimpiarCampos();
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -94,6 +94,7 @@ namespace ProyectoFinal_Factoria.Registros
                 else
                     MessageBox.Show("No Se Ha Podido Llevar A Cabo\nLa Operación Solicitada", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            LimpiarCampos();
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)

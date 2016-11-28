@@ -201,6 +201,7 @@ namespace ProyectoFinal_Factoria.Registros
                         }
                 }
             }
+            LimpiarCampos();
         }
 
         private void Agregar_Click(object sender, EventArgs e)

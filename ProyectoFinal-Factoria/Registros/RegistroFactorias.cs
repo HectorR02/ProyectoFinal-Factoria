@@ -117,6 +117,7 @@ namespace ProyectoFinal_Factoria.Registros
                 else
                     MessageBox.Show("No se pudo registrar", "-- Transacción Fallida --", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            LimpiarCampos();
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -139,6 +140,7 @@ namespace ProyectoFinal_Factoria.Registros
                 MessageBox.Show("No puedes dejar este campo vacio", "-- Aviso --", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 IDtextBox.Focus();
             }
+            LimpiarCampos();
         }
 
         private void RegistroFactorias_Load(object sender, EventArgs e)
