@@ -42,13 +42,13 @@
               <Width>3.03471cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.03471cm</Width>
+              <Width>4.35762cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.03471cm</Width>
+              <Width>3.00825cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.03471cm</Width>
+              <Width>1.73825cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.03471cm</Width>
@@ -226,7 +226,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>FactoriaRNC</rd:DefaultName>
@@ -256,7 +258,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>FechaEmision</rd:DefaultName>
@@ -286,7 +290,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>FirmaAutorizada</rd:DefaultName>
@@ -316,7 +322,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Quintales</rd:DefaultName>
@@ -346,7 +354,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>PrecioPorQuintal</rd:DefaultName>
@@ -390,7 +400,7 @@
         <Top>1.17271cm</Top>
         <Left>0.84349cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.17355cm</Width>
+        <Width>15.17354cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -429,7 +439,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.08333in</Height>
+    <Height>1.375in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>

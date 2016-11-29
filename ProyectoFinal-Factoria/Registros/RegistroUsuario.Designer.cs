@@ -211,8 +211,8 @@
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.Size = new System.Drawing.Size(477, 22);
             this.IdTextBox.TabIndex = 8;
-            this.IdTextBox.Text = "Ej.: 01";
             this.IdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IdTextBox.TextChanged += new System.EventHandler(this.IdTextBox_TextChanged);
             // 
             // UsuarioTextBox
             // 
@@ -224,7 +224,6 @@
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(609, 22);
             this.UsuarioTextBox.TabIndex = 9;
-            this.UsuarioTextBox.Text = "Ej.: Juan Pérez";
             this.UsuarioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ContraseñaTextBox
@@ -237,8 +236,8 @@
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
             this.ContraseñaTextBox.Size = new System.Drawing.Size(609, 22);
             this.ContraseñaTextBox.TabIndex = 10;
-            this.ContraseñaTextBox.Text = "Contraseña";
             this.ContraseñaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ContraseñaTextBox.TextChanged += new System.EventHandler(this.ContraseñaTextBox_TextChanged);
             // 
             // ConfirmarTextBox
             // 
@@ -250,7 +249,6 @@
             this.ConfirmarTextBox.Name = "ConfirmarTextBox";
             this.ConfirmarTextBox.Size = new System.Drawing.Size(609, 22);
             this.ConfirmarTextBox.TabIndex = 11;
-            this.ConfirmarTextBox.Text = "Contraseña";
             this.ConfirmarTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5

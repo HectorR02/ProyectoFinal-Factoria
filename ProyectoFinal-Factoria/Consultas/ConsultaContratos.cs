@@ -57,6 +57,7 @@ namespace ProyectoFinal_Factoria.Consultas
             var ventana = new VentanasReportes.ReporteContratoCliente();
             var fact = BLL.FactoriasBLL.Buscar((int)FactoriascomboBox.SelectedValue);
             ventana.FactoriaId = fact.FactoriaRNC;
+            ventana.Show();
         }
     }
 }

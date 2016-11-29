@@ -145,6 +145,7 @@ namespace Entidades
         public Usuarios(string nombre, string contraseña, int tipoUsuarioId, int factoriaId, string Nombres)
         {
             this.Nombre = nombre;
+            this.Nombres = Nombres;
             this.Contraseña = contraseña;
             this.TipoUsuarioId = tipoUsuarioId;
             this.FactoriaId = factoriaId;

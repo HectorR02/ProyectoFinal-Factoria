@@ -27,8 +27,9 @@ namespace BLL
                     conexion.SaveChanges();
                     resultado = true;
                 }
-                catch (Exception)
+                catch (Exception e )
                 {
+                    MessageBox.Show(e.ToString());
                     throw;
                 }
             }

@@ -251,17 +251,16 @@ namespace ProyectoFinal_Factoria.Registros
         private void CleanCampos()
         {
             int id = BLL.UsuariosBLL.Identity();
-            IdTextBox.Text = "Ej.: 01";
-            UsuarioTextBox.Text = "Ej.: Juan Pérez";
-            ContraseñaTextBox.Text = ConfirmarTextBox.Text = "Contraseña";
-            UsuarioTextBox.ForeColor = ContraseñaTextBox.ForeColor = ConfirmarTextBox.ForeColor = Color.Silver;
             CleanPermisos();
+            UsuarioTextBox.Clear();
+            ContraseñaTextBox.Clear();
+            ConfirmarTextBox.Clear();
+            IdTextBox.Clear();
             if (id > 1 || BLL.UsuariosBLL.GetList().Count > 0)
                 IdTextBox.Text = (id + 1).ToString();
             else
                 IdTextBox.Text = id.ToString();
             UsuarioTextBox.Focus();
-            //IdTextBox.ForeColor = Color.Black;
         }
 
         private void CleanPermisos()
@@ -352,6 +351,16 @@ namespace ProyectoFinal_Factoria.Registros
         private void RegistroUsuario_Load(object sender, EventArgs e)
         {
             CargarTiposUsuario();
+        }
+
+        private void ContraseñaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IdTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
